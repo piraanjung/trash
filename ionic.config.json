@@ -1,0 +1,8 @@
+{
+  "name": "trash",
+  "app_id": "69491ed5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
