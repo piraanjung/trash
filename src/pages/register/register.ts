@@ -1,13 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { App,Slides } from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { Slides, ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 // import { Loading } from 'ionic-angular/components/loading/loading';
-import { ActionSheetController } from 'ionic-angular'
 import { AuthenProvider } from '../../providers/authen/authen';
 import { API_URL } from "../../providers/api-url";
+import { RolesPage } from '../../pages/roles/roles';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -21,21 +20,36 @@ import { API_URL } from "../../providers/api-url";
   templateUrl: 'register.html',
 })
 export class RegisterPage {
+  submit(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
+  provinces:any;
+  province:any;
+  districts:any;
+  district:any;
+  municipalities:any = [];
+  municipality:any = [];
+  offices:any=[];
+  apiUrl: string;
   cat_name: string;
   showBtnMobilePasswordPage: boolean =false;
   checkmobile: boolean= false;
   currentIndex: number=0;
   @ViewChild(Slides) slides: Slides;
   user:any=[];
+  confirm:boolean=false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private authen:AuthenProvider, 
-    private alertCtrl: AlertController) {
+    private authen:AuthenProvider, public modalCtrl: ModalController,
+    private alertCtrl: AlertController,
+    private http: HttpClient) {
+      this.navCtrl = navCtrl;
+      this.apiUrl =API_URL;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    this.slides.lockSwipes(true);
+    this.slides.lockSwipes(false);
 
   }
 
@@ -92,11 +106,64 @@ export class RegisterPage {
     }else{
       if(this.user.password.length >3){
         this.showBtnMobilePasswordPage = true
+        this.getProvinces();
       }else{
         this.showBtnMobilePasswordPage = false
       }
     }
   }
+
+  getFilterDistricts(){
+    let url = '/districts/'+this.user.province['id'];
+    this.http.get(this.apiUrl+url).subscribe((res)=>{
+      this.districts =  res;
+    });
+  }
+
+  getFilterLocalgevernment(){
+
+    let url = '/municipalities/'+this.user.district['id'];
+    console.log(this.apiUrl+url)
+    this.http.get(this.apiUrl+url).subscribe((res)=>{
+      this.municipalities =  res;
+      console.log(this.municipalities);
+    });
+  }
+
+  getProvinces(){
+    let url = "/provinces";
+    this.http.get(this.apiUrl+url).subscribe(
+      (res) => {
+        this.provinces =res;
+        console.log(this.provinces);
+      
+      }
+    );
+  }
+
+  getOffice(){
+    console.log(this.user.municipality['id']);
+    let url = '/office/'+this.user.municipality['id'];
+    this.http.get(this.apiUrl+url).subscribe(res=>{
+      this.offices = res;
+      // if(this.office === ""){
+      //   this.presentAlert('','เลือกยังไม่ครบ')
+      // }
+    });
+    console.log(this.user.office)
+  }
+
+  checkUserAddress(){
+    if(this.user.province =="" || this.user.district =="" || this.user.municipality =="" 
+      || this.user.address=="" || (this.user.user_cat_id=="2" && this.user.school=="")){
+     
+      this.presentAlert('',"กรุณากรอกข้อมูลให้ครบ..")
+    }else{
+      this.goToNextSlide();
+    }
+  }
+
+
 
   presentAlert(title, subtitle) {
     let alert = this.alertCtrl.create({
@@ -122,6 +189,20 @@ export class RegisterPage {
         this.cat_name = 'โรงพยาบาล'
         break;
     }
+  }
+
+  checkOffice(){
+    console.log(this.user.office)
+  }
+
+  openModal() {
+    let myModal = this.modalCtrl.create(RolesPage);
+    myModal.present();
+  }
+
+  confirmres(id){
+    id==1 ? this.confirm =true : this.confirm =false
+    console.log(this.confirm)
   }
 
 }

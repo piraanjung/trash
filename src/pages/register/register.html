@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Register</ion-title>
+    <ion-title>ลงทะเบียน</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -31,7 +31,7 @@
     </ion-slide>
 
 
-    <ion-slide>
+    <ion-slide padding>
         <h2 class="slide-title">ข้อมูลสำหรับล็อกอินเข้าระบบ</h2>
       <ion-list>
           <ion-item class="round-input">
@@ -53,18 +53,79 @@
         </ion-row>
     </ion-slide>
     <!-- ที่อยู่หมวดหมู่ -->
-    <ion-slide>
+    <ion-slide padding>
         <h2 class="slide-title">{{cat_name}} ของท่านอยู่ในเขต</h2>
+        <ion-list>
+            <ion-item class="round-input">
+              <ion-label  class="label_addr">จังหวัด</ion-label>
+              <ion-select [(ngModel)]="user.province" (ionChange)="getFilterDistricts()">
+                <ion-option [value]="province" *ngFor="let province of provinces">
+                  {{ province.province_name}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item class="round-input">
+              <ion-label  class="label_addr">อำเภอ</ion-label>
+              <ion-select [(ngModel)]="user.district" (ionChange)="getFilterLocalgevernment()">
+                <ion-option [value]="district" *ngFor="let district of districts">
+                  {{ district.district_name }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="round-input">
+              <ion-label  class="label_addr">เทศบาล</ion-label>
+              <ion-select [(ngModel)]="user.municipality" (ionChange)="getOffice()">
+                <ion-option [value]="municipality" *ngFor="let municipality of municipalities">
+                  {{ municipality.name }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item class="round-input" *ngIf="user.user_cat_id !=1">
+              <ion-label  class="label_addr">{{cat_name}}ของท่าน</ion-label>
+              <ion-select [(ngModel)]="user.office"  (ionChange)="checkOffice()">
+                <ion-option [value]="office" *ngFor="let office of offices">
+                  {{ office.office_name }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+
+
+            <!-- <ion-item class="round-input">
+              <ion-label floating class="label_addr">ที่อยู่ของท่าน</ion-label>
+              <ion-input type="text" [(ngModel)]="user.address" placeholder="ตัวอย่าง: 12 หมู่ 1 ต.สะอาด" required></ion-input>
+            </ion-item> -->
+          </ion-list>
+          <ion-row padding>
+            <ion-col col-6>
+              <button ion-button round block (click)="goToPrvSlide()">Back</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round block (click)="checkUserAddress()">Next</button>
+            </ion-col>
+          </ion-row>
     </ion-slide>
 
-    <ion-slide>
-      <ion-toolbar>
-      </ion-toolbar>
+    <ion-slide padding>
+      
       <img src="assets/imgs/trashlogo.png" class="slide-image"/>
-      <h2 class="slide-title">Ready to Play?</h2>
-      <button ion-button large clear icon-end color="primary">
-        Continue
-        <ion-icon name="arrow-forward"></ion-icon>
+      <button ion-button block class="round-input" (click)="openModal()">อ่านข้อกำหนดและเงื่อนไข</button>
+     
+      <ion-list radio-group  [(ngModel)]="confirm" style="margin-top:20px">
+        <ion-item >
+            <ion-label>ไม่ยอมรับ</ion-label>
+            <ion-radio  value="false" (click)="confirmres(0)"></ion-radio>
+          </ion-item>
+        <ion-item>
+          <ion-label>ยอมรับ</ion-label>
+          <ion-radio  value="true" (click)="confirmres(1)"></ion-radio>
+        </ion-item>
+      </ion-list>
+    
+
+      <button ion-button block class="round-input"  color="secondary"  [disabled]="!confirm"> 
+        บันทึกข้อมูล
       </button>
     </ion-slide>
   </ion-slides>

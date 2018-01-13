@@ -42,7 +42,7 @@ export class LoginPage {
       .subscribe((res) => {
         console.log(res)
         if (res['status'] == 0){
-          this.presentToast('ไม่พบข้อมูลผู้ใช้ กรุณาลองใหม่');
+          this.presentAlert('','ไม่พบข้อมูลผู้ใช้ กรุณาลองใหม่');
         }else{
           let results = res['result'][0];
           this.storage.set('currentUser', results);
@@ -68,19 +68,13 @@ export class LoginPage {
     });
   }
 
-  presentToast(txt){
-    let toast = this.toast.create({
-      message: txt,
-      duration: 3000,
-      position: 'top',
-      cssClass: 'toast-message'
+  presentAlert(title, subtitle) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: subtitle,
+      buttons: ['Dismiss']
     });
-  
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-  
-    toast.present();
+    alert.present();
   }
 
   printer(){

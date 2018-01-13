@@ -20,12 +20,13 @@ import { MyApp } from './app.component';
 // import { PrintProvider } from '../providers/print/print';
 // import {PrinterListModalPage} from '../pages/print-list-modal/print-list-modal';
 import { RegisterPage } from '../pages/register/register';
-
-
+import { RolesPage } from '../pages/roles/roles';
+ 
 @NgModule({
   declarations: [
     MyApp,
-
+    RegisterPage,
+    RolesPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,8 @@ import { RegisterPage } from '../pages/register/register';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-
+    RegisterPage,
+    RolesPage
   ],
   providers: [
     StatusBar,
