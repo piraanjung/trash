@@ -19,11 +19,13 @@ import { MyApp } from './app.component';
 // import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 // import { PrintProvider } from '../providers/print/print';
 // import {PrinterListModalPage} from '../pages/print-list-modal/print-list-modal';
+import { RegisterPage } from '../pages/register/register';
 
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+
   ],
   imports: [
     BrowserModule,
@@ -31,11 +33,12 @@ import { MyApp } from './app.component';
     HttpClientModule,
     IonicStorageModule.forRoot(),
     LoginPageModule,
-    // NgxQRCodeModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+
   ],
   providers: [
     StatusBar,

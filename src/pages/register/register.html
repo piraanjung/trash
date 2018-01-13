@@ -1,18 +1,71 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content scroll="false" padding>
 
-<ion-content padding>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+        <h2>เลือกหมวดหมู่</h2>
 
+        <ion-row>
+          <ion-col>
+            <button ion-button class="circle" (click)="categoryChoosed(1)">เทศบาล</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button class="circle" (click)="categoryChoosed(2)">สถานศึกษา</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button class="circle">โรงพยาบาล</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <button ion-button class="circle">หน่วยงาน/องค์กร</button>
+            </ion-col>
+          </ion-row>
+    </ion-slide>
+
+
+    <ion-slide>
+        <h2 class="slide-title">ข้อมูลสำหรับล็อกอินเข้าระบบ</h2>
+      <ion-list>
+          <ion-item class="round-input">
+              <ion-input type="number" [(ngModel)]="user.phone" name="phone" required 
+                placeholder="หมายเลขโทรศัพท์" (keyup)="checkDuplicateMobile()"></ion-input>
+            </ion-item>
+            <ion-item class="round-input">
+                <ion-input type="text" [(ngModel)]="user.password" name="password" required 
+                  placeholder="password" (keyup)="checkPassword()"></ion-input>
+              </ion-item>
+      </ion-list>
+      <ion-row padding>
+          <ion-col col-6>
+            <button ion-button block round (click)="goToPrvSlide()">Back</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button block round (click)="goToNextSlide()"  *ngIf="showBtnMobilePasswordPage">Next</button>
+          </ion-col>
+        </ion-row>
+    </ion-slide>
+    <!-- ที่อยู่หมวดหมู่ -->
+    <ion-slide>
+        <h2 class="slide-title">{{cat_name}} ของท่านอยู่ในเขต</h2>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="assets/imgs/trashlogo.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to Play?</h2>
+      <button ion-button large clear icon-end color="primary">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

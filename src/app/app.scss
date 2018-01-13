@@ -17,12 +17,17 @@
 
 .circle{
     border-radius: 50%;
-    width:100px;
-    height: 100px;
+    width:140px;
+    height: 140px;
+}
+.button{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+              0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 ion-content{
-    background-color: #F2F2F2 !important
+    background-color: #FFFFFF !important
 }
+
 ion-header{
     background-color: #47A27E !important
 }

@@ -6,10 +6,9 @@ import { AuthenProvider } from '../../providers/authen/authen';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import { API_URL } from "../../providers/api-url";
 import { ToastController } from 'ionic-angular';
+import { RegisterPage } from '../../pages/register/register';
 
-@IonicPage({
-  "name": "login"
-})
+@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -18,7 +17,6 @@ export class LoginPage {
   
   @ViewChild(Nav) nav: Nav;
 
-  login_type: string = "byphone";
   params = {};
   currUser = {};
   apiUrl: string = "";
@@ -56,12 +54,7 @@ export class LoginPage {
   }
 
   register() {
-    this.navCtrl.push("register-confirm-user");
-  }
-
-  empty_email_form() {
-    this.params['email'] = "";
-    this.params['password'] = "";
+    this.navCtrl.push(RegisterPage);
   }
 
   empty_phone_form() {

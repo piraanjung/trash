@@ -12,6 +12,9 @@
  
   <form (ngSubmit)="onLogin()">
       <ion-list>
+          <ion-list-header style="border-bottom:none !important">
+            Login
+          </ion-list-header>
         <ion-item class="round-input">
           <ion-input type="number" [(ngModel)]="params.phone" name="phone" required placeholder="หมายเลขโทรศัพท์"></ion-input>
         </ion-item>
