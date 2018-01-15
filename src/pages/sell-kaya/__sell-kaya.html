@@ -1,0 +1,136 @@
+<!--
+  Generated template for the SellKayaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar [hideBackButton]="true">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>ขายขยะ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div *ngIf="currentuser.user_cat_id != 2">
+      <ion-card (click)="gotoSellKayaProcess()">
+        
+        <div class="card-title">ขายขยะ</div>
+        <div class="card-subtitle">รายละเอียด...</div>
+      </ion-card>
+    
+      <ion-card (click)="iBaking()">
+        
+        <div class="card-title">ธนาคารขยะ</div>
+        <div class="card-subtitle">รายละเอียด...</div>
+      </ion-card>
+    
+      <ion-card (click)="gotoPurchaseProduct()">
+        
+        <div class="card-title">ซื้อสินค้าออนไลน์</div>
+        <div class="card-subtitle">รายละเอียด...</div>
+      </ion-card>
+
+      <ion-card (click)="localproduct()">
+          
+          <div class="card-title">ซื้อ-ขาย สินค้าท้องถิ่น</div>
+          <div class="card-subtitle">รายละเอียด...</div>
+        </ion-card>
+      
+        <ion-card (click)="gotoSellKayaEstimatePrice()">
+          
+          <div class="card-title">ราคากลางขยะ</div>
+          <div class="card-subtitle">รายละเอียด...</div>
+        </ion-card>
+      
+        <ion-card (click)="gotoSellKayaBuyerSearch()">
+          
+          <div class="card-title">ค้นหาผู้ซื้อขยะ</div>
+          <div class="card-subtitle">รายละเอียด...</div>
+        </ion-card>
+      
+        <ion-card (click)="goToSellKayaUpValue()">
+          
+          <div class="card-title">คัดแยกขยะเพื่อเพิ่มมูลค่า</div>
+          <div class="card-subtitle">รายละเอียด...</div>
+        </ion-card>
+
+        <ion-card (click)="goToSellKayaHistory()">
+            <div class="card-title">ประวัติการขายขยะ</div>
+            <div class="card-subtitle">รายละเอียด...</div>
+          </ion-card>
+        </div>
+
+        <div *ngIf="currentuser.user_cat_id == 2">
+          
+          <ion-grid>
+            <ion-row>
+              <ion-col col-7>
+                <ion-img src="./assets/imgs/onlineproductmenu.png" class="sk_menu" 
+                  [width]="w" [height]="h" (click)="gotoPurchaseProduct()"></ion-img>
+              </ion-col>
+              <ion-col col-5 style="color:#1522e2;text-align:center">
+                <div>{{currentuser.name}}  {{currentuser.second_name}}</div>
+                <div >
+                    <b>{{balance}}<span style="font-size:10px;"> บาท</span> </b>
+                </div>
+                <div>
+                    <b>{{point}} <span style="font-size:10px;">  คะแนน</span></b>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                  <ion-img src="./assets/imgs/localproductmenu.png"  style="margin-left:3%" 
+                   class="sk_menu" [(width)]="w"  [(height)]="h"></ion-img>
+                </ion-col>
+                <ion-col col-4 style="color:#000000;">
+                    <!-- <h3>
+                      300 <span style="font-size:12px;">คะแนน</span></h3> -->
+                  </ion-col>
+                  
+                </ion-row>
+
+                <ion-row>
+                <ion-col col-6 style="text-align:right">
+                  <ion-img src="./assets/imgs/bankmenu.png" class="sk_menu" 
+                  [style]="s" [(width)]="w" [(height)]="h"></ion-img>
+                </ion-col>
+                <ion-col col-6  class="_name">
+                <!-- <div style="float: left;margin-top: -18%;margin-left: 5%;" >Pipatpong Hongzaeng</div> -->
+             </ion-col>
+              </ion-row>
+
+              <ion-row>
+                  <ion-col col-6>
+                    <ion-img src="./assets/imgs/expanpricemenu.png" class="sk_menu" [width]="w" [height]="h"></ion-img>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-img src="./assets/imgs/estpricemenu.png" class="sk_menu" 
+                       [(width)]="w" [(height)]="h" (click)="gotoSellKayaEstimatePrice()"></ion-img>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-8 style="text-align:right">
+                      <ion-img src="./assets/imgs/sellkayamenu.png"
+                       class="sk_menu" [(width)]="w" [(height)]="h" 
+                       (click)="gotoSellKayaProcess()"></ion-img>
+                    </ion-col>
+                    <ion-col col-4 style="text-align:right">
+                        <ion-img src="./assets/imgs/historymenu.png" class="sk_menu"
+                         [(width)]="w" [(height)]="h" (click)="goToSellKayaHistory()"></ion-img>
+                      </ion-col>
+                  </ion-row>
+              
+          </ion-grid>
+                
+        </div>
+    </ion-content>
+
+

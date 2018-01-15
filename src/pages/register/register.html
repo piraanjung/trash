@@ -108,6 +108,28 @@
     </ion-slide>
 
     <ion-slide padding>
+        <ion-list>
+            <ion-item class="round-input">
+              <ion-label  class="label_addr">จังหวัด</ion-label>
+              <ion-select [(ngModel)]="user.province" (ionChange)="getFilterDistricts()">
+                <ion-option [value]="province" *ngFor="let province of provinces">
+                  {{ province.province_name}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item class="round-input">
+              <ion-label  class="label_addr">อำเภอ</ion-label>
+              <ion-select [(ngModel)]="user.district" (ionChange)="getFilterLocalgevernment()">
+                <ion-option [value]="district" *ngFor="let district of districts">
+                  {{ district.district_name }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+    </ion-slide>
+
+    <ion-slide padding>
       
       <img src="assets/imgs/trashlogo.png" class="slide-image"/>
       <button ion-button block class="round-input" (click)="openModal()">อ่านข้อกำหนดและเงื่อนไข</button>

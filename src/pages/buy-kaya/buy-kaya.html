@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar [hideBackButton]="true" color="nav_blue">
+    <button ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title style="text-align: center;">รับซื้อขยะ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col offset-3>
+        <ion-img src="./assets/imgs/buykayabtn.png" width=240 height="242" 
+        (click)="goto_buyer()"></ion-img>
+    </ion-col>
+  </ion-row>
+    
+  <!-- <ion-card (click)="goto_buyer()"> -->
+    <!-- <ion-row>
+      <ion-col><ion-img src="./assets/imgs/buykaya.svg" width=100 height="100"></ion-img></ion-col>
+      <ion-col style="padding-top:30px; font-size:40px">รับซื้อขยะ</ion-col>
+    </ion-row> -->
+<!--   
+      <ion-img src="./assets/imgs/buykaya.svg" width=100 height="100"></ion-img>
+      <div style="padding-top:30px; font-size:40px">รับซื้อขยะ</div> -->
+  <!-- </ion-card> -->
+</ion-content>

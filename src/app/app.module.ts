@@ -21,12 +21,18 @@ import { MyApp } from './app.component';
 // import {PrinterListModalPage} from '../pages/print-list-modal/print-list-modal';
 import { RegisterPage } from '../pages/register/register';
 import { RolesPage } from '../pages/roles/roles';
+import { MainPage } from '../pages/main/main';
+import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
+import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
  
 @NgModule({
   declarations: [
     MyApp,
     RegisterPage,
-    RolesPage
+    RolesPage,
+    MainPage,
+    BuyKayaPage,
+    SellKayaPage,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,10 @@ import { RolesPage } from '../pages/roles/roles';
   entryComponents: [
     MyApp,
     RegisterPage,
-    RolesPage
+    RolesPage,
+    MainPage,
+    BuyKayaPage,
+    SellKayaPage,
   ],
   providers: [
     StatusBar,

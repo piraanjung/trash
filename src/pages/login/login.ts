@@ -5,9 +5,8 @@ import { Storage } from '@ionic/storage';
 import { AuthenProvider } from '../../providers/authen/authen';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import { API_URL } from "../../providers/api-url";
-import { ToastController } from 'ionic-angular';
 import { RegisterPage } from '../../pages/register/register';
-
+import { MainPage } from '../../pages/main/main';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -25,7 +24,6 @@ export class LoginPage {
     private http: HttpClient,
     private authen: AuthenProvider,
     private storage: Storage,
-    private toast:ToastController
     ) { }
 
   ionViewDidLoad() {
@@ -47,7 +45,7 @@ export class LoginPage {
           let results = res['result'][0];
           this.storage.set('currentUser', results);
           localStorage.setItem('my_user_type_id', results.user_type_id);
-          this.navCtrl.setRoot('main-page')
+          this.navCtrl.setRoot(MainPage)
         }
       }
       , (err: HttpErrorResponse) => console.log(err));

@@ -1,0 +1,57 @@
+page-sell-kaya {
+  .card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+    .card-title {
+      position: absolute;
+      top: 12%;
+      font-size: 1.5em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 65%;
+      width: 100%;
+      color: #fff;
+    }
+
+  }
+
+  ion-content{
+    background-image: url('../assets/imgs/sellkaya_bg.jpg');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    background-size:100% 100%;
+    top:23px !important;
+  }
+
+  .sk_menu{
+
+     background: none;
+  }
+  
+
+  .circlemenu{
+    border-radius: 60px 60px !important
+  }
+  
+  ion-grid{
+    margin-top: -10px !important
+  }
+
+  ._name{
+    text-align:right; 
+     //margin-left:5px;
+    color:#ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 4%
+  }
+}
+
