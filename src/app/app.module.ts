@@ -13,7 +13,7 @@ import { AuthenProvider } from '../providers/authen/authen';
 import { BuyerSideMenuProvider } from '../providers/buyer-side-menu/buyer-side-menu';
 import { SellerSideMenuProvider } from '../providers/seller-side-menu/seller-side-menu';
 import { LoginPageModule } from '../pages/login/login.module';
-// import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
 // import { Printer, PrintOptions } from '@ionic-native/printer';
 // import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
@@ -24,6 +24,7 @@ import { RolesPage } from '../pages/roles/roles';
 import { MainPage } from '../pages/main/main';
 import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
 import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
+import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matching'
  
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
     MainPage,
     BuyKayaPage,
     SellKayaPage,
+    BuyKayaMatchingPage
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
     MainPage,
     BuyKayaPage,
     SellKayaPage,
+    BuyKayaMatchingPage
   ],
   providers: [
     StatusBar,
@@ -57,7 +60,7 @@ import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     BuyerSideMenuProvider,
     SellerSideMenuProvider,
-    // BarcodeScanner,
+    BarcodeScanner,
     BuyersServiceProvider,
     KayaListServiceProvider,
     BuyKayaServiceProvider,

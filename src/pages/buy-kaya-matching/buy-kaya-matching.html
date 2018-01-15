@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar [hideBackButton]="false" color="nav_blue">
+    <button ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title style="text-align: center;">รับซื้อขยะ : หมวด {{ catName }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-content padding>
+
+       
+  <div padding>
+
+   
+
+    <ion-segment [(ngModel)]="seller_matching_by">
+        <ion-segment-button value="qrcode" (click)="clearPhoneNumber()">
+            สแกน QR Code ผู้ขายขยะ
+          </ion-segment-button>
+      <ion-segment-button value="sellercode">
+            รหัสผู้ขายขยะ
+          </ion-segment-button> 
+      
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="seller_matching_by">
+      <div *ngSwitchCase="'qrcode'">
+          <div style="text-align:center; margin-top:10%">
+              <!-- <img src="./assets/imgs/qrcodBtn.png" (click)="Scanqrcode()"> -->
+            <button ion-button class="circle" (click)="Scanqrcode()">สแกน QR CODE</button>  
+          </div>
+      </div>
+
+    <div *ngSwitchCase="'sellercode'">
+          <ion-item class="round-input" style="margin-top:5%"> 
+              <ion-input type="text" [(ngModel)]="sellercode" name="sellercode" 
+                required placeholder="รหัสผู้ขายขยะ"></ion-input>
+            </ion-item>
+            <button ion-button block large round color="shamrock" (click)="searchSeller()">ค้นหา</button>
+
+        
+    </div>
+  </div>
+
+  <ion-card *ngIf="has_user"> <!--(click)="itemSelected(value)">-->
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <img src="assets/img/DrDokvTeGUKcKS5e1gIh_user.png" />
+        </ion-col>
+        <ion-col col-8>
+          <h1 style="font-size:18px; font-weight:bold; 
+                          text-align:right">{{ user.mobile }}</h1>
+          <h1 style="font-size:20px; font-weight:bold;  margin-top:15px;
+                           color:#336798 ;text-align:right">{{ user.name }} {{user.second_name}}</h1>
+          <!-- <h1 style="font-size:16px; font-weight:bold;
+                           color:#336798">{{ user.address }}</h1> -->
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{ address }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div padding>
+        <button ion-button large block style="background:#39A2F3"  class="round-input"
+        (click)="goto_kaya_categories(user)">รับซื้อขยะ</button>
+      </div>
+  </ion-card>
+
+</ion-content>
