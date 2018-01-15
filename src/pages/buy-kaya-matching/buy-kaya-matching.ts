@@ -128,9 +128,11 @@ export class BuyKayaMatchingPage {
 
 
   search_user(sellercode) {
-    this.buyersService.get_buyer_profile_by_category(sellercode, this.catId).subscribe(res => {
-      this.user = res
-      this.items = res
+    // this.buyersService.get_buyer_profile_by_category(sellercode, this.catId).subscribe(res => {
+    this.buyersService.get_buyer_profile(sellercode).subscribe(res => {
+
+    this.user = res
+    this.items = res
       
       //this.user={
         //name : res['name'],

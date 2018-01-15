@@ -25,7 +25,9 @@ import { MainPage } from '../pages/main/main';
 import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
 import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
 import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matching'
- 
+import { BuyerKayaPurchaseListPage } from '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
+import { BuyerKayaFormCalculatorPage } from '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
+import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed'
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +36,10 @@ import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matchin
     MainPage,
     BuyKayaPage,
     SellKayaPage,
-    BuyKayaMatchingPage
+    BuyKayaMatchingPage,
+    BuyerKayaPurchaseListPage,
+    BuyerKayaFormCalculatorPage,
+    BuyerKayaPurchaseCompletedPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,10 @@ import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matchin
     MainPage,
     BuyKayaPage,
     SellKayaPage,
-    BuyKayaMatchingPage
+    BuyKayaMatchingPage,
+    BuyerKayaPurchaseListPage,
+    BuyerKayaFormCalculatorPage,
+    BuyerKayaPurchaseCompletedPage
   ],
   providers: [
     StatusBar,

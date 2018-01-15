@@ -1,0 +1,88 @@
+<ion-header>
+
+  <ion-navbar [hideBackButton]="false" color="nav_blue">
+    <button ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title style="text-align: center;">สรุปข้อมูลการรับซื้อขยะ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card>  
+        <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="./assets/img/DrDokvTeGUKcKS5e1gIh_user.png"/>
+          </ion-col>
+    
+          <ion-col col-9>
+            
+                  <h2>{{ user.mobile }} 
+                    
+                  </h2>
+                <h2>{{ user.name }} {{user.second_name}}</h2>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+
+  <ion-list padding>
+    <ion-item-sliding *ngFor="let value of items; let i = index">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="./assets/item_images/kaya.png">
+        </ion-thumbnail>
+        <h2>{{ value.name }}&nbsp;&nbsp;[&nbsp;{{ value.kaya_type_name }}&nbsp;]</h2>
+        <p>{{ value.amount }}&nbsp;{{ value.short_name }}
+          &nbsp;X&nbsp;{{ value.est_price }}&nbsp;=&nbsp;
+          <strong>{{ value.total }}</strong>&nbsp;บาท</p>
+        
+        <button ion-button color="danger" (click)="remove_item(i)">
+          <ion-icon name="trash"></ion-icon>
+          ลบรายการ
+        </button>
+      </ion-item>
+
+      <!-- <ion-item-options side="right">
+        <button ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          ลบรายการ
+        </button>
+      </ion-item-options> -->
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6><strong>รวมเป็นเงิน =</strong></ion-col>
+          <ion-col col-6 style="text-align:right">
+              <strong>{{ total_purchase_kaya }}</strong>&nbsp;บาท
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button round large block (click)="goto_kaya_categories()">
+          รายการซื้อขยะ
+        </button>
+      </ion-col>
+
+      <ion-col col-6>
+        <button ion-button round color="shamrock" large block  (click)="set_kaya_invoice()">
+          บันทึกการซื้อขยะ
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
