@@ -1,0 +1,116 @@
+<!--
+  Generated template for the DechetRewardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar [hideBackButton]="true">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>ซื้อสินค้าออนไลน์</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content >
+
+      <ion-card>
+        <ion-row>
+        <ion-col col-8>
+              <ion-item>
+                <ion-avatar item-start>
+                  <ion-img src="./assets/imgs/user_logo.png"></ion-img>
+                </ion-avatar> 
+                <!-- <h2>Marty McFly</h2>
+                <p>November 5, 1955</p> -->
+              </ion-item>
+       </ion-col>
+       <ion-col col-4 class="_net"> 
+         <div class="money">0.00 <span class="unit">บาท</span></div>
+         <div class="point">0 <span class="unit">คะแนน</span></div>
+       </ion-col>
+      </ion-row>
+      </ion-card>
+
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-slides autoplay="3000" loop="true" speed="3000">
+          <ion-slide *ngFor="let image of images">
+            <img [src]="image.img" style="height: 200px; width:100%;">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+        <ion-item style="background:#F28784">
+          <!-- (click)="go_to_promotions()"> -->
+          <span item-start>
+            <img src="./assets/imgs/purchase_product/promotiontopic.png">
+          </span>
+          <h1>ร่วมสนุกชิงรางวัล</h1>
+        </ion-item>
+        <ion-item style="background:#efbdb9; text-align:center"> 
+          <!-- (click)="go_to_productcategory('phone')"> -->
+            <span item-end>
+                <img src="./assets/imgs/purchase_product/phonetopic.png">
+              </span>
+          <h1>โทรศัพท์<br>และ<br>อุปกรณ์เสริม</h1>
+        </ion-item>
+        <ion-item style="background:#d6d8d2; text-align:center">
+
+        <!-- (click)="go_to_productcategory('bag_and_shoe')"> -->
+            <span item-start>
+                <img src="./assets/imgs/purchase_product/bag_and_shoetopic.png">
+              </span>
+          <h1>รองเท้า<br>และ<br>กระเป๋า</h1>
+        </ion-item>
+        <ion-item style="background:#ebd8bd; text-align:center">
+        <!-- (click)="go_to_productcategory('cosmetic')"> -->
+            <span item-end>
+                <img src="./assets/imgs/purchase_product/cosmetictopic.png">
+              </span>
+          <h1>เครื่องสำอางค์</h1>
+        </ion-item>
+      </ion-list>
+    <!-- <ion-row>
+      <ion-col col-6 *ngFor="let product of products" text-center 
+        (click)="get_product_details()" style="background-color: #fff;border:2px solid #9A9DB2">
+            <ion-img width="100" height="100" src="{{product.img}}"></ion-img>
+
+              <ion-label>{{product.name}}</ion-label>
+            <ion-grid style="margin-top:-20px">
+              <ion-row>
+                <ion-col col-6>
+                  <span style="font-size:18px; color:red">{{product.discount}}</span><span>%</span>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-icon name='logo-bitcoin'></ion-icon>{{product.price}}<br>
+                    <ion-icon name='star'></ion-icon>{{product.point}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      </ion-col>
+    </ion-row> -->
+</ion-content>
+<!-- <ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 text-center>
+        <button ion-button color="primary"  block>
+          <ion-icon name='ios-home-outline'></ion-icon>&nbsp;หน้าแรก</button>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <button ion-button color="primary"  block (click)="go_to_promotions()">
+          <ion-icon name='ios-megaphone-outline'></ion-icon>&nbsp;โปรโมชั่น</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-footer> -->
+

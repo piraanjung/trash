@@ -18,10 +18,13 @@
         <h2>สร้าง QR CODE ขายขยะ</h2>
         <div *ngIf="show_qr_code" id="qrcode">
           <qr-code value="{{seller_code}}" [size]="260"></qr-code>
+          <h5 style="text-align:center">นำ QR CODE สแกนกับเครื่องผู้รับซื้อขยะ</h5>
         </div>
+        
     </div>
   
 </ion-content>
 <ion-footer style="text-align:center; border-top:none">
     <img src="./assets/imgs/qrcodBtn.png" (click)="generate_qrcode()">
+    
   </ion-footer>

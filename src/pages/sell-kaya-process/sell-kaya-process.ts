@@ -20,7 +20,7 @@ export class SellKayaProcessPage {
   show_qr_code: boolean = false;
   
   seller_code:any =''
-  user:any ={}
+  user:any =[]
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private storage: Storage) {}
@@ -32,8 +32,9 @@ export class SellKayaProcessPage {
   generate_qrcode(){
     this.storage.get('currentUser').then(res =>{
       this.user =res
-      if(res.mobile != ""){
-        this.seller_code = res.mobile
+      console.log(this.user.mobile)
+      if(this.user.mobile != ""){
+        this.seller_code = this.user.mobile
         this.show_qr_code = true
       }
       

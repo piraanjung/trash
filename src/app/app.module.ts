@@ -23,7 +23,6 @@ import { RegisterPage } from '../pages/register/register';
 import { RolesPage } from '../pages/roles/roles';
 import { MainPage } from '../pages/main/main';
 import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
-import { SellKayaPage } from '../pages/sell-kaya/sell-kaya';
 import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matching'
 import { BuyerKayaPurchaseListPage } from '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
 import { BuyerKayaFormCalculatorPage } from '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
@@ -33,6 +32,8 @@ import { BuyLocalproductsPage } from '../pages/buy-localproducts/buy-localproduc
 import { BuyLocalproductsPageModule } from '../pages/buy-localproducts/buy-localproducts.module';
 import { SellKayaProcessPage } from '../pages/sell-kaya-process/sell-kaya-process'
 import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-process.module';
+import { IBankingPageModule } from '../pages/i-banking/i-banking.module';
+import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-banking-bookbank.module';
 
 
 @NgModule({
@@ -57,6 +58,8 @@ import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-
     SellKayaPageModule,
     BuyLocalproductsPageModule,
     SellKayaProcessPageModule,
+    IBankingPageModule,
+    IBankingBookbankPageModule
     
   ],
   bootstrap: [IonicApp],

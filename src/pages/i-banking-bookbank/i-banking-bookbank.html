@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        รายละเอียดบัญชี
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="page2">
+    <div>
+      <img src="./assets/imgs/logo_user.png" style="display:block;width:30%;height:auto;margin-left:auto;margin-right:auto;" />
+    </div>
+    <div class="spacer" style="width:283px;height:18px;" id="page2-spacer14"></div>
+    <div id="page2-markdown29" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#747474;">
+        <strong>
+          ยอดเงินที่ใช่ได้
+        </strong>
+        100.00 บาท
+      </p>
+      <p style="color:#747474;">
+        <strong>
+          ยอดเงินคงเหลือ
+        </strong>
+        100.00 บาท
+      </p>
+    </div>
+    <button id="page2-button13" ion-button color="positive" block on-click="goToIBankingTransferMoney()">
+      โอนเงิน
+    </button>
+    <ion-row>
+      <ion-col col-6 id="page2-container39">
+        <div id="page2-markdown30" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">
+            ชือผลิตภัณฑ์ :
+          </p>
+          <p style="color:#000000;">
+            ประเภทบัญชี :
+          </p>
+          <p style="color:#000000;">
+            เลขบัญชี :
+          </p>
+          <p style="color:#000000;">
+            ชื่อบัญชี :
+          </p>
+          <p style="color:#000000;">
+            สถานะบัญชี :
+          </p>
+          <p style="color:#000000;">
+            สาขา :
+          </p>
+        </div>
+      </ion-col>
+      <ion-col col-6 id="page2-container40">
+        <div id="page2-markdown31" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">
+            บัญชี RFTM
+          </p>
+          <p style="color:#000000;">
+            ออมทรัพย์
+          </p>
+          <p style="color:#000000;">
+            630-000-0000
+          </p>
+          <p style="color:#000000;">
+            นายสมชาย ใจดี
+          </p>
+          <p style="color:#000000;">
+            ปกติ (active)
+          </p>
+          <p style="color:#000000;">
+            เซ็นทรัล
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+  <ion-footer>
+    <button ion-button block outline (click)="goToIBanking()">กลับ</button>
+  </ion-footer>

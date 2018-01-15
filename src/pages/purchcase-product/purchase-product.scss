@@ -1,0 +1,39 @@
+purchase-product{
+    ion-content{
+        background-color: #ffffff !important
+    }
+    ._net{
+        background-color: darkorange !important;
+        .money, .point{
+            font-size: 16px;
+            font-weight: bold;
+            text-align: right
+        }
+        .money{
+           
+            color: #ffffff;
+            padding-bottom: 5px
+        }
+        .point{
+            border-top: 1px solid #ffffff;
+            padding-top: 5px
+        }
+        .unit{
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    ion-item{
+        h1{
+            color: #FFFFFF;
+            font-weight: bold;
+            text-shadow:
+                -1px -1px 0 rgb(49, 16, 194),  
+                1px -1px 0  rgb(49, 16, 194),
+                -1px 1px 0  rgb(49, 16, 194),
+                1px 1px 0  rgb(49, 16, 194);
+
+        }
+    }
+}

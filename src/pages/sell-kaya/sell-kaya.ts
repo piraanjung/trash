@@ -3,9 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SellKayaServiceProvider } from '../../providers/sell-kaya-service/sell-kaya-service';
 import { BuyLocalproductsPage } from '../../pages/buy-localproducts/buy-localproducts'
-
-// import { SellKayaProcessPage } from '../sell-kaya-process/sell-kaya-process';
-
+import { SellKayaProcessPage } from '../../pages/sell-kaya-process/sell-kaya-process'
+import { IBankingPage } from '../../pages/i-banking/i-banking';
 /**
  * Generated class for the SellKayaPage page.
  *
@@ -57,7 +56,7 @@ export class SellKayaPage {
   }
 
   iBaking(){
-    this.navCtrl.push("i-banking");
+    this.navCtrl.push(IBankingPage);
   }
   gotoPurchaseProduct(){
     this.navCtrl.push("purchase-product-slide");
@@ -72,7 +71,7 @@ export class SellKayaPage {
   }
 
   gotoSellKayaProcess(){
-    this.navCtrl.push("sell-kaya-process");
+    this.navCtrl.push(SellKayaProcessPage);
   }
 
   gotoSellKayaBuyerSearch(){
