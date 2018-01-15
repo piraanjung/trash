@@ -26,11 +26,11 @@ export class MainPage {
   ionViewDidLoad() {
     let my_user_type_id = localStorage.getItem("my_user_type_id");
 
-    if (my_user_type_id == '2') {
+    if (my_user_type_id == '3') {
       this.rootPage = BuyKayaPage ;
       this.menuCtrl.enable(true, 'buyerMenu');
       this.menuCtrl.enable(false, 'sellerMenu');
-    } else if (my_user_type_id == '3') {
+    } else if (my_user_type_id == '4') {
       this.rootPage = SellKayaPage;
       this.menuCtrl.enable(false, 'buyerMenu');
       this.menuCtrl.enable(true, 'sellerMenu');

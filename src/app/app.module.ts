@@ -28,6 +28,13 @@ import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matchin
 import { BuyerKayaPurchaseListPage } from '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
 import { BuyerKayaFormCalculatorPage } from '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
 import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed'
+import { SellKayaPageModule } from '../pages/sell-kaya/sell-kaya.module';
+import { BuyLocalproductsPage } from '../pages/buy-localproducts/buy-localproducts';
+import { BuyLocalproductsPageModule } from '../pages/buy-localproducts/buy-localproducts.module';
+import { SellKayaProcessPage } from '../pages/sell-kaya-process/sell-kaya-process'
+import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-process.module';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,7 +42,7 @@ import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-com
     RolesPage,
     MainPage,
     BuyKayaPage,
-    SellKayaPage,
+    // SellKayaPage,
     BuyKayaMatchingPage,
     BuyerKayaPurchaseListPage,
     BuyerKayaFormCalculatorPage,
@@ -47,6 +54,9 @@ import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-com
     HttpClientModule,
     IonicStorageModule.forRoot(),
     LoginPageModule,
+    SellKayaPageModule,
+    BuyLocalproductsPageModule,
+    SellKayaProcessPageModule,
     
   ],
   bootstrap: [IonicApp],
@@ -56,11 +66,13 @@ import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-com
     RolesPage,
     MainPage,
     BuyKayaPage,
-    SellKayaPage,
+    // SellKayaPage,
     BuyKayaMatchingPage,
     BuyerKayaPurchaseListPage,
     BuyerKayaFormCalculatorPage,
-    BuyerKayaPurchaseCompletedPage
+    BuyerKayaPurchaseCompletedPage,
+    BuyLocalproductsPage,
+    SellKayaProcessPage
   ],
   providers: [
     StatusBar,

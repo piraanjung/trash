@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SellKayaServiceProvider } from '../../providers/sell-kaya-service/sell-kaya-service';
-
+import { BuyLocalproductsPage } from '../../pages/buy-localproducts/buy-localproducts'
 
 // import { SellKayaProcessPage } from '../sell-kaya-process/sell-kaya-process';
 
@@ -14,7 +14,7 @@ import { SellKayaServiceProvider } from '../../providers/sell-kaya-service/sell-
  */
 
 @IonicPage({
-  "name" : "sell-kaya",
+  // "name" : "sell-kaya",
 })
 @Component({
   selector: 'page-sell-kaya',
@@ -50,7 +50,7 @@ export class SellKayaPage {
     
   }
   localproduct(){
-    this.navCtrl.push('localproducts');
+    this.navCtrl.push(BuyLocalproductsPage);
   }
   goToSellKayaUpValue(){
     this.navCtrl.push("sell-kaya-upvalue");
@@ -91,14 +91,15 @@ export class SellKayaPage {
   }
 
   get_user_info(){
-    this.storage.get('currentUser').then((val) => {
-      this.storage.set('user_cat_id', val.user_cat_id); 
+    // this.storage.get('currentUser').then((val) => {
+    //   this.storage.set('user_cat_id',1 ); //val.user_cat_id
         
-        this.currentuser = val
-        this.get_bank_info(this.currentuser['id']);
-        this.get_point_info(this.currentuser['id']);
+    //     this.currentuser = val
+    //     this.currentuser['id'] =2
+    //     this.get_bank_info(this.currentuser['id']);
+    //     this.get_point_info(this.currentuser['id']);
     
-      });
+    //  });
   }
 
   get_bank_info(id){
@@ -117,53 +118,33 @@ export class SellKayaPage {
     });
   }
 
-  set_image_ratio(shouldHeight){
-      if(this.shouldHeight >= 568 && this.shouldHeight <640){
-        this.h =44
-        this.w = 97
-      }
-      else if(this.shouldHeight>=640 && this.shouldHeight <699){
+  set_image_ratio(shouldHeight){}
+  //     if(this.shouldHeight >= 568 && this.shouldHeight <640){
+  //       this.h =44
+  //       this.w = 97
+  //     }
+  //     else if(this.shouldHeight>=640 && this.shouldHeight <699){
 
-        this.h = 53;
-        this.w =105;
+  //       this.h = 53;
+  //       this.w =105;
       
-      }else if(this.shouldHeight>=699 && this.shouldHeight <736){
-        this.h = 59;
-        this.w =112;
+  //     }else if(this.shouldHeight>=699 && this.shouldHeight <736){
+  //       this.h = 59;
+  //       this.w =112;
         
-    }else if(this.shouldHeight >=736 && this.shouldHeight <854){
-        this.h =60
-        this.w =128
-    }else if(this.shouldHeight >=854){
-          this.h =65
-          this.w =132
-    }else{
-      this.h = 59;
-      this.w =112;
-    }
-  }
+  //   }else if(this.shouldHeight >=736 && this.shouldHeight <854){
+  //       this.h =60
+  //       this.w =128
+  //   }else if(this.shouldHeight >=854){
+  //         this.h =65
+  //         this.w =132
+  //   }else{
+  //     this.h = 59;
+  //     this.w =112;
+  //   }
+  // }
 
 }
 
 
 
-//   if(this.shouldHeight >= 568 && this.shouldHeight <640){
-    //     this.h =44
-    //     this.w = 97
-    //   }
-    //   else if(this.shouldHeight>=640 && this.shouldHeight <699){
-
-    //     this.h = 53;
-    //     this.w =105;
-      
-    //   }else if(this.shouldHeight>=699 && this.shouldHeight <736){
-    //     this.h = 59;
-    //     this.w =112;
-        
-    // }else if(this.shouldHeight >=736 && this.shouldHeight <854){
-    //     this.h =60
-    //     this.w =128
-    // }else if(this.shouldHeight >=854){
-            //this.h =65
-      //     this.w =132
-    // }

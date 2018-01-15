@@ -33,7 +33,7 @@ export class BuyKayaPage {
 
     this.storage.get('currentUser').then((res) => {
       // console.log(res);
-      if (res == null) this.navCtrl.push('login');
+     // if (res == null) this.navCtrl.push('login');
     });
     // localStorage.removeItem("purchase_kaya_list")
     // localStorage.removeItem("total_purchase_kaya")
