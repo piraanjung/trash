@@ -34,6 +34,7 @@ import { SellKayaProcessPage } from '../pages/sell-kaya-process/sell-kaya-proces
 import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-process.module';
 import { IBankingPageModule } from '../pages/i-banking/i-banking.module';
 import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-banking-bookbank.module';
+import { SellKayaEstimatepriceDetailPageModule } from '../pages/sell-kaya-estimateprice-detail/sell-kaya-estimateprice-detail.module';
 
 
 @NgModule({
@@ -60,6 +61,8 @@ import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-bankin
     SellKayaProcessPageModule,
     IBankingPageModule,
     IBankingBookbankPageModule,
+    SellKayaEstimatepriceDetailPageModule,
+    SellKayaEstimatepriceDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

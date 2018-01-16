@@ -1,0 +1,34 @@
+<!--
+  Generated template for the SellKayaEstimatepriceDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>sell-kaya-estimateprice-detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <ion-searchbar (ionInput)="getItemsRecycleWastes($event)"></ion-searchbar>
+    <ion-list>
+      <button ion-item *ngFor="let item of items">
+        <!--{{ item.name }} -->
+      </button>
+    </ion-list>
+    <ion-item *ngFor="let kaya of kayas">
+        <span item-start>
+            <img src="assets/imgs/logo.png" width="60" height="60">
+        </span>
+          <h2>{{kaya.name}}</h2>
+          <h3>Don't Know What To Do!</h3>
+          <p item-end>{{kaya.est_price}}บาท</p>
+      
+    </ion-item>
+</ion-content>

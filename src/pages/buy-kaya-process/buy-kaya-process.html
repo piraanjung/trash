@@ -1,0 +1,176 @@
+<!--
+  Generated template for the BuyKayaProcessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      รายการรับซื้อขยะ
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="box box-widget widget-user-2">
+    <div class="widget-user-header bg-yellow">
+      <span style="margin-left:70%;font-weight:bold; text-decoration: underline;">ผู้ขายขยะ</span>
+
+      <div class="widget-user-image">
+        <img class="img-circle" src="./assets/img/DrDokvTeGUKcKS5e1gIh_user.png">
+      </div>
+      <h3 class="widget-user-username">{{user.id}}</h3>
+      <h5 class="widget-user-desc">{{user.name}}</h5>
+    </div>
+  </div>
+
+
+
+  <!-- Segment in a header -->
+  <div style="margin-top:10px">
+    <ion-segment [(ngModel)]="waste">
+      <ion-segment-button value="recycle-waste">
+        ขยะรีไซเคิล
+      </ion-segment-button>
+      <ion-segment-button value="organic-waste">
+        ขยะมูลฝอย
+      </ion-segment-button>
+      <ion-segment-button value="hazard-waste">
+        ขยะมีพิษ
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="waste" style="margin-top:10px">
+    <form (ngSubmit)="logForm()">
+      <ion-list *ngSwitchCase="'recycle-waste'">
+        <ion-searchbar (ionInput)="getItemsRecycleWastes($event)"></ion-searchbar>
+        <ion-list>
+
+          <ion-card *ngFor="let rw of recyclewastes; let i = index">
+            <ion-item>
+              <h2>{{rw.name}}</h2>
+              <!-- <ion-input type="hidden" value="{{rw.id}}" name="rw_id"></ion-input> -->
+            </ion-item>
+
+            <ion-row>
+              <ion-col col-6>
+                <img src="{{rw.img}}" />
+              </ion-col>
+              <ion-col col-6>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">ราคากลาง(บาท)</ion-label>
+                    <ion-input type="text" readonly="true" name="rw_estimate_price" value="{{rw.estimate_price}}">
+                    </ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">จำนวน : {{rw.unit}}</ion-label>
+                    <ion-input type="text" name="ww{{i}}" [(ngModel)]="recycle.weight"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">เป็นเงิน(บาท)</ion-label>
+                    <ion-input type="text" readonly="true" name="sum" value=""></ion-input>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+        </ion-list>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'organic-waste'">
+        <ion-searchbar (ionInput)="getItemsOrginics($event)"></ion-searchbar>
+        <ion-list>
+
+          <ion-card *ngFor="let org of organicwastes">
+            <ion-item>
+              <h2>{{org.name}}</h2>
+            </ion-item>
+
+            <ion-row>
+              <ion-col col-6>
+                <img src="{{org.img}}" />
+              </ion-col>
+              <ion-col col-6>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">คะแนน</ion-label>
+                    <ion-input type="text" readonly="true" name="estimate-price" value="{{org.estimate_price}}"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">จำนวน : {{org.unit}}</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">รวมแต้ม(คะแนน)</ion-label>
+                    <ion-input type="text" readonly="true" name="sum" value="{{2*3}}"></ion-input>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+        </ion-list>
+      </ion-list>
+
+
+      <ion-list *ngSwitchCase="'hazard-waste'">
+        <ion-searchbar (ionInput)="getItemsHazards($event)"></ion-searchbar>
+        <ion-list>
+
+          <ion-card *ngFor="let hz of hazardwaste">
+            <ion-item>
+              <h2>{{hz.name}}</h2>
+            </ion-item>
+
+            <ion-row>
+              <ion-col col-6>
+                <img src="{{hz.img}}" />
+              </ion-col>
+              <ion-col col-6>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">คะแนน</ion-label>
+                    <ion-input type="text" readonly="true" name="estimate-price" value="{{hz.estimate_price}}"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">จำนวน : {{hz.unit}}</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label floating color="primary">รวมแต้ม(คะแนน)</ion-label>
+                    <ion-input type="text" readonly="true" name="sum" value="{{2*150}}"></ion-input>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+        </ion-list>
+      </ion-list>
+
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <button ion-button  block (click)="kayaSummary()">บันทึก</button>
+  <!-- <button ion-button type="submit" block>บันทึก</button> -->
+</ion-footer>
+

@@ -1,0 +1,101 @@
+<!--
+  Generated template for the BuyDechetSummaryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar [hideBackButton]="true">
+    <ion-title>สรุปการซื้อขยะ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="_print">
+  <ion-list>
+    <ion-item>
+      ผู้ซื้อ : เทศบาลอำเภอพังโคน [SK-PK01]
+    </ion-item>
+    <ion-item>
+      ผู้ขาย : คุณสมชาย ใจดี [U-SK-PK00001]
+    </ion-item>
+    <ion-item>
+      <div>
+        <span>เลขที่การขาย</span>
+        <span style="float:right">C-23455-202060</span>
+      </div>
+      <div>
+        <span>ซื้อขายวันที่</span>
+        <span style="float:right">20 สิงหาคม 2560</span>
+      </div>
+    </ion-item>
+  </ion-list>
+    <ion-item-divider>
+      <ion-row style="border-bottom:1px solid #000000">
+        <ion-col col-5>รายการ</ion-col>
+        <ion-col col-2 class="txt-align-r">ราคา</ion-col>
+        <ion-col col-2 class="txt-align-r">จำนวน</ion-col>
+        <ion-col col-3 class="txt-align-r">รวม</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of recycle_datas;let i= index">
+        <ion-col col-5>{{data.name}}</ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.price}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.total}}
+          <span class="unit">{{data.unitcount}}</span>
+        </ion-col>
+        <ion-col col-3 class="txt-align-r">
+          {{data.price * data.total}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of organic_datas;let i= index">
+        <ion-col col-5>{{data.name}}</ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.price}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.total}}
+          <span class="unit">{{data.unitcount}}</span>
+        </ion-col>
+        <ion-col col-3 class="txt-align-r">
+          {{data.price * data.total}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of hazard_datas;let i= index">
+        <ion-col col-5>{{data.name}}</ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.price}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+        <ion-col col-2 class="txt-align-r">
+          {{data.total}}
+          <span class="unit">{{data.unitcount}}</span>
+        </ion-col>
+        <ion-col col-3 class="txt-align-r">
+          {{data.price * data.total}}
+          <span class="unit">{{data.unit}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item-divider>
+
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block  (click)="gotoBuyKaya()">กลับไปหน้าหลัก</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block color="secondary" (click)="print()">Print</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
