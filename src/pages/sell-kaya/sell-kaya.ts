@@ -40,12 +40,12 @@ export class SellKayaPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,  
     private storage: Storage, private sellkayaService : SellKayaServiceProvider) {
       this.get_user_info();
-          // หา ratio ของ screen
-          this.shouldHeight = document.body.clientHeight ;
-          this.shouldWidth = document.body.clientWidth ;
-          // let v = window.devicePixelRatio;
-          console.log(this.shouldHeight)
-            this.set_image_ratio(this.shouldHeight)
+      // หา ratio ของ screen
+      this.shouldHeight = document.body.clientHeight ;
+      this.shouldWidth = document.body.clientWidth ;
+      // let v = window.devicePixelRatio;
+      console.log(this.shouldHeight)
+      this.set_image_ratio(this.shouldHeight)
     
   }
   localproduct(){
@@ -90,22 +90,20 @@ export class SellKayaPage {
   }
 
   get_user_info(){
-    // this.storage.get('currentUser').then((val) => {
-    //   this.storage.set('user_cat_id',1 ); //val.user_cat_id
-        
-    //     this.currentuser = val
-    //     this.currentuser['id'] =2
-    //     this.get_bank_info(this.currentuser['id']);
-    //     this.get_point_info(this.currentuser['id']);
+    this.storage.get('currentUser').then(val => {
+      this.currentuser = val
+      this.storage.set('user_cat_id', this.currentuser.user_cat_id ); //val.user_cat_id
+      this.get_bank_info(this.currentuser.id);
+      this.get_point_info(this.currentuser.id);
     
-    //  });
+     });
   }
 
   get_bank_info(id){
     this.sellkayaService.get_bank_info(id).subscribe(res => {
-       this.bank_info = res
-       this.balance = res[0].balance
-      // this.storage.set('user_bank', res);
+      this.bank_info = res
+      this.balance = res[0].balance
+      this.storage.set('user_bank', res);
     });
   }
 
@@ -113,7 +111,7 @@ export class SellKayaPage {
     this.sellkayaService.get_point_info(id).subscribe(res => {
       this.point_info = res
       this.point = res[0].balance
-     // this.storage.set('user_point', res);
+      this.storage.set('user_point', res);
     });
   }
 

@@ -33,16 +33,17 @@ export class IBankingPage {
     private sellkayaService:SellKayaServiceProvider
   ) {
       this.storage.get('user_bank').then(res=>{
-        this.balance = res[0].balance
+        console.log(res)
+        // this.balance = res.balance
       });
       this.storage.get('user_point').then(res=>{
-        this.point = res[0].balance
+        // this.point = res.balance
       });
     }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IBankingPage');
-    this.storage.get('currentUser').then((val) => {
+    this.storage.get('currentUser').then(val => {
     this.current_user  =val;
     this.username = this.current_user.name
     this.secondname = this.current_user.second_name

@@ -59,8 +59,7 @@ import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-bankin
     BuyLocalproductsPageModule,
     SellKayaProcessPageModule,
     IBankingPageModule,
-    IBankingBookbankPageModule
-    
+    IBankingBookbankPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
