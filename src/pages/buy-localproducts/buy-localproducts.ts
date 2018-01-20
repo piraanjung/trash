@@ -28,4 +28,8 @@ export class BuyLocalproductsPage {
     this.navCtrl.push("buy-localproducts-info");
   }
 
+  sellLocalProduct(){
+    this.navCtrl.push('sell-local-product-dashboard');
+  }
+
 }

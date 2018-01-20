@@ -87,4 +87,5 @@
         <variable name="CHANNEL_NAME" value="Master" />
         <variable name="UPDATE_METHOD" value="none" />
     </plugin>
+    <plugin name="cordova-plugin-camera" spec="^4.0.1" />
 </widget>

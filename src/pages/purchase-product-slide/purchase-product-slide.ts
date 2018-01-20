@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PurchaseProductPage } from '../../pages/purchcase-product/purchase-product'
 /**
  * Generated class for the PurchaseProductSlidePage page.
  *
@@ -9,7 +8,7 @@ import { PurchaseProductPage } from '../../pages/purchcase-product/purchase-prod
  */
 
 @IonicPage({
-  // name : 'purchase-product-slide'
+  name : 'purchase-product-slide'
 })
 @Component({
   selector: 'page-purchase-product-slide',
@@ -43,7 +42,7 @@ export class PurchaseProductSlidePage {
   }
 
   goToPurchaseProduct(){
-    this.navCtrl.push(PurchaseProductPage);
+    this.navCtrl.push("purchase-product");
   }
 
 }

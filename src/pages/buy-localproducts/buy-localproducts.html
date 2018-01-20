@@ -2,24 +2,22 @@
   <ion-navbar>
 
     <ion-title>
-      ซื้อสินค้า
+      ซื้อ-ขายสินค้าท้องถิ่น
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page4">
-  <div id="page4-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
-    <p style="color:#446DDD;font-size:18px;">
-      ทำการ Scan QR Code
-    </p>
-  </div>
-  <div id="page4-markdown24" style="text-align:center;" class="show-list-numbers-and-dots">
-    <p style="color:#446DDD;font-size:18px;">
-      สินค้าของผู้ขาย
-    </p>
-  </div>
   <div>
     <a style="display:block;" on-click="goToBuyLocalProductInfo()">
-      <img src="./assets/img/IeuN6CDQuePWFScXFCGG_ScreenShot2560-10-30at20.47.10.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+      <img src="./assets/imgs/qr06.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
     </a>
   </div>
+  <ion-row>
+    <ion-col col-6>
+      <button ion-button class="circle" (click)="goToBuyLocalProductInfo()">ซื้อสินค้า</button>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button class="circle" (click)="sellLocalProduct()">ขายสินค้า</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

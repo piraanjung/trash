@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SellKayaServiceProvider } from '../../providers/sell-kaya-service/sell-kaya-service';
-import { BuyLocalproductsPage } from '../../pages/buy-localproducts/buy-localproducts'
-import { SellKayaProcessPage } from '../../pages/sell-kaya-process/sell-kaya-process'
-import { IBankingPage } from '../../pages/i-banking/i-banking';
 /**
  * Generated class for the SellKayaPage page.
  *
@@ -49,14 +46,14 @@ export class SellKayaPage {
     
   }
   localproduct(){
-    this.navCtrl.push(BuyLocalproductsPage);
+    this.navCtrl.push("buy-localproducts");
   }
   goToSellKayaUpValue(){
     this.navCtrl.push("sell-kaya-upvalue");
   }
 
   iBaking(){
-    this.navCtrl.push(IBankingPage);
+    this.navCtrl.push("i-banking");
   }
   gotoPurchaseProduct(){
     this.navCtrl.push("purchase-product-slide");
@@ -71,7 +68,7 @@ export class SellKayaPage {
   }
 
   gotoSellKayaProcess(){
-    this.navCtrl.push(SellKayaProcessPage);
+    this.navCtrl.push("sell-kaya-process");
   }
 
   gotoSellKayaBuyerSearch(){

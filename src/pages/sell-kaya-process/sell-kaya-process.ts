@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
  */
 
 @IonicPage({
-  // name : 'sell-kaya-process'
+  name : 'sell-kaya-process'
 })
 @Component({
   selector: 'page-sell-kaya-process',

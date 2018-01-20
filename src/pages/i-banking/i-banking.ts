@@ -12,7 +12,7 @@ import { SellerSideMenuProvider } from '../../providers/seller-side-menu/seller-
  */
 
 @IonicPage({
-  // "name" : "i-banking"
+  "name" : "i-banking"
 })
 @Component({
   selector: 'page-i-banking',

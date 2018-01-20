@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { BuyersServiceProvider } from '../../providers/buyers-service/buyers-service';
 import { ToastController } from 'ionic-angular';
@@ -160,6 +160,7 @@ export class BuyKayaMatchingPage {
       user: this.user,
     });
   }
+  
 
   clearPhoneNumber() {
     this.sellercode = ""
