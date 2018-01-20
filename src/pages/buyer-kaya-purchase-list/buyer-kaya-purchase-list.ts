@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { BuyKayaServiceProvider } from '../../providers/buy-kaya-service/buy-kaya-service';
-import { BuyerKayaPurchaseCompletedPage } from '../../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed'
 
 @IonicPage({
-  // "name": "buyer-kaya-purchase-list"
+  "name": "buyer-kaya-purchase-list"
 })
 @Component({
   selector: 'page-buyer-kaya-purchase-list',
@@ -62,7 +61,7 @@ export class BuyerKayaPurchaseListPage {
 
   goto_kaya_purchase_completed() {
     this.presentToast()
-    this.navCtrl.push(BuyerKayaPurchaseCompletedPage)
+    this.navCtrl.push("buyer-kaya-purchase-completed")
   }
 
   presentToast() {

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { BuyKayaPage } from '../../pages/buy-kaya/buy-kaya';
-import { BuyKayaMatchingPage } from '../../pages/buy-kaya-matching/buy-kaya-matching';
 
 @IonicPage({
-  // "name": "buyer-kaya-purchase-completed"
+  "name": "buyer-kaya-purchase-completed"
 })
 @Component({
   selector: 'page-buyer-kaya-purchase-completed',
@@ -32,11 +30,11 @@ export class BuyerKayaPurchaseCompletedPage {
 
   goto_kaya_categories() {
     // this.navCtrl.push('buy-kaya-choose-category')
-    this.navCtrl.push(BuyKayaMatchingPage)
+    this.navCtrl.push("buy-kaya-matching")
   }
 
   goto_main_page() {
-    this.navCtrl.push(BuyKayaPage)
+    this.navCtrl.push("buy-kaya")
   }
 
 }

@@ -13,7 +13,7 @@ import { IBankingPage } from '../../pages/i-banking/i-banking';
  */
 
 @IonicPage({
-  // "name" : "sell-kaya",
+  "name" : "sell-kaya",
 })
 @Component({
   selector: 'page-sell-kaya',

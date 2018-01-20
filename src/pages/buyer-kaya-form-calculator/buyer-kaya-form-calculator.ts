@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 
 @IonicPage({
-  // "name": "buyer-kaya-form-calculator"
+  "name": "buyer-kaya-form-calculator"
 })
 @Component({
   selector: 'page-buyer-kaya-form-calculator',

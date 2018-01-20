@@ -2,9 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController, Nav } from 'ionic-angular';
 import { SellerSideMenuProvider } from '../../providers/seller-side-menu/seller-side-menu';
 import { BuyerSideMenuProvider } from '../../providers/buyer-side-menu/buyer-side-menu';
-import { BuyKayaPage } from '../../pages/buy-kaya/buy-kaya';
-import { SellKayaPage } from '../../pages/sell-kaya/sell-kaya';
-@IonicPage()
+
+@IonicPage({
+  "name" : "main-page"
+})
 @Component({
   selector: 'page-main',
   templateUrl: 'main.html',
@@ -27,11 +28,11 @@ export class MainPage {
     let my_user_type_id = localStorage.getItem("my_user_type_id");
 
     if (my_user_type_id == '3') {
-      this.rootPage = BuyKayaPage ;
+      this.rootPage = "buy-kaya" ;
       this.menuCtrl.enable(true, 'buyerMenu');
       this.menuCtrl.enable(false, 'sellerMenu');
     } else if (my_user_type_id == '4') {
-      this.rootPage = SellKayaPage;
+      this.rootPage = "sell-kaya";
       this.menuCtrl.enable(false, 'buyerMenu');
       this.menuCtrl.enable(true, 'sellerMenu');
     }

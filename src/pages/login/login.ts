@@ -7,7 +7,9 @@ import { HttpErrorResponse } from '@angular/common/http/src/response';
 import { API_URL } from "../../providers/api-url";
 import { RegisterPage } from '../../pages/register/register';
 import { MainPage } from '../../pages/main/main';
-@IonicPage()
+@IonicPage({
+  "name" : "login"
+})
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

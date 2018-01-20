@@ -8,8 +8,8 @@ import { Storage } from '@ionic/storage';
 
 
 @IonicPage({
-  // "name": "buy-kaya-matching",
-  // "segment": "buy-kaya-matching"
+  "name": "buy-kaya-matching",
+  "segment": "buy-kaya-matching"
 })
 
 @Component({

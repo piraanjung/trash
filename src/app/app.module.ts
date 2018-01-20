@@ -15,40 +15,42 @@ import { SellerSideMenuProvider } from '../providers/seller-side-menu/seller-sid
 import { LoginPageModule } from '../pages/login/login.module';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
+import { MainPage } from '../pages/main/main';
 // import { Printer, PrintOptions } from '@ionic-native/printer';
 // import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 // import { PrintProvider } from '../providers/print/print';
 // import {PrinterListModalPage} from '../pages/print-list-modal/print-list-modal';
-import { RegisterPage } from '../pages/register/register';
-import { RolesPage } from '../pages/roles/roles';
-import { MainPage } from '../pages/main/main';
-import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
-import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matching'
-import { BuyerKayaPurchaseListPage } from '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
-import { BuyerKayaFormCalculatorPage } from '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
-import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed'
-import { SellKayaPageModule } from '../pages/sell-kaya/sell-kaya.module';
-import { BuyLocalproductsPage } from '../pages/buy-localproducts/buy-localproducts';
-import { BuyLocalproductsPageModule } from '../pages/buy-localproducts/buy-localproducts.module';
-import { SellKayaProcessPage } from '../pages/sell-kaya-process/sell-kaya-process'
-import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-process.module';
-import { IBankingPageModule } from '../pages/i-banking/i-banking.module';
-import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-banking-bookbank.module';
-import { SellKayaEstimatepriceDetailPageModule } from '../pages/sell-kaya-estimateprice-detail/sell-kaya-estimateprice-detail.module';
+// import { RegisterPage } from '../pages/register/register';
+// import { RolesPage } from '../pages/roles/roles';
+// import { MainPage } from '../pages/main/main';
+// import { BuyKayaPage } from '../pages/buy-kaya/buy-kaya';
+// import { BuyKayaMatchingPage } from '../pages/buy-kaya-matching/buy-kaya-matching'
+// import { BuyerKayaPurchaseListPage } from '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
+// import { BuyerKayaFormCalculatorPage } from '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
+// import { BuyerKayaPurchaseCompletedPage } from '../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed'
+// import { SellKayaPageModule } from '../pages/sell-kaya/sell-kaya.module';
+// import { BuyLocalproductsPage } from '../pages/buy-localproducts/buy-localproducts';
+// import { BuyLocalproductsPageModule } from '../pages/buy-localproducts/buy-localproducts.module';
+// import { SellKayaProcessPage } from '../pages/sell-kaya-process/sell-kaya-process'
+// import { SellKayaProcessPageModule } from '../pages/sell-kaya-process/sell-kaya-process.module';
+// import { IBankingPageModule } from '../pages/i-banking/i-banking.module';
+// import { IBankingBookbankPageModule } from '../pages/i-banking-bookbank/i-banking-bookbank.module';
+// import { SellKayaEstimatepriceDetailPageModule } from '../pages/sell-kaya-estimateprice-detail/sell-kaya-estimateprice-detail.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    RegisterPage,
-    RolesPage,
     MainPage,
-    BuyKayaPage,
-    // SellKayaPage,
-    BuyKayaMatchingPage,
-    BuyerKayaPurchaseListPage,
-    BuyerKayaFormCalculatorPage,
-    BuyerKayaPurchaseCompletedPage
+    // RegisterPage,
+    // RolesPage,
+    // MainPage,
+    // BuyKayaPage,
+    // // SellKayaPage,
+    // BuyKayaMatchingPage,
+    // BuyerKayaPurchaseListPage,
+    // BuyerKayaFormCalculatorPage,
+    // BuyerKayaPurchaseCompletedPage
   ],
   imports: [
     BrowserModule,
@@ -56,28 +58,28 @@ import { SellKayaEstimatepriceDetailPageModule } from '../pages/sell-kaya-estima
     HttpClientModule,
     IonicStorageModule.forRoot(),
     LoginPageModule,
-    SellKayaPageModule,
-    BuyLocalproductsPageModule,
-    SellKayaProcessPageModule,
-    IBankingPageModule,
-    IBankingBookbankPageModule,
-    SellKayaEstimatepriceDetailPageModule,
-    SellKayaEstimatepriceDetailPageModule
+    // SellKayaPageModule,
+    // BuyLocalproductsPageModule,
+    // SellKayaProcessPageModule,
+    // IBankingPageModule,
+    // IBankingBookbankPageModule,
+    // SellKayaEstimatepriceDetailPageModule,
+    // SellKayaEstimatepriceDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    RegisterPage,
-    RolesPage,
+    // RegisterPage,
+    // RolesPage,
     MainPage,
-    BuyKayaPage,
-    // SellKayaPage,
-    BuyKayaMatchingPage,
-    BuyerKayaPurchaseListPage,
-    BuyerKayaFormCalculatorPage,
-    BuyerKayaPurchaseCompletedPage,
-    BuyLocalproductsPage,
-    SellKayaProcessPage
+    // BuyKayaPage,
+    // // SellKayaPage,
+    // BuyKayaMatchingPage,
+    // BuyerKayaPurchaseListPage,
+    // BuyerKayaFormCalculatorPage,
+    // BuyerKayaPurchaseCompletedPage,
+    // BuyLocalproductsPage,
+    // SellKayaProcessPage
   ],
   providers: [
     StatusBar,

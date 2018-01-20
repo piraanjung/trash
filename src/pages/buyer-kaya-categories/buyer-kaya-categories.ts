@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { KayaListServiceProvider } from '../../providers/kaya-list-service/kaya-list-service';
-import { BuyerKayaPurchaseListPage } from '../../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list'
-import { BuyerKayaFormCalculatorPage } from '../../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator' 
 
 @IonicPage({
-  // "name": "buyer-kaya-categories"
+  "name": "buyer-kaya-categories"
 })
 @Component({
   selector: 'page-buyer-kaya-categories',
@@ -69,14 +67,14 @@ export class BuyerKayaCategoriesPage {
   }
 
   itemSelected(value) {
-    this.navCtrl.push(BuyerKayaFormCalculatorPage, {
+    this.navCtrl.push("buyer-kaya-form-calculator", {
       item: value,
       user: this.user
     });
   }
 
   goto_buyer_kaya_purchase() {
-    this.navCtrl.push(BuyerKayaPurchaseListPage, {
+    this.navCtrl.push("buyer-kaya-purchase-list", {
       user: this.user
     });
 
