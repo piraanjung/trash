@@ -1,12 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Nav } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { AuthenProvider } from '../../providers/authen/authen';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import { API_URL } from "../../providers/api-url";
-import { RegisterPage } from '../../pages/register/register';
-import { MainPage } from '../../pages/main/main';
 @IonicPage({
   "name" : "login"
 })
@@ -23,7 +21,6 @@ export class LoginPage {
   apiUrl: string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public alertCtrl: AlertController,
-    private http: HttpClient,
     private authen: AuthenProvider,
     private storage: Storage,
     ) { }
@@ -47,14 +44,14 @@ export class LoginPage {
           let results = res['result'][0];
           this.storage.set('currentUser', results);
           localStorage.setItem('my_user_type_id', results.user_type_id);
-          this.navCtrl.setRoot(MainPage)
+          this.navCtrl.setRoot("main-page")
         }
       }
       , (err: HttpErrorResponse) => console.log(err));
   }
 
   register() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push("register");
   }
 
   empty_phone_form() {

@@ -1,15 +1,14 @@
-webpackJsonp([2,8],{
+webpackJsonp([2],{
 
-/***/ 294:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PurchaseProductPageModule", function() { return PurchaseProductPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IBankingBookbankPageModule", function() { return IBankingBookbankPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__purchase_product__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__ = __webpack_require__(335);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,76 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var PurchaseProductPageModule = (function () {
-    function PurchaseProductPageModule() {
+var IBankingBookbankPageModule = (function () {
+    function IBankingBookbankPageModule() {
     }
-    PurchaseProductPageModule = __decorate([
+    IBankingBookbankPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__purchase_product__["a" /* PurchaseProductPage */],
+                __WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__["a" /* IBankingBookbankPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__purchase_product__["a" /* PurchaseProductPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__["a" /* IBankingBookbankPage */]),
             ],
         })
-    ], PurchaseProductPageModule);
-    return PurchaseProductPageModule;
+    ], IBankingBookbankPageModule);
+    return IBankingBookbankPageModule;
 }());
 
-//# sourceMappingURL=purchase-product.module.js.map
+//# sourceMappingURL=i-banking-bookbank.module.js.map
 
 /***/ }),
 
-/***/ 295:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PurchaseProductSlidePageModule", function() { return PurchaseProductSlidePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IBankingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__purchase_product_slide__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__purchcase_product_purchase_product_module__ = __webpack_require__(294);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var PurchaseProductSlidePageModule = (function () {
-    function PurchaseProductSlidePageModule() {
-    }
-    PurchaseProductSlidePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__purchase_product_slide__["a" /* PurchaseProductSlidePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__purchase_product_slide__["a" /* PurchaseProductSlidePage */]),
-                __WEBPACK_IMPORTED_MODULE_3__purchcase_product_purchase_product_module__["PurchaseProductPageModule"]
-            ],
-        })
-    ], PurchaseProductSlidePageModule);
-    return PurchaseProductSlidePageModule;
-}());
-
-//# sourceMappingURL=purchase-product-slide.module.js.map
-
-/***/ }),
-
-/***/ 319:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PurchaseProductPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -100,65 +59,101 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-// import { PurchaseProductService } from "./purchase-product.service";
-// import { ProductsService } from "../products/products.service";
+
+
+
 /**
- * Generated class for the PurchaseProductPage page.
+ * Generated class for the IBankingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var PurchaseProductPage = (function () {
-    function PurchaseProductPage(navCtrl, navParams) {
+var IBankingPage = (function () {
+    function IBankingPage(navCtrl, navParams, buyersService, storage, sellkayaService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.images = [];
-        this.item = [];
-        this.products = [];
+        this.buyersService = buyersService;
+        this.storage = storage;
+        this.sellkayaService = sellkayaService;
+        this.current_user = [];
+        this.point_info = [];
+        this.bank_info = [];
+        this.storage.get('user_bank').then(function (res) {
+            console.log(res);
+            // this.balance = res.balance
+        });
+        this.storage.get('user_point').then(function (res) {
+            // this.point = res.balance
+        });
     }
-    PurchaseProductPage.prototype.ionViewDidLoad = function () {
-        this.images = [
-            { img: "./assets/item_images/slide1.jpg" },
-            { img: "./assets/item_images/slide2.jpg" },
-            { img: "./assets/item_images/slide3.jpg" },
-            { img: "./assets/item_images/slide4.jpg" },
-            { img: "./assets/item_images/slide5.jpg" },
-        ];
-        // this.productsService.get_products().subscribe(res => {
-        //   this.products = res["results"];
-        // });
-    };
-    PurchaseProductPage.prototype.go_to_promotions = function () {
-        this.navCtrl.push('promotions');
-    };
-    PurchaseProductPage.prototype.get_product_details = function () {
-        this.navCtrl.push('product-details');
-    };
-    PurchaseProductPage.prototype.go_to_productcategory = function (category) {
-        this.navCtrl.push('purchase-product-category', {
-            cat: category
+    IBankingPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad IBankingPage');
+        this.storage.get('currentUser').then(function (val) {
+            _this.current_user = val;
+            _this.username = _this.current_user.name;
+            _this.secondname = _this.current_user.second_name;
+            console.log(_this.current_user);
+            _this.get_bank_info(_this.current_user.id);
+            _this.get_point_info(_this.current_user.id);
+            //    this.sellkayaService.get_bank_info(val.id).subscribe(res => {
+            //     this.bank_info = res
+            //     this.storage.set('user_bank', res);
+            //  });
+            // this.storage.get('user_bank').then(res=>{
+            //   this.balance = res[0].balance
+            // });
+            // this.storage.get('user_point').then(res=>{
+            //   this.point = res[0].balance
+            // });
         });
     };
-    PurchaseProductPage = __decorate([
+    IBankingPage.prototype.get_bank_info = function (id) {
+        var _this = this;
+        this.sellkayaService.get_bank_info(id).subscribe(function (res) {
+            _this.bank_info = res;
+            _this.balance = res[0].balance;
+            _this.storage.set('user_bank', res);
+        });
+    };
+    IBankingPage.prototype.get_point_info = function (id) {
+        var _this = this;
+        this.sellkayaService.get_point_info(id).subscribe(function (res) {
+            _this.point_info = res;
+            _this.point = res[0].balance;
+            _this.storage.set('user_point', res);
+        });
+    };
+    IBankingPage.prototype.goToBookbank = function () {
+        this.navCtrl.push("i-banking-bookbank");
+    };
+    IBankingPage.prototype.goToPointReward = function () {
+        this.navCtrl.push("i-banking-pointreward");
+    };
+    IBankingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'purchase-product',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchcase-product/purchase-product.html"*/'<!--\n  Generated template for the DechetRewardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar [hideBackButton]="true">\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>ซื้อสินค้าออนไลน์</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content >\n\n      <ion-card>\n        <ion-row>\n        <ion-col col-8>\n              <ion-item>\n                <ion-avatar item-start>\n                  <ion-img src="./assets/imgs/user_logo.png"></ion-img>\n                </ion-avatar> \n                <!-- <h2>Marty McFly</h2>\n                <p>November 5, 1955</p> -->\n              </ion-item>\n       </ion-col>\n       <ion-col col-4 class="_net"> \n         <div class="money">0.00 <span class="unit">บาท</span></div>\n         <div class="point">0 <span class="unit">คะแนน</span></div>\n       </ion-col>\n      </ion-row>\n      </ion-card>\n\n\n    <ion-row>\n      <ion-col col-12>\n        <ion-slides autoplay="3000" loop="true" speed="3000">\n          <ion-slide *ngFor="let image of images">\n            <img [src]="image.img" style="height: 200px; width:100%;">\n          </ion-slide>\n        </ion-slides>\n      </ion-col>\n    </ion-row>\n\n    <ion-list>\n        <ion-item style="background:#F28784">\n          <!-- (click)="go_to_promotions()"> -->\n          <span item-start>\n            <img src="./assets/imgs/purchase_product/promotiontopic.png">\n          </span>\n          <h1>ร่วมสนุกชิงรางวัล</h1>\n        </ion-item>\n        <ion-item style="background:#efbdb9; text-align:center"> \n          <!-- (click)="go_to_productcategory(\'phone\')"> -->\n            <span item-end>\n                <img src="./assets/imgs/purchase_product/phonetopic.png">\n              </span>\n          <h1>โทรศัพท์<br>และ<br>อุปกรณ์เสริม</h1>\n        </ion-item>\n        <ion-item style="background:#d6d8d2; text-align:center">\n\n        <!-- (click)="go_to_productcategory(\'bag_and_shoe\')"> -->\n            <span item-start>\n                <img src="./assets/imgs/purchase_product/bag_and_shoetopic.png">\n              </span>\n          <h1>รองเท้า<br>และ<br>กระเป๋า</h1>\n        </ion-item>\n        <ion-item style="background:#ebd8bd; text-align:center">\n        <!-- (click)="go_to_productcategory(\'cosmetic\')"> -->\n            <span item-end>\n                <img src="./assets/imgs/purchase_product/cosmetictopic.png">\n              </span>\n          <h1>เครื่องสำอางค์</h1>\n        </ion-item>\n      </ion-list>\n    <!-- <ion-row>\n      <ion-col col-6 *ngFor="let product of products" text-center \n        (click)="get_product_details()" style="background-color: #fff;border:2px solid #9A9DB2">\n            <ion-img width="100" height="100" src="{{product.img}}"></ion-img>\n\n              <ion-label>{{product.name}}</ion-label>\n            <ion-grid style="margin-top:-20px">\n              <ion-row>\n                <ion-col col-6>\n                  <span style="font-size:18px; color:red">{{product.discount}}</span><span>%</span>\n                </ion-col>\n                <ion-col col-6>\n                    <ion-icon name=\'logo-bitcoin\'></ion-icon>{{product.price}}<br>\n                    <ion-icon name=\'star\'></ion-icon>{{product.point}}\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n      </ion-col>\n    </ion-row> -->\n</ion-content>\n<!-- <ion-footer>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 text-center>\n        <button ion-button color="primary"  block>\n          <ion-icon name=\'ios-home-outline\'></ion-icon>&nbsp;หน้าแรก</button>\n      </ion-col>\n      <ion-col col-6 text-center>\n        <button ion-button color="primary"  block (click)="go_to_promotions()">\n          <ion-icon name=\'ios-megaphone-outline\'></ion-icon>&nbsp;โปรโมชั่น</button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-footer> -->\n\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchcase-product/purchase-product.html"*/,
+            selector: 'page-i-banking',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/'<ion-header>\n  <ion-navbar [hideBackButton]="true">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ธนาคารขยะ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page1">\n  <ion-card>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-4>\n          <img src="./assets/imgs/user_logo.png" style="display:block;height:auto;margin-left:auto;margin-right:auto;"\n          />\n        </ion-col>\n        <ion-col col-8>\n          <h1>\n            <strong>\n              {{username}}  {{secondname}}\n            </strong>\n          </h1>\n          <h2>\n             {{balance}} บาท\n          </h2>\n          <h2>\n             {{point}} คะแนน\n          </h2>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  <img src="./assets/imgs/creditcard.png">\n  <!-- <div id="page1-container5" class="row">\n    <div class="col-40 col-4">\n\n    </div>\n    <div id="page1-markdown13" class="show-list-numbers-and-dots col-50 col-8">\n\n    </div>\n  </div>\n  <div class="spacer" style="width:283px;height:23px;" id="page1-spacer4"></div>\n  <ion-list id="page1-list2">\n    <ion-item color="none" on-click="goToBookbank()" id="page1-list-item9">\n      <ion-icon name="logo-bitcoin" item-start></ion-icon>\n      บัญชีธนาคารขยะ\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToPointReward()" id="page1-list-item10">\n      <ion-icon name="add-circle" item-start></ion-icon>\n      แต้มสะสม\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n  </ion-list> -->\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], PurchaseProductPage);
-    return PurchaseProductPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__["a" /* BuyersServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__["a" /* SellKayaServiceProvider */]])
+    ], IBankingPage);
+    return IBankingPage;
 }());
 
-//# sourceMappingURL=purchase-product.js.map
+//# sourceMappingURL=i-banking.js.map
 
 /***/ }),
 
-/***/ 321:
+/***/ 335:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PurchaseProductSlidePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IBankingBookbankPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_i_banking_i_banking__ = __webpack_require__(320);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -170,50 +165,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
- * Generated class for the PurchaseProductSlidePage page.
+ * Generated class for the IBankingBookbankPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var PurchaseProductSlidePage = (function () {
-    function PurchaseProductSlidePage(navCtrl, navParams) {
+var IBankingBookbankPage = (function () {
+    function IBankingBookbankPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.slides = [
-            {
-                title: "ยินดีต้อนรับสู่ <br>Refuze Shopping Online",
-                description: "แหล่งรวมสินค้าราคาถูก  โปรโมชั่นโดนใจ <br>สิทธิพิเศษสำหรับสมาชิก Refuze เท่านั้น",
-                image: "./assets/imgs/purchase_product/purchase_product_slide1.png",
-            },
-            {
-                title: "แลกซื้อสินค้าด้วยเงินขายขยะ",
-                description: "<b>ท่านสามารถนำเงินสะสมจากการขายขยะ<br>มาแลกซื้อสินค้าในราคาพิเศษ<br>เพื่อสมาชิกเท่านั้น</b> ",
-                image: "./assets/imgs/purchase_product/purchase_product_slide2.png",
-            },
-            {
-                title: "หรือ ใช้แต้มสะสมแลกสินค้า",
-                description: "<b>ท่านสามารถนำแต้มสะสมมาแลกซื้อสินค้า<br>โดยไม่ต้องจ่ายเงิน</b> ",
-                image: "./assets/imgs/purchase_product/purchase_product_slide3.png",
-            }
-        ];
     }
-    PurchaseProductSlidePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PurchaseProductSlidePage');
+    IBankingBookbankPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad IBankingBookbankPage');
     };
-    PurchaseProductSlidePage.prototype.goToPurchaseProduct = function () {
-        this.navCtrl.push("purchase-product");
+    IBankingBookbankPage.prototype.goToIBanking = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_i_banking_i_banking__["a" /* IBankingPage */]);
     };
-    PurchaseProductSlidePage = __decorate([
+    IBankingBookbankPage.prototype.goToIBankingTransferMoney = function () {
+        this.navCtrl.push("i-banking-transfer-money");
+    };
+    IBankingBookbankPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-purchase-product-slide',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchase-product-slide/purchase-product-slide.html"*/'<!--\n  Generated template for the PurchaseProductSlidePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>สินค้าออนไลน์</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="tutorial-page">\n\n  <ion-slides pager>\n    <ion-slide *ngFor="let slide of slides">\n      <ion-toolbar>\n        <ion-buttons end>\n          <button ion-button color="primary" (click)="goToPurchaseProduct()">Skip</button>\n        </ion-buttons>\n      </ion-toolbar>\n      <img [src]="slide.image" class="slide-image"/>\n      <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n      <p [innerHTML]="slide.description"></p>\n    </ion-slide>\n    <ion-slide>\n      <ion-toolbar>\n      </ion-toolbar>\n      <img src="./assets/imgs/purchase_product/purchase_product_slide4.png" class="slide-image"/>\n      <h2 class="slide-title">สบายกระเป๋าเอาแต้มแลกสินค้า<br>\n        สุขหรรษาได้ซื้อสินค้าราคาถูก\n      </h2>\n      <button ion-button large clear icon-end color="primary" (click)="goToPurchaseProduct()">\n        พร้อมแล้วไปกันเลย\n        <ion-icon name="arrow-forward"></ion-icon>\n      </button>\n    </ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchase-product-slide/purchase-product-slide.html"*/,
+            selector: 'page-i-banking-bookbank',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking-bookbank/i-banking-bookbank.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title>\n        รายละเอียดบัญชี\n      </ion-title>\n    </ion-navbar>\n  </ion-header>\n  <ion-content padding id="page2">\n    <div>\n      <img src="./assets/imgs/logo_user.png" style="display:block;width:30%;height:auto;margin-left:auto;margin-right:auto;" />\n    </div>\n    <div class="spacer" style="width:283px;height:18px;" id="page2-spacer14"></div>\n    <div id="page2-markdown29" style="text-align:center;" class="show-list-numbers-and-dots">\n      <p style="color:#747474;">\n        <strong>\n          ยอดเงินที่ใช่ได้\n        </strong>\n        100.00 บาท\n      </p>\n      <p style="color:#747474;">\n        <strong>\n          ยอดเงินคงเหลือ\n        </strong>\n        100.00 บาท\n      </p>\n    </div>\n    <button id="page2-button13" ion-button color="positive" block on-click="goToIBankingTransferMoney()">\n      โอนเงิน\n    </button>\n    <ion-row>\n      <ion-col col-6 id="page2-container39">\n        <div id="page2-markdown30" class="show-list-numbers-and-dots">\n          <p style="color:#000000;">\n            ชือผลิตภัณฑ์ :\n          </p>\n          <p style="color:#000000;">\n            ประเภทบัญชี :\n          </p>\n          <p style="color:#000000;">\n            เลขบัญชี :\n          </p>\n          <p style="color:#000000;">\n            ชื่อบัญชี :\n          </p>\n          <p style="color:#000000;">\n            สถานะบัญชี :\n          </p>\n          <p style="color:#000000;">\n            สาขา :\n          </p>\n        </div>\n      </ion-col>\n      <ion-col col-6 id="page2-container40">\n        <div id="page2-markdown31" class="show-list-numbers-and-dots">\n          <p style="color:#000000;">\n            บัญชี RFTM\n          </p>\n          <p style="color:#000000;">\n            ออมทรัพย์\n          </p>\n          <p style="color:#000000;">\n            630-000-0000\n          </p>\n          <p style="color:#000000;">\n            นายสมชาย ใจดี\n          </p>\n          <p style="color:#000000;">\n            ปกติ (active)\n          </p>\n          <p style="color:#000000;">\n            เซ็นทรัล\n          </p>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-content>\n  <ion-footer>\n    <button ion-button block outline (click)="goToIBanking()">กลับ</button>\n  </ion-footer>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking-bookbank/i-banking-bookbank.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], PurchaseProductSlidePage);
-    return PurchaseProductSlidePage;
+    ], IBankingBookbankPage);
+    return IBankingBookbankPage;
 }());
 
-//# sourceMappingURL=purchase-product-slide.js.map
+//# sourceMappingURL=i-banking-bookbank.js.map
 
 /***/ })
 

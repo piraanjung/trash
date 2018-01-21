@@ -1,14 +1,15 @@
 webpackJsonp([3],{
 
-/***/ 308:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IBankingBookbankPageModule", function() { return IBankingBookbankPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellLocalProductCreateProductPageModule", function() { return SellLocalProductCreateProductPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_local_product_create_product__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(322);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +19,260 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var IBankingBookbankPageModule = (function () {
-    function IBankingBookbankPageModule() {
+
+var SellLocalProductCreateProductPageModule = (function () {
+    function SellLocalProductCreateProductPageModule() {
     }
-    IBankingBookbankPageModule = __decorate([
+    SellLocalProductCreateProductPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__["a" /* IBankingBookbankPage */],
+                __WEBPACK_IMPORTED_MODULE_2__sell_local_product_create_product__["a" /* SellLocalProductCreateProductPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__i_banking_bookbank__["a" /* IBankingBookbankPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sell_local_product_create_product__["a" /* SellLocalProductCreateProductPage */]),
             ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]
+            ]
         })
-    ], IBankingBookbankPageModule);
-    return IBankingBookbankPageModule;
+    ], SellLocalProductCreateProductPageModule);
+    return SellLocalProductCreateProductPageModule;
 }());
 
-//# sourceMappingURL=i-banking-bookbank.module.js.map
+//# sourceMappingURL=sell-local-product-create-product.module.js.map
 
 /***/ }),
 
-/***/ 320:
+/***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IBankingPage; });
+/* unused harmony export DestinationType */
+/* unused harmony export EncodingType */
+/* unused harmony export MediaType */
+/* unused harmony export PictureSourceType */
+/* unused harmony export PopoverArrowDirection */
+/* unused harmony export Direction */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Camera; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(53);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DestinationType;
+(function (DestinationType) {
+    DestinationType[DestinationType["DATA_URL"] = 0] = "DATA_URL";
+    DestinationType[DestinationType["FILE_URL"] = 1] = "FILE_URL";
+    DestinationType[DestinationType["NATIVE_URI"] = 2] = "NATIVE_URI";
+})(DestinationType || (DestinationType = {}));
+var EncodingType;
+(function (EncodingType) {
+    EncodingType[EncodingType["JPEG"] = 0] = "JPEG";
+    EncodingType[EncodingType["PNG"] = 1] = "PNG";
+})(EncodingType || (EncodingType = {}));
+var MediaType;
+(function (MediaType) {
+    MediaType[MediaType["PICTURE"] = 0] = "PICTURE";
+    MediaType[MediaType["VIDEO"] = 1] = "VIDEO";
+    MediaType[MediaType["ALLMEDIA"] = 2] = "ALLMEDIA";
+})(MediaType || (MediaType = {}));
+var PictureSourceType;
+(function (PictureSourceType) {
+    PictureSourceType[PictureSourceType["PHOTOLIBRARY"] = 0] = "PHOTOLIBRARY";
+    PictureSourceType[PictureSourceType["CAMERA"] = 1] = "CAMERA";
+    PictureSourceType[PictureSourceType["SAVEDPHOTOALBUM"] = 2] = "SAVEDPHOTOALBUM";
+})(PictureSourceType || (PictureSourceType = {}));
+var PopoverArrowDirection;
+(function (PopoverArrowDirection) {
+    PopoverArrowDirection[PopoverArrowDirection["ARROW_UP"] = 1] = "ARROW_UP";
+    PopoverArrowDirection[PopoverArrowDirection["ARROW_DOWN"] = 2] = "ARROW_DOWN";
+    PopoverArrowDirection[PopoverArrowDirection["ARROW_LEFT"] = 3] = "ARROW_LEFT";
+    PopoverArrowDirection[PopoverArrowDirection["ARROW_RIGHT"] = 4] = "ARROW_RIGHT";
+    PopoverArrowDirection[PopoverArrowDirection["ARROW_ANY"] = 5] = "ARROW_ANY";
+})(PopoverArrowDirection || (PopoverArrowDirection = {}));
+var Direction;
+(function (Direction) {
+    Direction[Direction["BACK"] = 0] = "BACK";
+    Direction[Direction["FRONT"] = 1] = "FRONT";
+})(Direction || (Direction = {}));
+/**
+ * @name Camera
+ * @description
+ * Take a photo or capture video.
+ *
+ * Requires and the Cordova plugin: `cordova-plugin-camera`. For more info, please see the [Cordova Camera Plugin Docs](https://github.com/apache/cordova-plugin-camera).
+ *
+ * @usage
+ * ```typescript
+ * import { Camera, CameraOptions } from '@ionic-native/camera';
+ *
+ * constructor(private camera: Camera) { }
+ *
+ * ...
+ *
+ *
+ * const options: CameraOptions = {
+ *   quality: 100,
+ *   destinationType: this.camera.DestinationType.DATA_URL,
+ *   encodingType: this.camera.EncodingType.JPEG,
+ *   mediaType: this.camera.MediaType.PICTURE
+ * }
+ *
+ * this.camera.getPicture(options).then((imageData) => {
+ *  // imageData is either a base64 encoded string or a file URI
+ *  // If it's base64:
+ *  let base64Image = 'data:image/jpeg;base64,' + imageData;
+ * }, (err) => {
+ *  // Handle error
+ * });
+ * ```
+ * @interfaces
+ * CameraOptions
+ * CameraPopoverOptions
+ */
+var Camera = (function (_super) {
+    __extends(Camera, _super);
+    function Camera() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Constant for possible destination types
+         */
+        _this.DestinationType = {
+            /** Return base64 encoded string. DATA_URL can be very memory intensive and cause app crashes or out of memory errors. Use FILE_URI or NATIVE_URI if possible */
+            DATA_URL: 0,
+            /** Return file uri (content://media/external/images/media/2 for Android) */
+            FILE_URI: 1,
+            /** Return native uri (eg. asset-library://... for iOS) */
+            NATIVE_URI: 2
+        };
+        /**
+         * Convenience constant
+         */
+        _this.EncodingType = {
+            /** Return JPEG encoded image */
+            JPEG: 0,
+            /** Return PNG encoded image */
+            PNG: 1
+        };
+        /**
+         * Convenience constant
+         */
+        _this.MediaType = {
+            /** Allow selection of still pictures only. DEFAULT. Will return format specified via DestinationType */
+            PICTURE: 0,
+            /** Allow selection of video only, ONLY RETURNS URL */
+            VIDEO: 1,
+            /** Allow selection from all media types */
+            ALLMEDIA: 2
+        };
+        /**
+         * Convenience constant
+         */
+        _this.PictureSourceType = {
+            /** Choose image from picture library (same as SAVEDPHOTOALBUM for Android) */
+            PHOTOLIBRARY: 0,
+            /** Take picture from camera */
+            CAMERA: 1,
+            /** Choose image from picture library (same as PHOTOLIBRARY for Android) */
+            SAVEDPHOTOALBUM: 2
+        };
+        /**
+         * Convenience constant
+         */
+        _this.PopoverArrowDirection = {
+            ARROW_UP: 1,
+            ARROW_DOWN: 2,
+            ARROW_LEFT: 4,
+            ARROW_RIGHT: 8,
+            ARROW_ANY: 15
+        };
+        /**
+         * Convenience constant
+         */
+        _this.Direction = {
+            /** Use the back-facing camera */
+            BACK: 0,
+            /** Use the front-facing camera */
+            FRONT: 1
+        };
+        return _this;
+    }
+    /**
+     * Take a picture or video, or load one from the library.
+     * @param {CameraOptions} [options] Options that you want to pass to the camera. Encoding type, quality, etc. Platform-specific quirks are described in the [Cordova plugin docs](https://github.com/apache/cordova-plugin-camera#cameraoptions-errata-).
+     * @returns {Promise<any>} Returns a Promise that resolves with Base64 encoding of the image data, or the image file URI, depending on cameraOptions, otherwise rejects with an error.
+     */
+    Camera.prototype.getPicture = function (options) { return; };
+    /**
+     * Remove intermediate image files that are kept in temporary storage after calling camera.getPicture.
+     * Applies only when the value of Camera.sourceType equals Camera.PictureSourceType.CAMERA and the Camera.destinationType equals Camera.DestinationType.FILE_URI.
+     * @returns {Promise<any>}
+     */
+    Camera.prototype.cleanup = function () { return; };
+    ;
+    Camera.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    Camera.ctorParameters = function () { return []; };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+            callbackOrder: 'reverse'
+        }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], Camera.prototype, "getPicture", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+            platforms: ['iOS']
+        }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], Camera.prototype, "cleanup", null);
+    Camera = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
+            pluginName: 'Camera',
+            plugin: 'cordova-plugin-camera',
+            pluginRef: 'navigator.camera',
+            repo: 'https://github.com/apache/cordova-plugin-camera',
+            platforms: ['Android', 'BlackBerry 10', 'Browser', 'Firefox OS', 'iOS', 'Ubuntu', 'Windows', 'Windows Phone 8']
+        })
+    ], Camera);
+    return Camera;
+}(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* IonicNativePlugin */]));
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 339:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellLocalProductCreateProductPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(322);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,142 +285,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 /**
- * Generated class for the IBankingPage page.
+ * Generated class for the SellLocalProductCreateProductPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var IBankingPage = (function () {
-    function IBankingPage(navCtrl, navParams, buyersService, storage, sellkayaService) {
+var SellLocalProductCreateProductPage = (function () {
+    function SellLocalProductCreateProductPage(navCtrl, navParams, camera) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.buyersService = buyersService;
-        this.storage = storage;
-        this.sellkayaService = sellkayaService;
-        this.current_user = [];
-        this.point_info = [];
-        this.bank_info = [];
-        this.storage.get('user_bank').then(function (res) {
-            console.log(res);
-            // this.balance = res.balance
-        });
-        this.storage.get('user_point').then(function (res) {
-            // this.point = res.balance
-        });
+        this.camera = camera;
     }
-    IBankingPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        console.log('ionViewDidLoad IBankingPage');
-        this.storage.get('currentUser').then(function (val) {
-            _this.current_user = val;
-            _this.username = _this.current_user.name;
-            _this.secondname = _this.current_user.second_name;
-            console.log(_this.current_user);
-            _this.get_bank_info(_this.current_user.id);
-            _this.get_point_info(_this.current_user.id);
-            //    this.sellkayaService.get_bank_info(val.id).subscribe(res => {
-            //     this.bank_info = res
-            //     this.storage.set('user_bank', res);
-            //  });
-            // this.storage.get('user_bank').then(res=>{
-            //   this.balance = res[0].balance
-            // });
-            // this.storage.get('user_point').then(res=>{
-            //   this.point = res[0].balance
-            // });
+    SellLocalProductCreateProductPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SellLocalProductCreateProductPage');
+    };
+    SellLocalProductCreateProductPage.prototype.captureImage = function () {
+        var options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            // imageData is either a base64 encoded string or a file URI
+            // If it's base64:
+            var base64Image = 'data:image/jpeg;base64,' + imageData;
+        }, function (err) {
+            // Handle error
         });
     };
-    IBankingPage.prototype.get_bank_info = function (id) {
-        var _this = this;
-        this.sellkayaService.get_bank_info(id).subscribe(function (res) {
-            _this.bank_info = res;
-            _this.balance = res[0].balance;
-            _this.storage.set('user_bank', res);
-        });
-    };
-    IBankingPage.prototype.get_point_info = function (id) {
-        var _this = this;
-        this.sellkayaService.get_point_info(id).subscribe(function (res) {
-            _this.point_info = res;
-            _this.point = res[0].balance;
-            _this.storage.set('user_point', res);
-        });
-    };
-    IBankingPage.prototype.goToBookbank = function () {
-        this.navCtrl.push("i-banking-bookbank");
-    };
-    IBankingPage.prototype.goToPointReward = function () {
-        this.navCtrl.push("i-banking-pointreward");
-    };
-    IBankingPage = __decorate([
+    SellLocalProductCreateProductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-i-banking',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/'<ion-header>\n  <ion-navbar [hideBackButton]="true">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ธนาคารขยะ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page1">\n  <ion-card>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-4>\n          <img src="./assets/imgs/user_logo.png" style="display:block;height:auto;margin-left:auto;margin-right:auto;"\n          />\n        </ion-col>\n        <ion-col col-8>\n          <h1>\n            <strong>\n              {{username}}  {{secondname}}\n            </strong>\n          </h1>\n          <h2>\n             {{balance}} บาท\n          </h2>\n          <h2>\n             {{point}} คะแนน\n          </h2>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  <img src="./assets/imgs/creditcard.png">\n  <!-- <div id="page1-container5" class="row">\n    <div class="col-40 col-4">\n\n    </div>\n    <div id="page1-markdown13" class="show-list-numbers-and-dots col-50 col-8">\n\n    </div>\n  </div>\n  <div class="spacer" style="width:283px;height:23px;" id="page1-spacer4"></div>\n  <ion-list id="page1-list2">\n    <ion-item color="none" on-click="goToBookbank()" id="page1-list-item9">\n      <ion-icon name="logo-bitcoin" item-start></ion-icon>\n      บัญชีธนาคารขยะ\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToPointReward()" id="page1-list-item10">\n      <ion-icon name="add-circle" item-start></ion-icon>\n      แต้มสะสม\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n  </ion-list> -->\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/,
+            selector: 'page-sell-local-product-create-product',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/'<!--\n  Generated template for the SellLocalProductCreateProductPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>sellLocalProductCreateProduct</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  ชื่อสินค้า \n  คำอธิบาย\n  ราคาต่อหน่วย\n  หน่วย\n  ถ่ายภาพ\n  <button ion-button class="input-round" click="captureImage()"> ถ่ายภาพ</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__["a" /* BuyersServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__["a" /* SellKayaServiceProvider */]])
-    ], IBankingPage);
-    return IBankingPage;
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]])
+    ], SellLocalProductCreateProductPage);
+    return SellLocalProductCreateProductPage;
 }());
 
-//# sourceMappingURL=i-banking.js.map
-
-/***/ }),
-
-/***/ 335:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IBankingBookbankPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_i_banking_i_banking__ = __webpack_require__(320);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the IBankingBookbankPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var IBankingBookbankPage = (function () {
-    function IBankingBookbankPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    IBankingBookbankPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad IBankingBookbankPage');
-    };
-    IBankingBookbankPage.prototype.goToIBanking = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_i_banking_i_banking__["a" /* IBankingPage */]);
-    };
-    IBankingBookbankPage.prototype.goToIBankingTransferMoney = function () {
-        this.navCtrl.push("i-banking-transfer-money");
-    };
-    IBankingBookbankPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-i-banking-bookbank',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking-bookbank/i-banking-bookbank.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title>\n        รายละเอียดบัญชี\n      </ion-title>\n    </ion-navbar>\n  </ion-header>\n  <ion-content padding id="page2">\n    <div>\n      <img src="./assets/imgs/logo_user.png" style="display:block;width:30%;height:auto;margin-left:auto;margin-right:auto;" />\n    </div>\n    <div class="spacer" style="width:283px;height:18px;" id="page2-spacer14"></div>\n    <div id="page2-markdown29" style="text-align:center;" class="show-list-numbers-and-dots">\n      <p style="color:#747474;">\n        <strong>\n          ยอดเงินที่ใช่ได้\n        </strong>\n        100.00 บาท\n      </p>\n      <p style="color:#747474;">\n        <strong>\n          ยอดเงินคงเหลือ\n        </strong>\n        100.00 บาท\n      </p>\n    </div>\n    <button id="page2-button13" ion-button color="positive" block on-click="goToIBankingTransferMoney()">\n      โอนเงิน\n    </button>\n    <ion-row>\n      <ion-col col-6 id="page2-container39">\n        <div id="page2-markdown30" class="show-list-numbers-and-dots">\n          <p style="color:#000000;">\n            ชือผลิตภัณฑ์ :\n          </p>\n          <p style="color:#000000;">\n            ประเภทบัญชี :\n          </p>\n          <p style="color:#000000;">\n            เลขบัญชี :\n          </p>\n          <p style="color:#000000;">\n            ชื่อบัญชี :\n          </p>\n          <p style="color:#000000;">\n            สถานะบัญชี :\n          </p>\n          <p style="color:#000000;">\n            สาขา :\n          </p>\n        </div>\n      </ion-col>\n      <ion-col col-6 id="page2-container40">\n        <div id="page2-markdown31" class="show-list-numbers-and-dots">\n          <p style="color:#000000;">\n            บัญชี RFTM\n          </p>\n          <p style="color:#000000;">\n            ออมทรัพย์\n          </p>\n          <p style="color:#000000;">\n            630-000-0000\n          </p>\n          <p style="color:#000000;">\n            นายสมชาย ใจดี\n          </p>\n          <p style="color:#000000;">\n            ปกติ (active)\n          </p>\n          <p style="color:#000000;">\n            เซ็นทรัล\n          </p>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-content>\n  <ion-footer>\n    <button ion-button block outline (click)="goToIBanking()">กลับ</button>\n  </ion-footer>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking-bookbank/i-banking-bookbank.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], IBankingBookbankPage);
-    return IBankingBookbankPage;
-}());
-
-//# sourceMappingURL=i-banking-bookbank.js.map
+//# sourceMappingURL=sell-local-product-create-product.js.map
 
 /***/ })
 

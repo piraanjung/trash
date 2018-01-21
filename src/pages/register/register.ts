@@ -6,7 +6,6 @@ import { AlertController } from 'ionic-angular';
 // import { Loading } from 'ionic-angular/components/loading/loading';
 import { AuthenProvider } from '../../providers/authen/authen';
 import { API_URL } from "../../providers/api-url";
-import { RolesPage } from '../../pages/roles/roles';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -14,7 +13,9 @@ import { RolesPage } from '../../pages/roles/roles';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  "name" : "register"
+})
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
@@ -196,7 +197,7 @@ export class RegisterPage {
   }
 
   openModal() {
-    let myModal = this.modalCtrl.create(RolesPage);
+    let myModal = this.modalCtrl.create("roles");
     myModal.present();
   }
 

@@ -9,7 +9,9 @@ import { ViewController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  "name" : "roles"
+})
 @Component({
   selector: 'page-roles',
   templateUrl: 'roles.html',

@@ -1,4 +1,4 @@
-webpackJsonp([0,2,8],{
+webpackJsonp([0,1,8],{
 
 /***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -82,7 +82,7 @@ var PurchaseProductSlidePageModule = (function () {
 
 /***/ }),
 
-/***/ 318:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,7 +90,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellKayaPageModule", function() { return SellKayaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__purchase_product_slide_purchase_product_slide_module__ = __webpack_require__(295);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -261,7 +261,7 @@ var PurchaseProductSlidePage = (function () {
 
 /***/ }),
 
-/***/ 343:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
