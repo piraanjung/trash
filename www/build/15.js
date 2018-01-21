@@ -5,10 +5,11 @@ webpackJsonp([15],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyLocalproductsResultPageModule", function() { return BuyLocalproductsResultPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaCategoriesPageModule", function() { return BuyerKayaCategoriesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_result__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +19,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyLocalproductsResultPageModule = (function () {
-    function BuyLocalproductsResultPageModule() {
+
+var BuyerKayaCategoriesPageModule = (function () {
+    function BuyerKayaCategoriesPageModule() {
     }
-    BuyLocalproductsResultPageModule = __decorate([
+    BuyerKayaCategoriesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_result__["a" /* BuyLocalproductsResultPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__["a" /* BuyerKayaCategoriesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_localproducts_result__["a" /* BuyLocalproductsResultPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__["a" /* BuyerKayaCategoriesPage */]),
             ],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_kaya_list_service_kaya_list_service__["a" /* KayaListServiceProvider */]]
         })
-    ], BuyLocalproductsResultPageModule);
-    return BuyLocalproductsResultPageModule;
+    ], BuyerKayaCategoriesPageModule);
+    return BuyerKayaCategoriesPageModule;
 }());
 
-//# sourceMappingURL=buy-localproducts-result.module.js.map
+//# sourceMappingURL=buyer-kaya-categories.module.js.map
 
 /***/ }),
 
@@ -42,9 +45,10 @@ var BuyLocalproductsResultPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyLocalproductsResultPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaCategoriesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,36 +60,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the BuyLocalproductsResultPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var BuyLocalproductsResultPage = (function () {
-    function BuyLocalproductsResultPage(navCtrl, navParams) {
+
+var BuyerKayaCategoriesPage = (function () {
+    function BuyerKayaCategoriesPage(navCtrl, navParams, KayaListService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.KayaListService = KayaListService;
+        this.user = {};
+        this.items = [];
+        this.purchase_items = [];
+        this.btn_purchase_items_status = true;
+        this.address = 'เทศบาลตำบลพังโคน สกลนคร';
     }
-    BuyLocalproductsResultPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BuyLocalproductsResultPage');
+    BuyerKayaCategoriesPage.prototype.ionViewDidLoad = function () {
+        this.user = this.navParams.get('user');
+        this.user = (typeof this.user != 'undefined' ? this.user : 0);
+        if (this.user != '0') {
+            this.user_cate_id = this.user.user_cat_id;
+            this.office_id = this.user.office_id;
+        }
+        console.log(this.user);
+        // if (this.purchase_items != null) this.btn_purchase_items_status = false
+        this.get_kaya_list();
     };
-    BuyLocalproductsResultPage.prototype.goToLocalProducts = function () {
-        this.navCtrl.push("localproducts");
+    BuyerKayaCategoriesPage.prototype.ionViewWillEnter = function () {
+        var items = localStorage.getItem("purchase_kaya_list");
+        this.purchase_items = JSON.parse(items);
+        if (this.purchase_items != null)
+            this.btn_purchase_items_status = false;
     };
-    BuyLocalproductsResultPage.prototype.goToBuyLocalProducts = function () {
-        this.navCtrl.push("buy-localproducts");
+    BuyerKayaCategoriesPage.prototype.get_kaya_list = function () {
+        var _this = this;
+        var param = {
+            user_cat_id: this.user_cate_id,
+            office_id: this.office_id
+        };
+        this.KayaListService.get_kaya_list(param).subscribe(function (res) {
+            _this.items = res;
+        });
     };
-    BuyLocalproductsResultPage = __decorate([
+    BuyerKayaCategoriesPage.prototype.getItems = function (ev) {
+        var val = ev.target.value;
+        if (val && val.trim() != '') {
+            this.items = this.items.filter(function (item) {
+                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+        else {
+            this.get_kaya_list();
+        }
+    };
+    BuyerKayaCategoriesPage.prototype.itemSelected = function (value) {
+        this.navCtrl.push("buyer-kaya-form-calculator", {
+            item: value,
+            user: this.user
+        });
+    };
+    BuyerKayaCategoriesPage.prototype.goto_buyer_kaya_purchase = function () {
+        this.navCtrl.push("buyer-kaya-purchase-list", {
+            user: this.user
+        });
+    };
+    BuyerKayaCategoriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buy-localproducts-result',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-result/buy-localproducts-result.html"*/'<ion-header>\n  <ion-navbar [hideBackButton]="true">\n   \n    <ion-title>\n      ผลการซื้อสินค้า\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page9">\n\n  <h3 id="page9-heading2" style="color:#27B643;text-align:center; margin-top:20%">\n    ทำการซื้อสินค้าเรียบร้อย\n  </h3>\n\n  <ion-grid style="margin-top:40%">\n    <ion-row>\n      <ion-col col-6>\n        <button id="page9-button8" ion-button color="positive" block on-click="goToLocalProducts()">\n          กลับไปหน้าหลัก\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <button id="page9-button9" ion-button color="secondary" block on-click="goToBuyLocalProducts()">\n          ซื้อสินค้าอีก\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-result/buy-localproducts-result.html"*/,
+            selector: 'page-buyer-kaya-categories',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-categories/buyer-kaya-categories.html"*/'<ion-header>\n  \n    <ion-navbar [hideBackButton]="false"  color="nav_blue">\n      <button ion-button menuToggle right>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <ion-title style="text-align: center;" color="nav_blue">รับซื้อขยะ</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  <ion-content class="my_bg">\n    <ion-card>  <ion-grid>\n      <ion-row>\n        <ion-col col-3>\n          <img src="./assets/imgs/user_logo.png"/>\n        </ion-col>\n  \n        <ion-col col-9>\n          <ion-row>\n            <ion-col col-9>\n                <h2>{{ user.mobile }} \n                  \n                </h2>\n              <h2>{{ user.name }}  {{user.second_name}}</h2>\n            </ion-col>\n            <ion-col col-3>\n                <button ion-button color="dark" [disabled]=btn_purchase_items_status (click)="goto_buyer_kaya_purchase()">\n                    <ion-icon name="cart"></ion-icon>\n                  </button>\n            </ion-col>\n          </ion-row>\n            \n          \n  \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  \n  \n    <!-- <ion-searchbar (ionInput)="getItems($event)" placeholder="ค้นขยะ..."></ion-searchbar> -->\n    <ion-card *ngFor="let value of items" (click)="itemSelected(value)" class="card_kaya">\n      <ion-card-header>\n        <ion-row>\n          <ion-col col-8>\n            {{ value.name }} \n          </ion-col>\n          <ion-col col-4 class="kaya_type_txt">\n            {{ value.kaya_type_name }}\n          </ion-col>\n        </ion-row>\n        \n        <ion-row>\n          <ion-col style="text-align:right">\n              <strong>{{ value.est_price }}บาท : {{ value.unit_name }}</strong>\n          </ion-col>\n        </ion-row>\n  \n      </ion-card-header>\n  \n    </ion-card>\n  \n  </ion-content>\n  '/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-categories/buyer-kaya-categories.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], BuyLocalproductsResultPage);
-    return BuyLocalproductsResultPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_kaya_list_service_kaya_list_service__["a" /* KayaListServiceProvider */]])
+    ], BuyerKayaCategoriesPage);
+    return BuyerKayaCategoriesPage;
 }());
 
-//# sourceMappingURL=buy-localproducts-result.js.map
+//# sourceMappingURL=buyer-kaya-categories.js.map
 
 /***/ })
 

@@ -1,15 +1,15 @@
 webpackJsonp([10],{
 
-/***/ 307:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaPurchaseListPageModule", function() { return BuyerKayaPurchaseListPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PurchaseProductPageModule", function() { return PurchaseProductPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__purchase_product__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,35 +20,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyerKayaPurchaseListPageModule = (function () {
-    function BuyerKayaPurchaseListPageModule() {
+var PurchaseProductPageModule = (function () {
+    function PurchaseProductPageModule() {
     }
-    BuyerKayaPurchaseListPageModule = __decorate([
+    PurchaseProductPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */],
+                __WEBPACK_IMPORTED_MODULE_2__purchase_product__["a" /* PurchaseProductPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__purchase_product__["a" /* PurchaseProductPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */]]
         })
-    ], BuyerKayaPurchaseListPageModule);
-    return BuyerKayaPurchaseListPageModule;
+    ], PurchaseProductPageModule);
+    return PurchaseProductPageModule;
 }());
 
-//# sourceMappingURL=buyer-kaya-purchase-list.module.js.map
+//# sourceMappingURL=purchase-product.module.js.map
 
 /***/ }),
 
-/***/ 334:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaPurchaseListPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PurchaseProductPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,106 +59,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var BuyerKayaPurchaseListPage = (function () {
-    function BuyerKayaPurchaseListPage(navCtrl, navParams, alertCtrl, BuyKayaService, toastCtrl) {
+// import { PurchaseProductService } from "./purchase-product.service";
+// import { ProductsService } from "../products/products.service";
+/**
+ * Generated class for the PurchaseProductPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PurchaseProductPage = (function () {
+    function PurchaseProductPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.BuyKayaService = BuyKayaService;
-        this.toastCtrl = toastCtrl;
-        this.user = {};
-        this.items = [];
-        this.address = 'เทศบาลตำบลพังโคน สกลนคร';
+        this.images = [];
+        this.item = [];
+        this.products = [];
     }
-    BuyerKayaPurchaseListPage.prototype.ionViewDidLoad = function () {
-        this.user = this.navParams.get('user');
-        this.user = (typeof this.user != 'undefined' ? this.user : 0);
-        var items = localStorage.getItem("purchase_kaya_list");
-        this.items = JSON.parse(items);
-        var total_purchase_kaya = (localStorage.getItem("total_purchase_kaya") == null ? 0 : localStorage.getItem("total_purchase_kaya"));
-        this.total_purchase_kaya = total_purchase_kaya;
+    PurchaseProductPage.prototype.ionViewDidLoad = function () {
+        this.images = [
+            { img: "./assets/item_images/slide1.jpg" },
+            { img: "./assets/item_images/slide2.jpg" },
+            { img: "./assets/item_images/slide3.jpg" },
+            { img: "./assets/item_images/slide4.jpg" },
+            { img: "./assets/item_images/slide5.jpg" },
+        ];
+        // this.productsService.get_products().subscribe(res => {
+        //   this.products = res["results"];
+        // });
     };
-    BuyerKayaPurchaseListPage.prototype.set_kaya_invoice = function () {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'แจ้งเตือน',
-            message: 'คุณต้องการบันทึกข้อมูลการซื้อขยะหรือไม่ ?',
-            buttons: [
-                {
-                    text: 'ยกเลิก',
-                    handler: function () {
-                        // console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'ตกลง',
-                    handler: function () {
-                        // console.log('Agree clicked');
-                        // this.goto_kaya_purchase_completed()
-                        _this.set_kaya_profile();
-                    }
-                }
-            ]
-        });
-        confirm.present();
+    PurchaseProductPage.prototype.go_to_promotions = function () {
+        this.navCtrl.push('promotions');
     };
-    BuyerKayaPurchaseListPage.prototype.goto_kaya_categories = function () {
-        this.navCtrl.pop();
+    PurchaseProductPage.prototype.get_product_details = function () {
+        this.navCtrl.push('product-details');
     };
-    BuyerKayaPurchaseListPage.prototype.goto_kaya_purchase_completed = function () {
-        this.presentToast();
-        this.navCtrl.push("buyer-kaya-purchase-completed");
-    };
-    BuyerKayaPurchaseListPage.prototype.presentToast = function () {
-        var toast = this.toastCtrl.create({
-            message: 'บันทึกรายการสำเร็จ',
-            duration: 3000,
-            position: 'top'
-        });
-        toast.present();
-    };
-    BuyerKayaPurchaseListPage.prototype.set_kaya_profile = function () {
-        var _this = this;
-        console.log(this.user.id);
-        var param = {
-            items: this.items,
-            seller_id: (typeof this.user != 'undefined' ? this.user.id : 0),
-            buyer_id: 1,
-            total_purchase_kaya: this.total_purchase_kaya,
-            kaya_type_id: 1,
-            acc_bank_id: this.user.account_bank_id || 0,
-        };
-        this.BuyKayaService.set_kaya_profile(param).subscribe(function (res) {
-            _this.goto_kaya_purchase_completed();
+    PurchaseProductPage.prototype.go_to_productcategory = function (category) {
+        this.navCtrl.push('purchase-product-category', {
+            cat: category
         });
     };
-    BuyerKayaPurchaseListPage.prototype.remove_item = function (id) {
-        this.items.splice(id, 1);
-        this.calculator_total(this.items);
-        localStorage.setItem('purchase_kaya_list', JSON.stringify(this.items));
-    };
-    BuyerKayaPurchaseListPage.prototype.calculator_total = function (items) {
-        var total = 0;
-        items.forEach(function (value) {
-            total = total + value.total;
-        });
-        this.total_purchase_kaya = total;
-        localStorage.setItem('total_purchase_kaya', this.total_purchase_kaya);
-    };
-    BuyerKayaPurchaseListPage = __decorate([
+    PurchaseProductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buyer-kaya-purchase-list',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;">สรุปข้อมูลการรับซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n    <ion-card>  \n        <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img src="./assets/imgs/user_logo.png"/>\n          </ion-col>\n    \n          <ion-col col-9>\n            \n                  <h2>{{ user.mobile }} \n                    \n                  </h2>\n                <h2>{{ user.name }} {{user.second_name}}</h2>\n\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card>\n\n\n  <ion-list padding>\n    <ion-item-sliding *ngFor="let value of items; let i = index">\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="./assets/item_images/kaya.png">\n        </ion-thumbnail>\n        <h2>{{ value.name }}&nbsp;&nbsp;[&nbsp;{{ value.kaya_type_name }}&nbsp;]</h2>\n        <p>{{ value.amount }}&nbsp;{{ value.short_name }}\n          &nbsp;X&nbsp;{{ value.est_price }}&nbsp;=&nbsp;\n          <strong>{{ value.total }}</strong>&nbsp;บาท</p>\n        \n        <button ion-button color="danger" (click)="remove_item(i)">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item>\n\n      <!-- <ion-item-options side="right">\n        <button ion-button color="danger">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item-options> -->\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6><strong>รวมเป็นเงิน =</strong></ion-col>\n          <ion-col col-6 style="text-align:right">\n              <strong>{{ total_purchase_kaya }}</strong>&nbsp;บาท\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <button ion-button round large block (click)="goto_kaya_categories()">\n          รายการซื้อขยะ\n        </button>\n      </ion-col>\n\n      <ion-col col-6>\n        <button ion-button round color="shamrock" large block  (click)="set_kaya_invoice()">\n          บันทึกการซื้อขยะ\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/,
+            selector: 'purchase-product',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchcase-product/purchase-product.html"*/'<!--\n  Generated template for the DechetRewardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar [hideBackButton]="true">\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>ซื้อสินค้าออนไลน์</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content >\n\n      <ion-card>\n        <ion-row>\n        <ion-col col-8>\n              <ion-item>\n                <ion-avatar item-start>\n                  <ion-img src="./assets/imgs/user_logo.png"></ion-img>\n                </ion-avatar> \n                <!-- <h2>Marty McFly</h2>\n                <p>November 5, 1955</p> -->\n              </ion-item>\n       </ion-col>\n       <ion-col col-4 class="_net"> \n         <div class="money">0.00 <span class="unit">บาท</span></div>\n         <div class="point">0 <span class="unit">คะแนน</span></div>\n       </ion-col>\n      </ion-row>\n      </ion-card>\n\n\n    <ion-row>\n      <ion-col col-12>\n        <ion-slides autoplay="3000" loop="true" speed="3000">\n          <ion-slide *ngFor="let image of images">\n            <img [src]="image.img" style="height: 200px; width:100%;">\n          </ion-slide>\n        </ion-slides>\n      </ion-col>\n    </ion-row>\n\n    <ion-list>\n        <ion-item style="background:#F28784">\n          <!-- (click)="go_to_promotions()"> -->\n          <span item-start>\n            <img src="./assets/imgs/purchase_product/promotiontopic.png">\n          </span>\n          <h1>ร่วมสนุกชิงรางวัล</h1>\n        </ion-item>\n        <ion-item style="background:#efbdb9; text-align:center"> \n          <!-- (click)="go_to_productcategory(\'phone\')"> -->\n            <span item-end>\n                <img src="./assets/imgs/purchase_product/phonetopic.png">\n              </span>\n          <h1>โทรศัพท์<br>และ<br>อุปกรณ์เสริม</h1>\n        </ion-item>\n        <ion-item style="background:#d6d8d2; text-align:center">\n\n        <!-- (click)="go_to_productcategory(\'bag_and_shoe\')"> -->\n            <span item-start>\n                <img src="./assets/imgs/purchase_product/bag_and_shoetopic.png">\n              </span>\n          <h1>รองเท้า<br>และ<br>กระเป๋า</h1>\n        </ion-item>\n        <ion-item style="background:#ebd8bd; text-align:center">\n        <!-- (click)="go_to_productcategory(\'cosmetic\')"> -->\n            <span item-end>\n                <img src="./assets/imgs/purchase_product/cosmetictopic.png">\n              </span>\n          <h1>เครื่องสำอางค์</h1>\n        </ion-item>\n      </ion-list>\n    <!-- <ion-row>\n      <ion-col col-6 *ngFor="let product of products" text-center \n        (click)="get_product_details()" style="background-color: #fff;border:2px solid #9A9DB2">\n            <ion-img width="100" height="100" src="{{product.img}}"></ion-img>\n\n              <ion-label>{{product.name}}</ion-label>\n            <ion-grid style="margin-top:-20px">\n              <ion-row>\n                <ion-col col-6>\n                  <span style="font-size:18px; color:red">{{product.discount}}</span><span>%</span>\n                </ion-col>\n                <ion-col col-6>\n                    <ion-icon name=\'logo-bitcoin\'></ion-icon>{{product.price}}<br>\n                    <ion-icon name=\'star\'></ion-icon>{{product.point}}\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n      </ion-col>\n    </ion-row> -->\n</ion-content>\n<!-- <ion-footer>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 text-center>\n        <button ion-button color="primary"  block>\n          <ion-icon name=\'ios-home-outline\'></ion-icon>&nbsp;หน้าแรก</button>\n      </ion-col>\n      <ion-col col-6 text-center>\n        <button ion-button color="primary"  block (click)="go_to_promotions()">\n          <ion-icon name=\'ios-megaphone-outline\'></ion-icon>&nbsp;โปรโมชั่น</button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-footer> -->\n\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/purchcase-product/purchase-product.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-    ], BuyerKayaPurchaseListPage);
-    return BuyerKayaPurchaseListPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], PurchaseProductPage);
+    return PurchaseProductPage;
 }());
 
-//# sourceMappingURL=buyer-kaya-purchase-list.js.map
+//# sourceMappingURL=purchase-product.js.map
 
 /***/ })
 

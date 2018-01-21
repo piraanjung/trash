@@ -15,7 +15,7 @@ import { SellerSideMenuProvider } from '../providers/seller-side-menu/seller-sid
 import { LoginPageModule } from '../pages/login/login.module';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
-import { MainPage } from '../pages/main/main';
+// import { MainPage } from '../pages/main/main';
 // import { Printer, PrintOptions } from '@ionic-native/printer';
 // import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 // import { PrintProvider } from '../providers/print/print';
@@ -41,7 +41,7 @@ import { MainPage } from '../pages/main/main';
 @NgModule({
   declarations: [
     MyApp,
-    MainPage,
+    // MainPage,
     // RegisterPage,
     // RolesPage,
     // MainPage,
@@ -71,7 +71,7 @@ import { MainPage } from '../pages/main/main';
     MyApp,
     // RegisterPage,
     // RolesPage,
-    MainPage,
+    // MainPage,
     // BuyKayaPage,
     // // SellKayaPage,
     // BuyKayaMatchingPage,

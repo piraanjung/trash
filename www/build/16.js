@@ -5,10 +5,10 @@ webpackJsonp([16],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyLocalproductsInfoPageModule", function() { return BuyLocalproductsInfoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyLocalproductsPageModule", function() { return BuyLocalproductsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_info__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_localproducts__ = __webpack_require__(328);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyLocalproductsInfoPageModule = (function () {
-    function BuyLocalproductsInfoPageModule() {
+var BuyLocalproductsPageModule = (function () {
+    function BuyLocalproductsPageModule() {
     }
-    BuyLocalproductsInfoPageModule = __decorate([
+    BuyLocalproductsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_info__["a" /* BuyLocalproductsInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buy_localproducts__["a" /* BuyLocalproductsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_localproducts_info__["a" /* BuyLocalproductsInfoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_localproducts__["a" /* BuyLocalproductsPage */]),
             ],
         })
-    ], BuyLocalproductsInfoPageModule);
-    return BuyLocalproductsInfoPageModule;
+    ], BuyLocalproductsPageModule);
+    return BuyLocalproductsPageModule;
 }());
 
-//# sourceMappingURL=buy-localproducts-info.module.js.map
+//# sourceMappingURL=buy-localproducts.module.js.map
 
 /***/ }),
 
@@ -42,9 +42,9 @@ var BuyLocalproductsInfoPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyLocalproductsInfoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyLocalproductsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,32 +57,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the BuyLocalproductsInfoPage page.
+ * Generated class for the BuyLocalproductsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var BuyLocalproductsInfoPage = (function () {
-    function BuyLocalproductsInfoPage(navCtrl, navParams) {
+var BuyLocalproductsPage = (function () {
+    function BuyLocalproductsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    BuyLocalproductsInfoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BuyLocalproductsInfoPage');
+    BuyLocalproductsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad BuyLocalproductsPage');
     };
-    BuyLocalproductsInfoPage.prototype.goToBuyLocalProductConfirm = function () {
-        this.navCtrl.push("buy-localproducts-confirm");
+    BuyLocalproductsPage.prototype.goToBuyLocalProductInfo = function () {
+        this.navCtrl.push("buy-localproducts-info");
     };
-    BuyLocalproductsInfoPage = __decorate([
+    BuyLocalproductsPage.prototype.sellLocalProduct = function () {
+        this.navCtrl.push('sell-local-product-dashboard');
+    };
+    BuyLocalproductsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buy-localproducts-info',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-info/buy-localproducts-info.html"*/'<ion-header>\n  <ion-navbar>\n   \n    <ion-title>\n      ซื้อสินค้า\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page11">\n  <ion-list id="page11-list7">\n    <ion-item color="none" id="page11-list-item44">\n      <ion-thumbnail item-left>\n        <img src="./assets/img/chill2.png" />\n      </ion-thumbnail>\n      <h2>\n        พริกสด\n      </h2>\n    </ion-item>\n    <ion-list id="page11-list8">\n      <ion-item color="none" id="page11-list-item48">\n        ผู้ขาย : B-1001-2\n      </ion-item>\n      <ion-item color="none" id="page11-list-item49">\n        ราคา 10 บาท/ถุง\n      </ion-item>\n    </ion-list>\n  </ion-list>\n  <div class="spacer" style="width:300px;height:38px;" id="page11-spacer4"></div>\n  <form id="page11-form3">\n    <h1 id="page11-heading4" style="color:#000000;">\n      ซื้อจำนวน\n    </h1>\n    <ion-item id="page11-input11">\n      <ion-label></ion-label>\n      <ion-input type="text" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n  <button id="page11-button15" ion-button color="positive" block on-click="goToBuyLocalProductConfirm()">\n    ตกลง\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-info/buy-localproducts-info.html"*/,
+            selector: 'page-buy-localproducts',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts/buy-localproducts.html"*/'<ion-header>\n  <ion-navbar>\n\n    <ion-title>\n      ซื้อ-ขายสินค้าท้องถิ่น\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page4">\n  <div>\n    <a style="display:block;" on-click="goToBuyLocalProductInfo()">\n      <img src="./assets/imgs/qr06.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n    </a>\n  </div>\n  <ion-row>\n    <ion-col col-6>\n      <button ion-button class="circle" (click)="goToBuyLocalProductInfo()">ซื้อสินค้า</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button class="circle" (click)="sellLocalProduct()">ขายสินค้า</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts/buy-localproducts.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], BuyLocalproductsInfoPage);
-    return BuyLocalproductsInfoPage;
+    ], BuyLocalproductsPage);
+    return BuyLocalproductsPage;
 }());
 
-//# sourceMappingURL=buy-localproducts-info.js.map
+//# sourceMappingURL=buy-localproducts.js.map
 
 /***/ })
 

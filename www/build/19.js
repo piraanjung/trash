@@ -5,10 +5,10 @@ webpackJsonp([19],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyKayaSummaryPageModule", function() { return BuyKayaSummaryPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyLocalproductsConfirmPageModule", function() { return BuyLocalproductsConfirmPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_kaya_summary__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__ = __webpack_require__(325);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyKayaSummaryPageModule = (function () {
-    function BuyKayaSummaryPageModule() {
+var BuyLocalproductsConfirmPageModule = (function () {
+    function BuyLocalproductsConfirmPageModule() {
     }
-    BuyKayaSummaryPageModule = __decorate([
+    BuyLocalproductsConfirmPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buy_kaya_summary__["a" /* BuyKayaSummaryPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__["a" /* BuyLocalproductsConfirmPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_kaya_summary__["a" /* BuyKayaSummaryPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__["a" /* BuyLocalproductsConfirmPage */]),
             ],
         })
-    ], BuyKayaSummaryPageModule);
-    return BuyKayaSummaryPageModule;
+    ], BuyLocalproductsConfirmPageModule);
+    return BuyLocalproductsConfirmPageModule;
 }());
 
-//# sourceMappingURL=buy-kaya-summary.module.js.map
+//# sourceMappingURL=buy-localproducts-confirm.module.js.map
 
 /***/ }),
 
@@ -42,9 +42,9 @@ var BuyKayaSummaryPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyKayaSummaryPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyLocalproductsConfirmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,92 +56,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-// import { Printer } from '@ionic-native/printer';
-// import { BuyKayaPage } from '../buy-kaya/buy-kaya';
 /**
- * Generated class for the BuyKayaSummaryPage page.
+ * Generated class for the BuyLocalproductsConfirmPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var BuyKayaSummaryPage = (function () {
-    function BuyKayaSummaryPage(navCtrl, navParams) {
+var BuyLocalproductsConfirmPage = (function () {
+    function BuyLocalproductsConfirmPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.organic_datas = [];
-        this.recycle_datas = [];
-        this.hazard_datas = [];
-        this.organic_datas = [
-            {
-                'id': 1,
-                'name': 'เศษอาหาร',
-                'price': 20,
-                'unitcount': 'กก.',
-                'unit': 'แต้ม',
-                'total': 2.5
-            },
-            {
-                'id': 2,
-                'name': 'ใบไม้',
-                'price': 10,
-                'unitcount': 'กก.',
-                'unit': 'แต้ม',
-                'total': 2
-            },
-        ];
-        this.recycle_datas = [
-            {
-                'id': 'r1',
-                'name': 'ขวด PET',
-                'price': 7,
-                'unitcount': 'กก.',
-                'unit': 'บาท',
-                'total': 2
-            },
-            {
-                'id': 'r2',
-                'name': 'กระดาษ',
-                'price': 10,
-                'unitcount': 'กก.',
-                'unit': 'บาท',
-                'total': 2.5
-            },
-        ];
-        this.hazard_datas = [
-            {
-                'id': 'h1',
-                'name': 'หลอดฟลูออเรสเซนต์',
-                'price': 200,
-                'unitcount': 'หลอด',
-                'unit': 'แต้ม',
-                'total': 2
-            },
-            {
-                'id': 'h2',
-                'name': 'ถ่านไฟฉาย AAA',
-                'price': 50,
-                'unitcount': 'ก้อน',
-                'unit': 'แต้ม',
-                'total': 2
-            },
-        ];
     }
-    BuyKayaSummaryPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BuyKayaSummaryPage');
+    BuyLocalproductsConfirmPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad BuyLocalproductsConfirmPage');
     };
-    BuyKayaSummaryPage.prototype.gotoBuyKaya = function () {
-        this.navCtrl.push("buy-kaya");
+    BuyLocalproductsConfirmPage.prototype.goToBuyLocalProductResult = function () {
+        this.navCtrl.push("buy-localproducts-result");
     };
-    BuyKayaSummaryPage = __decorate([
+    BuyLocalproductsConfirmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buy-kaya-summary',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya-summary/buy-kaya-summary.html"*/'<!--\n  Generated template for the BuyDechetSummaryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar [hideBackButton]="true">\n    <ion-title>สรุปการซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content id="_print">\n  <ion-list>\n    <ion-item>\n      ผู้ซื้อ : เทศบาลอำเภอพังโคน [SK-PK01]\n    </ion-item>\n    <ion-item>\n      ผู้ขาย : คุณสมชาย ใจดี [U-SK-PK00001]\n    </ion-item>\n    <ion-item>\n      <div>\n        <span>เลขที่การขาย</span>\n        <span style="float:right">C-23455-202060</span>\n      </div>\n      <div>\n        <span>ซื้อขายวันที่</span>\n        <span style="float:right">20 สิงหาคม 2560</span>\n      </div>\n    </ion-item>\n  </ion-list>\n    <ion-item-divider>\n      <ion-row style="border-bottom:1px solid #000000">\n        <ion-col col-5>รายการ</ion-col>\n        <ion-col col-2 class="txt-align-r">ราคา</ion-col>\n        <ion-col col-2 class="txt-align-r">จำนวน</ion-col>\n        <ion-col col-3 class="txt-align-r">รวม</ion-col>\n      </ion-row>\n      <ion-row *ngFor="let data of recycle_datas;let i= index">\n        <ion-col col-5>{{data.name}}</ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.price}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.total}}\n          <span class="unit">{{data.unitcount}}</span>\n        </ion-col>\n        <ion-col col-3 class="txt-align-r">\n          {{data.price * data.total}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngFor="let data of organic_datas;let i= index">\n        <ion-col col-5>{{data.name}}</ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.price}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.total}}\n          <span class="unit">{{data.unitcount}}</span>\n        </ion-col>\n        <ion-col col-3 class="txt-align-r">\n          {{data.price * data.total}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngFor="let data of hazard_datas;let i= index">\n        <ion-col col-5>{{data.name}}</ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.price}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n        <ion-col col-2 class="txt-align-r">\n          {{data.total}}\n          <span class="unit">{{data.unitcount}}</span>\n        </ion-col>\n        <ion-col col-3 class="txt-align-r">\n          {{data.price * data.total}}\n          <span class="unit">{{data.unit}}</span>\n        </ion-col>\n      </ion-row>\n    </ion-item-divider>\n\n</ion-content>\n<ion-footer>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <button ion-button block  (click)="gotoBuyKaya()">กลับไปหน้าหลัก</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button block color="secondary" (click)="print()">Print</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya-summary/buy-kaya-summary.html"*/,
+            selector: 'page-buy-localproducts-confirm',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-confirm/buy-localproducts-confirm.html"*/'<ion-header>\n  <ion-navbar>\n    \n    <ion-title>\n      ยืนยันการซื้อสินค้า\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page13">\n  <ion-card id="page13-card210">\n    <ion-list>\n      \n      <ion-item color="assertive" id="page13-list-item65">\n          <ion-avatar item-left>\n              <img src="./assets/img/chill.png" />\n            </ion-avatar>\n        พริกสด\n      </ion-item>\n      <ion-item id="page13-list-item-container18">\n        <div id="page13-markdown20" class="show-list-numbers-and-dots">\n          <p style="margin-top:0px;color:#000000;">\n            ราคา: 10บาท/ถุง\n          </p>\n        </div>\n      </ion-item>\n      <ion-item color="positive" id="page13-list-item66">\n        <ion-icon name="person" item-left></ion-icon>\n        ผู้ขาย :B-0112-1\n      </ion-item>\n    </ion-list>\n  </ion-card>\n  <ion-card id="page13-card211">\n    <ion-list>\n     \n      <ion-item id="page13-list-item-container19">\n        <div id="page13-markdown21" class="show-list-numbers-and-dots">\n          <p style="margin-top:0px;color:#000000;">\n            ซื้อจำนวน\n          </p>\n        </div>\n      </ion-item>\n      <ion-item color="balanced" id="page13-list-item68">\n        <ion-icon name="add-circle" item-left></ion-icon>\n        2 ถุง : 20 บาท\n      </ion-item>\n    </ion-list>\n  </ion-card>\n  <button id="page13-button14" ion-button color="positive" block on-click="goToBuyLocalProductResult()">\n    ยืนยันการซื้อ\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-confirm/buy-localproducts-confirm.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], BuyKayaSummaryPage);
-    return BuyKayaSummaryPage;
+    ], BuyLocalproductsConfirmPage);
+    return BuyLocalproductsConfirmPage;
 }());
 
-//# sourceMappingURL=buy-kaya-summary.js.map
+//# sourceMappingURL=buy-localproducts-confirm.js.map
 
 /***/ })
 

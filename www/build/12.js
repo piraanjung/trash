@@ -1,14 +1,15 @@
 webpackJsonp([12],{
 
-/***/ 306:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaFormCalculatorPageModule", function() { return BuyerKayaFormCalculatorPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaPurchaseListPageModule", function() { return BuyerKayaPurchaseListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +19,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyerKayaFormCalculatorPageModule = (function () {
-    function BuyerKayaFormCalculatorPageModule() {
+
+var BuyerKayaPurchaseListPageModule = (function () {
+    function BuyerKayaPurchaseListPageModule() {
     }
-    BuyerKayaFormCalculatorPageModule = __decorate([
+    BuyerKayaPurchaseListPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__["a" /* BuyerKayaFormCalculatorPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__["a" /* BuyerKayaFormCalculatorPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */]),
             ],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */]]
         })
-    ], BuyerKayaFormCalculatorPageModule);
-    return BuyerKayaFormCalculatorPageModule;
+    ], BuyerKayaPurchaseListPageModule);
+    return BuyerKayaPurchaseListPageModule;
 }());
 
-//# sourceMappingURL=buyer-kaya-form-calculator.module.js.map
+//# sourceMappingURL=buyer-kaya-purchase-list.module.js.map
 
 /***/ }),
 
-/***/ 333:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaFormCalculatorPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaPurchaseListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,84 +61,105 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var BuyerKayaFormCalculatorPage = (function () {
-    function BuyerKayaFormCalculatorPage(navCtrl, navParams, toastCtrl) {
+var BuyerKayaPurchaseListPage = (function () {
+    function BuyerKayaPurchaseListPage(navCtrl, navParams, alertCtrl, BuyKayaService, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.BuyKayaService = BuyKayaService;
         this.toastCtrl = toastCtrl;
-        this.shortname = 'กก.';
-        this.item = {};
-        this.items = [];
         this.user = {};
-        this.total_purchase_kaya = 0;
-        this.kaya_name = '';
-        this.est_price = 0;
-        this.total = 0;
+        this.items = [];
         this.address = 'เทศบาลตำบลพังโคน สกลนคร';
     }
-    BuyerKayaFormCalculatorPage.prototype.ionViewDidLoad = function () {
+    BuyerKayaPurchaseListPage.prototype.ionViewDidLoad = function () {
         this.user = this.navParams.get('user');
         this.user = (typeof this.user != 'undefined' ? this.user : 0);
-        this.item = this.navParams.get('item');
-        this.item = (typeof this.user != 'undefined' ? this.item : 0);
-        var total_purchase_kaya = localStorage.getItem("total_purchase_kaya");
-        this.total_purchase_kaya = (total_purchase_kaya == null ? 0 : total_purchase_kaya);
-        // localStorage.removeItem("purchase_kaya_list");
-        this.items = JSON.parse(localStorage.getItem("purchase_kaya_list"));
-        console.log(this.item);
-        if (typeof this.item != 'undefined') {
-            this.kaya_name = this.item.name + ' [ ' + this.item.kaya_type_name + ' ]';
-            this.est_price = this.item.est_price;
-            this.shortname = this.item.short_name;
-        }
+        var items = localStorage.getItem("purchase_kaya_list");
+        this.items = JSON.parse(items);
+        var total_purchase_kaya = (localStorage.getItem("total_purchase_kaya") == null ? 0 : localStorage.getItem("total_purchase_kaya"));
+        this.total_purchase_kaya = total_purchase_kaya;
     };
-    BuyerKayaFormCalculatorPage.prototype.calculator = function (event) {
-        this.amount = event;
-        this.total = this.est_price * this.amount;
-    };
-    BuyerKayaFormCalculatorPage.prototype.set_purchase_kaya_list = function () {
-        if (this.items == null || this.items.length <= 0) {
-            this.items = [];
-            console.log(typeof this.items);
-        }
-        if (typeof this.items == 'string') {
-            this.items = [];
-        }
-        console.log(typeof this.items);
-        this.items.push({
-            id: this.item.id,
-            name: this.item.name,
-            est_price: this.item.est_price,
-            amount: this.amount,
-            total: this.total,
-            unit: this.item.unit,
-            short_name: this.item.short_name,
-            kaya_type_name: this.item.kaya_type_name
+    BuyerKayaPurchaseListPage.prototype.set_kaya_invoice = function () {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'แจ้งเตือน',
+            message: 'คุณต้องการบันทึกข้อมูลการซื้อขยะหรือไม่ ?',
+            buttons: [
+                {
+                    text: 'ยกเลิก',
+                    handler: function () {
+                        // console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'ตกลง',
+                    handler: function () {
+                        // console.log('Agree clicked');
+                        // this.goto_kaya_purchase_completed()
+                        _this.set_kaya_profile();
+                    }
+                }
+            ]
         });
-        this.total_purchase_kaya = this.total + parseFloat(this.total_purchase_kaya);
-        localStorage.setItem('total_purchase_kaya', this.total_purchase_kaya);
-        localStorage.setItem('purchase_kaya_list', JSON.stringify(this.items));
-        this.presentToast();
+        confirm.present();
+    };
+    BuyerKayaPurchaseListPage.prototype.goto_kaya_categories = function () {
         this.navCtrl.pop();
     };
-    BuyerKayaFormCalculatorPage.prototype.presentToast = function () {
+    BuyerKayaPurchaseListPage.prototype.goto_kaya_purchase_completed = function () {
+        this.presentToast();
+        this.navCtrl.push("buyer-kaya-purchase-completed");
+    };
+    BuyerKayaPurchaseListPage.prototype.presentToast = function () {
         var toast = this.toastCtrl.create({
             message: 'บันทึกรายการสำเร็จ',
-            duration: 2000,
+            duration: 3000,
             position: 'top'
         });
         toast.present();
     };
-    BuyerKayaFormCalculatorPage = __decorate([
+    BuyerKayaPurchaseListPage.prototype.set_kaya_profile = function () {
+        var _this = this;
+        console.log(this.user.id);
+        var param = {
+            items: this.items,
+            seller_id: (typeof this.user != 'undefined' ? this.user.id : 0),
+            buyer_id: 1,
+            total_purchase_kaya: this.total_purchase_kaya,
+            kaya_type_id: 1,
+            acc_bank_id: this.user.account_bank_id || 0,
+        };
+        this.BuyKayaService.set_kaya_profile(param).subscribe(function (res) {
+            _this.goto_kaya_purchase_completed();
+        });
+    };
+    BuyerKayaPurchaseListPage.prototype.remove_item = function (id) {
+        this.items.splice(id, 1);
+        this.calculator_total(this.items);
+        localStorage.setItem('purchase_kaya_list', JSON.stringify(this.items));
+    };
+    BuyerKayaPurchaseListPage.prototype.calculator_total = function (items) {
+        var total = 0;
+        items.forEach(function (value) {
+            total = total + value.total;
+        });
+        this.total_purchase_kaya = total;
+        localStorage.setItem('total_purchase_kaya', this.total_purchase_kaya);
+    };
+    BuyerKayaPurchaseListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buyer-kaya-form-calculator',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;" color="nav_blue">บันทึกข้อมูลซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="my_bg">\n  <ion-card>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-3>\n          <img src="./assets/imgs/user_logo.png" />\n        </ion-col>\n\n        <ion-col col-9>\n\n          <h2>{{ user.mobile }}\n\n          </h2>\n          <h2>{{ user.name }} {{user.second_name}}</h2>\n\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n\n  <div>\n\n    <ion-card class="card_form">\n      <ion-row>\n        <ion-col col-9>\n          <ion-input type="text" [ngModel]="kaya_name" class="topic" readonly=true></ion-input>\n        </ion-col>\n        <ion-col col-3>\n\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-6>\n          <span>ราคากลาง</span>\n        </ion-col>\n        <ion-col col-6>\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="text" [ngModel]="est_price" readonly=true></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              บาท\n            </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n\n      <ion-row style="border-bottom:#ffffff 2px solid ">\n        <ion-col col-6>\n          <span>จำนวน</span>\n        </ion-col>\n        <ion-col col-6>\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="number" class="weight_input" [ngModel]="amount" (ngModelChange)="calculator($event)"></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              {{ shortname }}\n            </ion-col>\n          </ion-row>\n\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-6>\n          <span>คิดเป็นเงิน</span>\n        </ion-col>\n        <ion-col col-6>\n\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="text" [ngModel]="total" readonly=true></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              บาท\n            </ion-col>\n          </ion-row>\n\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n\n  </div>\n\n  <div padding>\n    <button ion-button block class="round-input" (click)="set_purchase_kaya_list()">บันทึกข้อมูล</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.html"*/,
+            selector: 'page-buyer-kaya-purchase-list',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;">สรุปข้อมูลการรับซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n    <ion-card>  \n        <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img src="./assets/imgs/user_logo.png"/>\n          </ion-col>\n    \n          <ion-col col-9>\n            \n                  <h2>{{ user.mobile }} \n                    \n                  </h2>\n                <h2>{{ user.name }} {{user.second_name}}</h2>\n\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card>\n\n\n  <ion-list padding>\n    <ion-item-sliding *ngFor="let value of items; let i = index">\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="./assets/item_images/kaya.png">\n        </ion-thumbnail>\n        <h2>{{ value.name }}&nbsp;&nbsp;[&nbsp;{{ value.kaya_type_name }}&nbsp;]</h2>\n        <p>{{ value.amount }}&nbsp;{{ value.short_name }}\n          &nbsp;X&nbsp;{{ value.est_price }}&nbsp;=&nbsp;\n          <strong>{{ value.total }}</strong>&nbsp;บาท</p>\n        \n        <button ion-button color="danger" (click)="remove_item(i)">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item>\n\n      <!-- <ion-item-options side="right">\n        <button ion-button color="danger">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item-options> -->\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6><strong>รวมเป็นเงิน =</strong></ion-col>\n          <ion-col col-6 style="text-align:right">\n              <strong>{{ total_purchase_kaya }}</strong>&nbsp;บาท\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <button ion-button round large block (click)="goto_kaya_categories()">\n          รายการซื้อขยะ\n        </button>\n      </ion-col>\n\n      <ion-col col-6>\n        <button ion-button round color="shamrock" large block  (click)="set_kaya_invoice()">\n          บันทึกการซื้อขยะ\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-    ], BuyerKayaFormCalculatorPage);
-    return BuyerKayaFormCalculatorPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], BuyerKayaPurchaseListPage);
+    return BuyerKayaPurchaseListPage;
 }());
 
-//# sourceMappingURL=buyer-kaya-form-calculator.js.map
+//# sourceMappingURL=buyer-kaya-purchase-list.js.map
 
 /***/ })
 

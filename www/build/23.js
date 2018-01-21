@@ -1,15 +1,56 @@
 webpackJsonp([23],{
 
-/***/ 211:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyKayaMatchingPageModule", function() { return BuyKayaMatchingPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authen_authen__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api_url__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_kaya_matching__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buyers_service_buyers_service__ = __webpack_require__(205);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var BuyKayaMatchingPageModule = (function () {
+    function BuyKayaMatchingPageModule() {
+    }
+    BuyKayaMatchingPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__buy_kaya_matching__["a" /* BuyKayaMatchingPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_kaya_matching__["a" /* BuyKayaMatchingPage */])
+            ],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_buyers_service_buyers_service__["a" /* BuyersServiceProvider */]]
+        })
+    ], BuyKayaMatchingPageModule);
+    return BuyKayaMatchingPageModule;
+}());
+
+//# sourceMappingURL=buy-kaya-matching.module.js.map
+
+/***/ }),
+
+/***/ 321:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyKayaMatchingPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -24,232 +65,144 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import { Loading } from 'ionic-angular/components/loading/loading';
 
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var RegisterPage = (function () {
-    function RegisterPage(navCtrl, navParams, authen, modalCtrl, alertCtrl, http) {
+var BuyKayaMatchingPage = (function () {
+    function BuyKayaMatchingPage(navCtrl, navParams, buyersService, toastCtrl, barcodeScanner, storage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.authen = authen;
-        this.modalCtrl = modalCtrl;
-        this.alertCtrl = alertCtrl;
-        this.http = http;
-        this.municipalities = [];
-        this.municipality = [];
-        this.offices = [];
-        this.showBtnMobilePasswordPage = false;
-        this.checkmobile = false;
-        this.currentIndex = 0;
-        this.user = [];
-        this.confirm = false;
-        this.navCtrl = navCtrl;
-        this.apiUrl = __WEBPACK_IMPORTED_MODULE_4__providers_api_url__["a" /* API_URL */];
+        this.buyersService = buyersService;
+        this.toastCtrl = toastCtrl;
+        this.barcodeScanner = barcodeScanner;
+        this.storage = storage;
+        this.user = {};
+        this.has_user = false;
+        this.items = {};
+        // address: string = 'เทศบาลตำบลพังโคน สกลนคร';
+        this.catName = "";
+        this.sellercode = "";
+        this.seller_matching_by = "qrcode";
+        this.data = {};
     }
-    RegisterPage.prototype.submit = function (arg0) {
-        throw new Error("Method not implemented.");
+    BuyKayaMatchingPage.prototype.ionViewDidLoad = function () {
+        this.eventId = this.navParams.get('eventId');
+        this.eventTitle = this.navParams.get('eventTitle');
+        this.buttonText = "Scan";
+        this.loading = false;
+        var catType = this.navParams.get('cat_type');
+        if (catType == "localgovernment") {
+            this.catName = "เทศบาล";
+            this.catId = 1;
+        }
+        if (catType == "school") {
+            this.catName = "โรงเรียน";
+            this.catId = 2;
+        }
+        if (catType == "hospital") {
+            this.catName = "โรงพยาบาล";
+            this.catId = 3;
+        }
+        //this.get_buyers()
     };
-    RegisterPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RegisterPage');
-        this.slides.lockSwipes(false);
-    };
-    RegisterPage.prototype.slideChanged = function () {
-        this.currentIndex = this.slides.getActiveIndex();
-        console.log('Current index is', this.currentIndex);
-    };
-    RegisterPage.prototype.categoryChoosed = function (cat) {
-        this.user.user_cat_id = cat;
-        this.categories(this.user.user_cat_id);
-        console.log(this.cat_name);
-        this.goToNextSlide();
-    };
-    RegisterPage.prototype.goToNextSlide = function () {
-        this.slides.lockSwipes(false);
-        this.slides.slideTo(this.currentIndex + 1, 500);
-        this.slides.lockSwipes(true);
-    };
-    RegisterPage.prototype.goToPrvSlide = function () {
-        if (this.currentIndex > 0) {
-            this.slides.lockSwipes(false);
-            this.slides.slideTo(this.currentIndex - 1, 500);
-            this.slides.lockSwipes(true);
+    BuyKayaMatchingPage.prototype.searchSeller = function () {
+        if (this.sellercode == "") {
+            this.presentToast("ใส่รหัสผู้ขายขยะ");
+        }
+        else {
+            var sellercode = this.sellercode;
+            // console.log("sellercode=" + sellercode + "   catId=" + this.catId)
+            this.search_user(sellercode);
         }
     };
-    RegisterPage.prototype.checkDuplicateMobile = function () {
-        var _this = this;
-        if (this.user.phone.length == 10) {
-            this.authen.check_duplicate_mobile(this.user.phone)
-                .subscribe(function (res) {
-                if (res == '1') {
-                    _this.presentAlert("ตรวจสอบ", "หมายเลขนี้ถูกใช้สมัครแล้ว");
-                    _this.checkmobile = false;
-                    _this.showBtnMobilePasswordPage = false;
-                }
-                else {
-                    _this.checkmobile = true;
-                    console.log(_this.user);
-                }
+    BuyKayaMatchingPage.prototype.itemSelected = function (item) {
+        this.navCtrl.push('buyer-profile', {
+            user: item,
+        });
+    };
+    BuyKayaMatchingPage.prototype.getItems = function (ev) {
+        var val = ev.target.value;
+        if (val && val.trim() != '') {
+            this.items = this.items.filter(function (item) {
+                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
             });
         }
         else {
-            this.checkmobile = false;
-            this.showBtnMobilePasswordPage = false;
+            // this.get_buyers()
         }
     };
-    RegisterPage.prototype.checkPassword = function () {
-        if (this.checkmobile == false) {
-            this.presentAlert("", "คุณยังไม่ได้กรอกหมายเลขโทรศัพท์");
-            this.user.password = "";
-        }
-        else {
-            if (this.user.password.length > 3) {
-                this.showBtnMobilePasswordPage = true;
-                this.getProvinces();
+    BuyKayaMatchingPage.prototype.Scanqrcode = function () {
+        var _this = this;
+        this.option = {
+            preferFrontCamera: false,
+            prompt: "สแกน QR CODE"
+        };
+        this.barcodeScanner.scan(this.option).then(function (barcodeData) {
+            _this.data = barcodeData.text;
+            _this.search_user(_this.data);
+        }, function (err) {
+            // An error occurred
+            console.log(err);
+        });
+    };
+    BuyKayaMatchingPage.prototype.presentToast = function (txt) {
+        var toast = this.toastCtrl.create({
+            message: txt,
+            duration: 2000,
+            position: 'top'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    BuyKayaMatchingPage.prototype.search_user = function (sellercode) {
+        var _this = this;
+        // this.buyersService.get_buyer_profile_by_category(sellercode, this.catId).subscribe(res => {
+        this.buyersService.get_buyer_profile(sellercode).subscribe(function (res) {
+            _this.user = res;
+            _this.items = res;
+            //this.user={
+            //name : res['name'],
+            //second_name : res['second_name'],
+            //mobile : res['mobile'],
+            //user_cat_id :res['user_cat_id'],
+            //office_id :res['office_id']
+            //}
+            _this.storage.set('current_seller', _this.user);
+            console.log(_this.user);
+            if (JSON.stringify(_this.user) == '{}') {
+                _this.presentToast("ไม่พบข้อมูล");
+                _this.sellercode = "";
+                _this.has_user = false;
             }
             else {
-                this.showBtnMobilePasswordPage = false;
+                _this.has_user = true;
             }
-        }
-    };
-    RegisterPage.prototype.getFilterDistricts = function () {
-        var _this = this;
-        var url = '/districts/' + this.user.province['id'];
-        this.http.get(this.apiUrl + url).subscribe(function (res) {
-            _this.districts = res;
+        }, function (error) {
+            _this.presentToast("กรุณาใส่รหัสผู้ขายขยะ");
         });
     };
-    RegisterPage.prototype.getFilterLocalgevernment = function () {
-        var _this = this;
-        var url = '/municipalities/' + this.user.district['id'];
-        console.log(this.apiUrl + url);
-        this.http.get(this.apiUrl + url).subscribe(function (res) {
-            _this.municipalities = res;
-            console.log(_this.municipalities);
+    BuyKayaMatchingPage.prototype.goto_kaya_categories = function (item) {
+        this.navCtrl.push('buyer-kaya-categories', {
+            user: this.user,
         });
     };
-    RegisterPage.prototype.getProvinces = function () {
-        var _this = this;
-        var url = "/provinces";
-        this.http.get(this.apiUrl + url).subscribe(function (res) {
-            _this.provinces = res;
-            console.log(_this.provinces);
-        });
+    BuyKayaMatchingPage.prototype.clearPhoneNumber = function () {
+        this.sellercode = "";
     };
-    RegisterPage.prototype.getOffice = function () {
-        var _this = this;
-        console.log(this.user.municipality['id']);
-        var url = '/office/' + this.user.municipality['id'];
-        this.http.get(this.apiUrl + url).subscribe(function (res) {
-            _this.offices = res;
-            // if(this.office === ""){
-            //   this.presentAlert('','เลือกยังไม่ครบ')
-            // }
-        });
-        console.log(this.user.office);
-    };
-    RegisterPage.prototype.checkUserAddress = function () {
-        if (this.user.province == "" || this.user.district == "" || this.user.municipality == ""
-            || this.user.address == "" || (this.user.user_cat_id == "2" && this.user.school == "")) {
-            this.presentAlert('', "กรุณากรอกข้อมูลให้ครบ..");
-        }
-        else {
-            this.goToNextSlide();
-        }
-    };
-    RegisterPage.prototype.presentAlert = function (title, subtitle) {
-        var alert = this.alertCtrl.create({
-            title: title,
-            subTitle: subtitle,
-            buttons: ['Dismiss']
-        });
-        alert.present();
-    };
-    RegisterPage.prototype.categories = function (id) {
-        switch (id) {
-            case 1:
-                this.cat_name = 'เทศบาล';
-                break;
-            case 2:
-                this.cat_name = 'โรงเรียน';
-                break;
-            case 3:
-                this.cat_name = 'หน่วยงาน/องค์กร';
-                break;
-            case 4:
-                this.cat_name = 'โรงพยาบาล';
-                break;
-        }
-    };
-    RegisterPage.prototype.checkOffice = function () {
-        console.log(this.user.office);
-    };
-    RegisterPage.prototype.openModal = function () {
-        var myModal = this.modalCtrl.create("roles");
-        myModal.present();
-    };
-    RegisterPage.prototype.confirmres = function (id) {
-        id == 1 ? this.confirm = true : this.confirm = false;
-        console.log(this.confirm);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Slides */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Slides */]) === "function" && _a || Object)
-    ], RegisterPage.prototype, "slides", void 0);
-    RegisterPage = __decorate([
+    BuyKayaMatchingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/register/register.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>ลงทะเบียน</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content scroll="false" padding>\n\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n    <ion-slide>\n        <h2>เลือกหมวดหมู่</h2>\n\n        <ion-row>\n          <ion-col>\n            <button ion-button class="circle" (click)="categoryChoosed(1)">เทศบาล</button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6>\n            <button ion-button class="circle" (click)="categoryChoosed(2)">สถานศึกษา</button>\n          </ion-col>\n          <ion-col col-6>\n            <button ion-button class="circle">โรงพยาบาล</button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col>\n              <button ion-button class="circle">หน่วยงาน/องค์กร</button>\n            </ion-col>\n          </ion-row>\n    </ion-slide>\n\n\n    <ion-slide padding>\n        <h2 class="slide-title">ข้อมูลสำหรับล็อกอินเข้าระบบ</h2>\n      <ion-list>\n          <ion-item class="round-input">\n              <ion-input type="number" [(ngModel)]="user.phone" name="phone" required \n                placeholder="หมายเลขโทรศัพท์" (keyup)="checkDuplicateMobile()"></ion-input>\n            </ion-item>\n            <ion-item class="round-input">\n                <ion-input type="text" [(ngModel)]="user.password" name="password" required \n                  placeholder="password" (keyup)="checkPassword()"></ion-input>\n              </ion-item>\n      </ion-list>\n      <ion-row padding>\n          <ion-col col-6>\n            <button ion-button block round (click)="goToPrvSlide()">Back</button>\n          </ion-col>\n          <ion-col col-6>\n            <button ion-button block round (click)="goToNextSlide()"  *ngIf="showBtnMobilePasswordPage">Next</button>\n          </ion-col>\n        </ion-row>\n    </ion-slide>\n    <!-- ที่อยู่หมวดหมู่ -->\n    <ion-slide padding>\n        <h2 class="slide-title">{{cat_name}} ของท่านอยู่ในเขต</h2>\n        <ion-list>\n            <ion-item class="round-input">\n              <ion-label  class="label_addr">จังหวัด</ion-label>\n              <ion-select [(ngModel)]="user.province" (ionChange)="getFilterDistricts()">\n                <ion-option [value]="province" *ngFor="let province of provinces">\n                  {{ province.province_name}}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n    \n            <ion-item class="round-input">\n              <ion-label  class="label_addr">อำเภอ</ion-label>\n              <ion-select [(ngModel)]="user.district" (ionChange)="getFilterLocalgevernment()">\n                <ion-option [value]="district" *ngFor="let district of districts">\n                  {{ district.district_name }}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n            <ion-item class="round-input">\n              <ion-label  class="label_addr">เทศบาล</ion-label>\n              <ion-select [(ngModel)]="user.municipality" (ionChange)="getOffice()">\n                <ion-option [value]="municipality" *ngFor="let municipality of municipalities">\n                  {{ municipality.name }}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n    \n            <ion-item class="round-input" *ngIf="user.user_cat_id !=1">\n              <ion-label  class="label_addr">{{cat_name}}ของท่าน</ion-label>\n              <ion-select [(ngModel)]="user.office"  (ionChange)="checkOffice()">\n                <ion-option [value]="office" *ngFor="let office of offices">\n                  {{ office.office_name }}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n\n\n            <!-- <ion-item class="round-input">\n              <ion-label floating class="label_addr">ที่อยู่ของท่าน</ion-label>\n              <ion-input type="text" [(ngModel)]="user.address" placeholder="ตัวอย่าง: 12 หมู่ 1 ต.สะอาด" required></ion-input>\n            </ion-item> -->\n          </ion-list>\n          <ion-row padding>\n            <ion-col col-6>\n              <button ion-button round block (click)="goToPrvSlide()">Back</button>\n            </ion-col>\n            <ion-col col-6>\n              <button ion-button round block (click)="checkUserAddress()">Next</button>\n            </ion-col>\n          </ion-row>\n    </ion-slide>\n\n    <ion-slide padding>\n        <ion-list>\n            <ion-item class="round-input">\n              <ion-label  class="label_addr">จังหวัด</ion-label>\n              <ion-select [(ngModel)]="user.province" (ionChange)="getFilterDistricts()">\n                <ion-option [value]="province" *ngFor="let province of provinces">\n                  {{ province.province_name}}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n    \n            <ion-item class="round-input">\n              <ion-label  class="label_addr">อำเภอ</ion-label>\n              <ion-select [(ngModel)]="user.district" (ionChange)="getFilterLocalgevernment()">\n                <ion-option [value]="district" *ngFor="let district of districts">\n                  {{ district.district_name }}\n                </ion-option>\n              </ion-select>\n            </ion-item>\n          </ion-list>\n    </ion-slide>\n\n    <ion-slide padding>\n      \n      <img src="assets/imgs/trashlogo.png" class="slide-image"/>\n      <button ion-button block class="round-input" (click)="openModal()">อ่านข้อกำหนดและเงื่อนไข</button>\n     \n      <ion-list radio-group  [(ngModel)]="confirm" style="margin-top:20px">\n        <ion-item >\n            <ion-label>ไม่ยอมรับ</ion-label>\n            <ion-radio  value="false" (click)="confirmres(0)"></ion-radio>\n          </ion-item>\n        <ion-item>\n          <ion-label>ยอมรับ</ion-label>\n          <ion-radio  value="true" (click)="confirmres(1)"></ion-radio>\n        </ion-item>\n      </ion-list>\n    \n\n      <button ion-button block class="round-input"  color="secondary"  [disabled]="!confirm"> \n        บันทึกข้อมูล\n      </button>\n    </ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/register/register.html"*/,
+            selector: 'page-buy-kaya-matching',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya-matching/buy-kaya-matching.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;">รับซื้อขยะ : หมวด {{ catName }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-content padding>\n\n       \n  <div padding>\n\n   \n\n    <ion-segment [(ngModel)]="seller_matching_by">\n        <ion-segment-button value="qrcode" (click)="clearPhoneNumber()">\n            สแกน QR Code ผู้ขายขยะ\n          </ion-segment-button>\n      <ion-segment-button value="sellercode">\n            รหัสผู้ขายขยะ\n          </ion-segment-button> \n      \n    </ion-segment>\n  </div>\n  <div [ngSwitch]="seller_matching_by">\n      <div *ngSwitchCase="\'qrcode\'">\n          <div style="text-align:center; margin-top:10%">\n              <!-- <img src="./assets/imgs/qrcodBtn.png" (click)="Scanqrcode()"> -->\n            <button ion-button class="circle" (click)="Scanqrcode()">สแกน QR CODE</button>  \n          </div>\n      </div>\n\n    <div *ngSwitchCase="\'sellercode\'">\n          <ion-item class="round-input" style="margin-top:5%"> \n              <ion-input type="text" [(ngModel)]="sellercode" name="sellercode" \n                required placeholder="รหัสผู้ขายขยะ"></ion-input>\n            </ion-item>\n            <button ion-button block large round color="shamrock" (click)="searchSeller()">ค้นหา</button>\n\n        \n    </div>\n  </div>\n\n  <ion-card *ngIf="has_user"> <!--(click)="itemSelected(value)">-->\n  \n    <ion-grid>\n      <ion-row>\n        <ion-col col-4>\n          <img src="assets/imgs/user_logo.png" />\n        </ion-col>\n        <ion-col col-8>\n          <h1 style="font-size:18px; font-weight:bold; \n                          text-align:right">{{ user.mobile }}</h1>\n          <h1 style="font-size:20px; font-weight:bold;  margin-top:15px;\n                           color:#336798 ;text-align:right">{{ user.name }} {{user.second_name}}</h1>\n          <!-- <h1 style="font-size:16px; font-weight:bold;\n                           color:#336798">{{ user.address }}</h1> -->\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{ address }}\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <div padding>\n        <button ion-button large block style="background:#39A2F3"  class="round-input"\n        (click)="goto_kaya_categories(user)">รับซื้อขยะ</button>\n      </div>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya-matching/buy-kaya-matching.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_authen_authen__["a" /* AuthenProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_authen_authen__["a" /* AuthenProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _g || Object])
-    ], RegisterPage);
-    return RegisterPage;
-    var _a, _b, _c, _d, _e, _f, _g;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__["a" /* BuyersServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+    ], BuyKayaMatchingPage);
+    return BuyKayaMatchingPage;
 }());
 
-//# sourceMappingURL=register.js.map
-
-/***/ }),
-
-/***/ 312:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(211);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var RegisterPageModule = (function () {
-    function RegisterPageModule() {
-    }
-    RegisterPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
-            ],
-        })
-    ], RegisterPageModule);
-    return RegisterPageModule;
-}());
-
-//# sourceMappingURL=register.module.js.map
+//# sourceMappingURL=buy-kaya-matching.js.map
 
 /***/ })
 
