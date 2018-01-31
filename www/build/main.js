@@ -1,86 +1,6 @@
 webpackJsonp([25],{
 
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellerSideMenuProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SellerSideMenuProvider = (function () {
-    function SellerSideMenuProvider() {
-    }
-    SellerSideMenuProvider.prototype.sideMenu = function () {
-        return [
-            // { title: 'นัดหมายลูกค้า', component: "buy-kaya-appointment" },
-            { title: 'ขายขยะ', component: "sell-kaya" },
-            { title: 'ธนาคารขยะ', component: "i-banking" },
-            // { title: 'ซื้อสินค้าท้องถิ่น', component: "localproducts" },
-            // { title: 'ราคากลางขยะ', component: "sell-kaya-estimateprice" },
-            // { title: 'ค้นหาผู้รับซื้อขยะ', component: "sell-kaya-buyersearch" },
-            // { title: 'ประวัติการขายขยะ', component: "sell-kaya-history" },
-            // { title: 'วิธีคัดแยกขยะเพิ่มมูลค่า', component: "sell-kaya-upvalue" },
-            { title: 'ออกจากระบบ', component: "login" },
-        ];
-    };
-    SellerSideMenuProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], SellerSideMenuProvider);
-    return SellerSideMenuProvider;
-}());
-
-//# sourceMappingURL=seller-side-menu.js.map
-
-/***/ }),
-
-/***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerSideMenuProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var BuyerSideMenuProvider = (function () {
-    function BuyerSideMenuProvider() {
-    }
-    BuyerSideMenuProvider.prototype.sideMenu = function () {
-        return [
-            { title: 'รับซื้อขยะ', component: "buy-kaya" },
-            // { title: 'นัดหมายลูกค้า', component: "buy-kaya-appointment" },
-            { title: 'ออกจากระบบ', component: "login" },
-        ];
-    };
-    BuyerSideMenuProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], BuyerSideMenuProvider);
-    return BuyerSideMenuProvider;
-}());
-
-//# sourceMappingURL=buyer-side-menu.js.map
-
-/***/ }),
-
-/***/ 118:
+/***/ 116:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -93,115 +13,115 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 118;
+webpackEmptyAsyncContext.id = 116;
 
 /***/ }),
 
-/***/ 160:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/buy-kaya-matching/buy-kaya-matching.module": [
+		293,
+		24
+	],
+	"../pages/buy-kaya-process/buy-kaya-process.module": [
 		294,
 		23
 	],
-	"../pages/buy-kaya-process/buy-kaya-process.module": [
+	"../pages/buy-kaya-summary/buy-kaya-summary.module": [
 		295,
 		22
 	],
-	"../pages/buy-kaya-summary/buy-kaya-summary.module": [
+	"../pages/buy-kaya/buy-kaya.module": [
 		296,
 		21
 	],
-	"../pages/buy-kaya/buy-kaya.module": [
+	"../pages/buy-localproducts-confirm/buy-localproducts-confirm.module": [
 		297,
 		20
 	],
-	"../pages/buy-localproducts-confirm/buy-localproducts-confirm.module": [
+	"../pages/buy-localproducts-info/buy-localproducts-info.module": [
 		298,
 		19
 	],
-	"../pages/buy-localproducts-info/buy-localproducts-info.module": [
+	"../pages/buy-localproducts-result/buy-localproducts-result.module": [
 		299,
 		18
 	],
-	"../pages/buy-localproducts-result/buy-localproducts-result.module": [
+	"../pages/buy-localproducts/buy-localproducts.module": [
 		300,
 		17
 	],
-	"../pages/buy-localproducts/buy-localproducts.module": [
+	"../pages/buyer-kaya-categories/buyer-kaya-categories.module": [
 		301,
 		16
 	],
-	"../pages/buyer-kaya-categories/buyer-kaya-categories.module": [
+	"../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.module": [
 		302,
 		15
 	],
-	"../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.module": [
+	"../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed.module": [
 		303,
 		14
 	],
-	"../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed.module": [
+	"../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.module": [
 		304,
 		13
 	],
-	"../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.module": [
-		305,
-		12
-	],
 	"../pages/i-banking-bookbank/i-banking-bookbank.module": [
-		306,
+		305,
 		2
 	],
 	"../pages/i-banking/i-banking.module": [
+		306,
+		12
+	],
+	"../pages/login/login.module": [
+		160
+	],
+	"../pages/main/main.module": [
 		307,
 		11
 	],
-	"../pages/login/login.module": [
-		162
-	],
-	"../pages/main/main.module": [
-		308,
-		24
-	],
 	"../pages/purchase-product-slide/purchase-product-slide.module": [
-		293,
+		292,
 		1
 	],
 	"../pages/purchcase-product/purchase-product.module": [
-		292,
+		291,
 		10
 	],
 	"../pages/register/register.module": [
-		309,
+		308,
 		9
 	],
 	"../pages/roles/roles.module": [
-		310,
+		309,
 		8
 	],
 	"../pages/sell-kaya-estimateprice-detail/sell-kaya-estimateprice-detail.module": [
-		311,
+		310,
 		7
 	],
 	"../pages/sell-kaya-estimateprice/sell-kaya-estimateprice.module": [
-		312,
+		311,
 		6
 	],
 	"../pages/sell-kaya-process/sell-kaya-process.module": [
-		313,
+		312,
 		5
 	],
 	"../pages/sell-kaya/sell-kaya.module": [
-		314,
+		313,
 		0
 	],
 	"../pages/sell-local-product-create-product/sell-local-product-create-product.module": [
-		315,
+		314,
 		3
 	],
 	"../pages/sell-local-product-dashboard/sell-local-product-dashboard.module": [
-		316,
+		315,
 		4
 	]
 };
@@ -216,20 +136,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 160;
+webpackAsyncContext.id = 158;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 162:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authen_authen__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -262,13 +182,13 @@ var LoginPageModule = (function () {
 
 /***/ }),
 
-/***/ 163:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authen_authen__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api_url__ = __webpack_require__(29);
@@ -365,7 +285,7 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -409,7 +329,7 @@ var BuyersServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,7 +376,7 @@ var SellKayaServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -500,7 +420,7 @@ var KayaListServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 208:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -538,13 +458,93 @@ var BuyKayaServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 211:
+/***/ 207:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellerSideMenuProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SellerSideMenuProvider = (function () {
+    function SellerSideMenuProvider() {
+    }
+    SellerSideMenuProvider.prototype.sideMenu = function () {
+        return [
+            // { title: 'นัดหมายลูกค้า', component: "buy-kaya-appointment" },
+            { title: 'ขายขยะ', component: "sell-kaya" },
+            { title: 'ธนาคารขยะ', component: "i-banking" },
+            // { title: 'ซื้อสินค้าท้องถิ่น', component: "localproducts" },
+            // { title: 'ราคากลางขยะ', component: "sell-kaya-estimateprice" },
+            // { title: 'ค้นหาผู้รับซื้อขยะ', component: "sell-kaya-buyersearch" },
+            // { title: 'ประวัติการขายขยะ', component: "sell-kaya-history" },
+            // { title: 'วิธีคัดแยกขยะเพิ่มมูลค่า', component: "sell-kaya-upvalue" },
+            { title: 'ออกจากระบบ', component: "login" },
+        ];
+    };
+    SellerSideMenuProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], SellerSideMenuProvider);
+    return SellerSideMenuProvider;
+}());
+
+//# sourceMappingURL=seller-side-menu.js.map
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerSideMenuProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BuyerSideMenuProvider = (function () {
+    function BuyerSideMenuProvider() {
+    }
+    BuyerSideMenuProvider.prototype.sideMenu = function () {
+        return [
+            { title: 'รับซื้อขยะ', component: "buy-kaya" },
+            // { title: 'นัดหมายลูกค้า', component: "buy-kaya-appointment" },
+            { title: 'ออกจากระบบ', component: "login" },
+        ];
+    };
+    BuyerSideMenuProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], BuyerSideMenuProvider);
+    return BuyerSideMenuProvider;
+}());
+
+//# sourceMappingURL=buyer-side-menu.js.map
+
+/***/ }),
+
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -552,28 +552,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_buyers_service_buyers_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_buyers_service_buyers_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_authen_authen__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_buyer_side_menu_buyer_side_menu__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_seller_side_menu_seller_side_menu__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_login_login_module__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_buyer_side_menu_buyer_side_menu__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_seller_side_menu_seller_side_menu__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_login_login_module__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_barcode_scanner__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_component__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_component__ = __webpack_require__(290);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -693,22 +693,22 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_URL; });
-// export const API_URL = '/api/v1';
-var API_URL = 'http://babylinlinsworld.com/refuze/api/v1';
+var API_URL = '/api/v1';
+// export const API_URL = 'http://babylinlinsworld.com/refuze/api/v1'; 
 //# sourceMappingURL=api-url.js.map
 
 /***/ }),
 
-/***/ 291:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -722,6 +722,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import { HomePage } from '../pages/home/home';
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
@@ -736,9 +737,10 @@ var MyApp = (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -787,5 +789,5 @@ var AuthenProvider = (function () {
 
 /***/ })
 
-},[211]);
+},[210]);
 //# sourceMappingURL=main.js.map

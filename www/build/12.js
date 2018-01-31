@@ -1,15 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 305:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaPurchaseListPageModule", function() { return BuyerKayaPurchaseListPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IBankingPageModule", function() { return IBankingPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__i_banking__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var BuyerKayaPurchaseListPageModule = (function () {
-    function BuyerKayaPurchaseListPageModule() {
+var IBankingPageModule = (function () {
+    function IBankingPageModule() {
     }
-    BuyerKayaPurchaseListPageModule = __decorate([
+    IBankingPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */],
+                __WEBPACK_IMPORTED_MODULE_2__i_banking__["a" /* IBankingPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_purchase_list__["a" /* BuyerKayaPurchaseListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__i_banking__["a" /* IBankingPage */]),
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */]]
         })
-    ], BuyerKayaPurchaseListPageModule);
-    return BuyerKayaPurchaseListPageModule;
+    ], IBankingPageModule);
+    return IBankingPageModule;
 }());
 
-//# sourceMappingURL=buyer-kaya-purchase-list.module.js.map
+//# sourceMappingURL=i-banking.module.js.map
 
 /***/ }),
 
-/***/ 332:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaPurchaseListPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IBankingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,105 +60,89 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var BuyerKayaPurchaseListPage = (function () {
-    function BuyerKayaPurchaseListPage(navCtrl, navParams, alertCtrl, BuyKayaService, toastCtrl) {
+
+
+/**
+ * Generated class for the IBankingPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var IBankingPage = (function () {
+    function IBankingPage(navCtrl, navParams, buyersService, storage, sellkayaService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.BuyKayaService = BuyKayaService;
-        this.toastCtrl = toastCtrl;
-        this.user = {};
-        this.items = [];
-        this.address = 'เทศบาลตำบลพังโคน สกลนคร';
+        this.buyersService = buyersService;
+        this.storage = storage;
+        this.sellkayaService = sellkayaService;
+        this.current_user = [];
+        this.point_info = [];
+        this.bank_info = [];
+        this.storage.get('user_bank').then(function (res) {
+            console.log(res);
+            // this.balance = res.balance
+        });
+        this.storage.get('user_point').then(function (res) {
+            // this.point = res.balance
+        });
     }
-    BuyerKayaPurchaseListPage.prototype.ionViewDidLoad = function () {
-        this.user = this.navParams.get('user');
-        this.user = (typeof this.user != 'undefined' ? this.user : 0);
-        var items = localStorage.getItem("purchase_kaya_list");
-        this.items = JSON.parse(items);
-        var total_purchase_kaya = (localStorage.getItem("total_purchase_kaya") == null ? 0 : localStorage.getItem("total_purchase_kaya"));
-        this.total_purchase_kaya = total_purchase_kaya;
-    };
-    BuyerKayaPurchaseListPage.prototype.set_kaya_invoice = function () {
+    IBankingPage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'แจ้งเตือน',
-            message: 'คุณต้องการบันทึกข้อมูลการซื้อขยะหรือไม่ ?',
-            buttons: [
-                {
-                    text: 'ยกเลิก',
-                    handler: function () {
-                        // console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'ตกลง',
-                    handler: function () {
-                        // console.log('Agree clicked');
-                        // this.goto_kaya_purchase_completed()
-                        _this.set_kaya_profile();
-                    }
-                }
-            ]
+        console.log('ionViewDidLoad IBankingPage');
+        this.storage.get('currentUser').then(function (val) {
+            _this.current_user = val;
+            _this.username = _this.current_user.name;
+            _this.secondname = _this.current_user.second_name;
+            console.log(_this.current_user);
+            _this.get_bank_info(_this.current_user.id);
+            _this.get_point_info(_this.current_user.id);
+            //    this.sellkayaService.get_bank_info(val.id).subscribe(res => {
+            //     this.bank_info = res
+            //     this.storage.set('user_bank', res);
+            //  });
+            // this.storage.get('user_bank').then(res=>{
+            //   this.balance = res[0].balance
+            // });
+            // this.storage.get('user_point').then(res=>{
+            //   this.point = res[0].balance
+            // });
         });
-        confirm.present();
     };
-    BuyerKayaPurchaseListPage.prototype.goto_kaya_categories = function () {
-        this.navCtrl.pop();
-    };
-    BuyerKayaPurchaseListPage.prototype.goto_kaya_purchase_completed = function () {
-        this.presentToast();
-        this.navCtrl.push("buyer-kaya-purchase-completed");
-    };
-    BuyerKayaPurchaseListPage.prototype.presentToast = function () {
-        var toast = this.toastCtrl.create({
-            message: 'บันทึกรายการสำเร็จ',
-            duration: 3000,
-            position: 'top'
-        });
-        toast.present();
-    };
-    BuyerKayaPurchaseListPage.prototype.set_kaya_profile = function () {
+    IBankingPage.prototype.get_bank_info = function (id) {
         var _this = this;
-        console.log(this.user.id);
-        var param = {
-            items: this.items,
-            seller_id: (typeof this.user != 'undefined' ? this.user.id : 0),
-            buyer_id: 1,
-            total_purchase_kaya: this.total_purchase_kaya,
-            kaya_type_id: 1,
-            acc_bank_id: this.user.account_bank_id || 0,
-        };
-        this.BuyKayaService.set_kaya_profile(param).subscribe(function (res) {
-            _this.goto_kaya_purchase_completed();
+        this.sellkayaService.get_bank_info(id).subscribe(function (res) {
+            _this.bank_info = res;
+            _this.balance = res[0].balance;
+            _this.storage.set('user_bank', res);
         });
     };
-    BuyerKayaPurchaseListPage.prototype.remove_item = function (id) {
-        this.items.splice(id, 1);
-        this.calculator_total(this.items);
-        localStorage.setItem('purchase_kaya_list', JSON.stringify(this.items));
-    };
-    BuyerKayaPurchaseListPage.prototype.calculator_total = function (items) {
-        var total = 0;
-        items.forEach(function (value) {
-            total = total + value.total;
+    IBankingPage.prototype.get_point_info = function (id) {
+        var _this = this;
+        this.sellkayaService.get_point_info(id).subscribe(function (res) {
+            _this.point_info = res;
+            _this.point = res[0].balance;
+            _this.storage.set('user_point', res);
         });
-        this.total_purchase_kaya = total;
-        localStorage.setItem('total_purchase_kaya', this.total_purchase_kaya);
     };
-    BuyerKayaPurchaseListPage = __decorate([
+    IBankingPage.prototype.goToBookbank = function () {
+        this.navCtrl.push("i-banking-bookbank");
+    };
+    IBankingPage.prototype.goToPointReward = function () {
+        this.navCtrl.push("i-banking-pointreward");
+    };
+    IBankingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buyer-kaya-purchase-list',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;">สรุปข้อมูลการรับซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n    <ion-card>  \n        <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img src="./assets/imgs/user_logo.png"/>\n          </ion-col>\n    \n          <ion-col col-9>\n            \n                  <h2>{{ user.mobile }} \n                    \n                  </h2>\n                <h2>{{ user.name }} {{user.second_name}}</h2>\n\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card>\n\n\n  <ion-list padding>\n    <ion-item-sliding *ngFor="let value of items; let i = index">\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="./assets/item_images/kaya.png">\n        </ion-thumbnail>\n        <h2>{{ value.name }}&nbsp;&nbsp;[&nbsp;{{ value.kaya_type_name }}&nbsp;]</h2>\n        <p>{{ value.amount }}&nbsp;{{ value.short_name }}\n          &nbsp;X&nbsp;{{ value.est_price }}&nbsp;=&nbsp;\n          <strong>{{ value.total }}</strong>&nbsp;บาท</p>\n        \n        <button ion-button color="danger" (click)="remove_item(i)">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item>\n\n      <!-- <ion-item-options side="right">\n        <button ion-button color="danger">\n          <ion-icon name="trash"></ion-icon>\n          ลบรายการ\n        </button>\n      </ion-item-options> -->\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6><strong>รวมเป็นเงิน =</strong></ion-col>\n          <ion-col col-6 style="text-align:right">\n              <strong>{{ total_purchase_kaya }}</strong>&nbsp;บาท\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <button ion-button round large block (click)="goto_kaya_categories()">\n          รายการซื้อขยะ\n        </button>\n      </ion-col>\n\n      <ion-col col-6>\n        <button ion-button round color="shamrock" large block  (click)="set_kaya_invoice()">\n          บันทึกการซื้อขยะ\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.html"*/,
+            selector: 'page-i-banking',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/'<ion-header>\n  <ion-navbar [hideBackButton]="true">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ธนาคารขยะ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page1">\n  <ion-card>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-4>\n          <img src="./assets/imgs/user_logo.png" style="display:block;height:auto;margin-left:auto;margin-right:auto;"\n          />\n        </ion-col>\n        <ion-col col-8>\n          <h1>\n            <strong>\n              {{username}}  {{secondname}}\n            </strong>\n          </h1>\n          <h2>\n             {{balance}} บาท\n          </h2>\n          <h2>\n             {{point}} คะแนน\n          </h2>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  <img src="./assets/imgs/creditcard.png">\n  <!-- <div id="page1-container5" class="row">\n    <div class="col-40 col-4">\n\n    </div>\n    <div id="page1-markdown13" class="show-list-numbers-and-dots col-50 col-8">\n\n    </div>\n  </div>\n  <div class="spacer" style="width:283px;height:23px;" id="page1-spacer4"></div>\n  <ion-list id="page1-list2">\n    <ion-item color="none" on-click="goToBookbank()" id="page1-list-item9">\n      <ion-icon name="logo-bitcoin" item-start></ion-icon>\n      บัญชีธนาคารขยะ\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToPointReward()" id="page1-list-item10">\n      <ion-icon name="add-circle" item-start></ion-icon>\n      แต้มสะสม\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n  </ion-list> -->\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/i-banking/i-banking.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_buy_kaya_service_buy_kaya_service__["a" /* BuyKayaServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-    ], BuyerKayaPurchaseListPage);
-    return BuyerKayaPurchaseListPage;
+            __WEBPACK_IMPORTED_MODULE_2__providers_buyers_service_buyers_service__["a" /* BuyersServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_sell_kaya_service_sell_kaya_service__["a" /* SellKayaServiceProvider */]])
+    ], IBankingPage);
+    return IBankingPage;
 }());
 
-//# sourceMappingURL=buyer-kaya-purchase-list.js.map
+//# sourceMappingURL=i-banking.js.map
 
 /***/ })
 

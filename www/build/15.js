@@ -5,11 +5,10 @@ webpackJsonp([15],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaCategoriesPageModule", function() { return BuyerKayaCategoriesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyerKayaFormCalculatorPageModule", function() { return BuyerKayaFormCalculatorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__ = __webpack_require__(329);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,25 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var BuyerKayaCategoriesPageModule = (function () {
-    function BuyerKayaCategoriesPageModule() {
+var BuyerKayaFormCalculatorPageModule = (function () {
+    function BuyerKayaFormCalculatorPageModule() {
     }
-    BuyerKayaCategoriesPageModule = __decorate([
+    BuyerKayaFormCalculatorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__["a" /* BuyerKayaCategoriesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__["a" /* BuyerKayaFormCalculatorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_categories__["a" /* BuyerKayaCategoriesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buyer_kaya_form_calculator__["a" /* BuyerKayaFormCalculatorPage */]),
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_kaya_list_service_kaya_list_service__["a" /* KayaListServiceProvider */]]
         })
-    ], BuyerKayaCategoriesPageModule);
-    return BuyerKayaCategoriesPageModule;
+    ], BuyerKayaFormCalculatorPageModule);
+    return BuyerKayaFormCalculatorPageModule;
 }());
 
-//# sourceMappingURL=buyer-kaya-categories.module.js.map
+//# sourceMappingURL=buyer-kaya-form-calculator.module.js.map
 
 /***/ }),
 
@@ -45,10 +42,9 @@ var BuyerKayaCategoriesPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaCategoriesPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyerKayaFormCalculatorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_kaya_list_service_kaya_list_service__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,77 +57,84 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var BuyerKayaCategoriesPage = (function () {
-    function BuyerKayaCategoriesPage(navCtrl, navParams, KayaListService) {
+var BuyerKayaFormCalculatorPage = (function () {
+    function BuyerKayaFormCalculatorPage(navCtrl, navParams, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.KayaListService = KayaListService;
-        this.user = {};
+        this.toastCtrl = toastCtrl;
+        this.shortname = 'กก.';
+        this.item = {};
         this.items = [];
-        this.purchase_items = [];
-        this.btn_purchase_items_status = true;
+        this.user = {};
+        this.total_purchase_kaya = 0;
+        this.kaya_name = '';
+        this.est_price = 0;
+        this.total = 0;
         this.address = 'เทศบาลตำบลพังโคน สกลนคร';
     }
-    BuyerKayaCategoriesPage.prototype.ionViewDidLoad = function () {
+    BuyerKayaFormCalculatorPage.prototype.ionViewDidLoad = function () {
         this.user = this.navParams.get('user');
         this.user = (typeof this.user != 'undefined' ? this.user : 0);
-        if (this.user != '0') {
-            this.user_cate_id = this.user.user_cat_id;
-            this.office_id = this.user.office_id;
-        }
-        console.log(this.user);
-        // if (this.purchase_items != null) this.btn_purchase_items_status = false
-        this.get_kaya_list();
-    };
-    BuyerKayaCategoriesPage.prototype.ionViewWillEnter = function () {
-        var items = localStorage.getItem("purchase_kaya_list");
-        this.purchase_items = JSON.parse(items);
-        if (this.purchase_items != null)
-            this.btn_purchase_items_status = false;
-    };
-    BuyerKayaCategoriesPage.prototype.get_kaya_list = function () {
-        var _this = this;
-        var param = {
-            user_cat_id: this.user_cate_id,
-            office_id: this.office_id
-        };
-        this.KayaListService.get_kaya_list(param).subscribe(function (res) {
-            _this.items = res;
-        });
-    };
-    BuyerKayaCategoriesPage.prototype.getItems = function (ev) {
-        var val = ev.target.value;
-        if (val && val.trim() != '') {
-            this.items = this.items.filter(function (item) {
-                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-            });
-        }
-        else {
-            this.get_kaya_list();
+        this.item = this.navParams.get('item');
+        this.item = (typeof this.user != 'undefined' ? this.item : 0);
+        var total_purchase_kaya = localStorage.getItem("total_purchase_kaya");
+        this.total_purchase_kaya = (total_purchase_kaya == null ? 0 : total_purchase_kaya);
+        // localStorage.removeItem("purchase_kaya_list");
+        this.items = JSON.parse(localStorage.getItem("purchase_kaya_list"));
+        console.log(this.item);
+        if (typeof this.item != 'undefined') {
+            this.kaya_name = this.item.name + ' [ ' + this.item.kaya_type_name + ' ]';
+            this.est_price = this.item.est_price;
+            this.shortname = this.item.short_name;
         }
     };
-    BuyerKayaCategoriesPage.prototype.itemSelected = function (value) {
-        this.navCtrl.push("buyer-kaya-form-calculator", {
-            item: value,
-            user: this.user
-        });
+    BuyerKayaFormCalculatorPage.prototype.calculator = function (event) {
+        this.amount = event;
+        this.total = this.est_price * this.amount;
     };
-    BuyerKayaCategoriesPage.prototype.goto_buyer_kaya_purchase = function () {
-        this.navCtrl.push("buyer-kaya-purchase-list", {
-            user: this.user
+    BuyerKayaFormCalculatorPage.prototype.set_purchase_kaya_list = function () {
+        if (this.items == null || this.items.length <= 0) {
+            this.items = [];
+            console.log(typeof this.items);
+        }
+        if (typeof this.items == 'string') {
+            this.items = [];
+        }
+        console.log(typeof this.items);
+        this.items.push({
+            id: this.item.id,
+            name: this.item.name,
+            est_price: this.item.est_price,
+            amount: this.amount,
+            total: this.total,
+            unit: this.item.unit,
+            short_name: this.item.short_name,
+            kaya_type_name: this.item.kaya_type_name
         });
+        this.total_purchase_kaya = this.total + parseFloat(this.total_purchase_kaya);
+        localStorage.setItem('total_purchase_kaya', this.total_purchase_kaya);
+        localStorage.setItem('purchase_kaya_list', JSON.stringify(this.items));
+        this.presentToast();
+        this.navCtrl.pop();
     };
-    BuyerKayaCategoriesPage = __decorate([
+    BuyerKayaFormCalculatorPage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'บันทึกรายการสำเร็จ',
+            duration: 2000,
+            position: 'top'
+        });
+        toast.present();
+    };
+    BuyerKayaFormCalculatorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buyer-kaya-categories',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-categories/buyer-kaya-categories.html"*/'<ion-header>\n  \n    <ion-navbar [hideBackButton]="false"  color="nav_blue">\n      <button ion-button menuToggle right>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <ion-title style="text-align: center;" color="nav_blue">รับซื้อขยะ</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  <ion-content class="my_bg">\n    <ion-card>  <ion-grid>\n      <ion-row>\n        <ion-col col-3>\n          <img src="./assets/imgs/user_logo.png"/>\n        </ion-col>\n  \n        <ion-col col-9>\n          <ion-row>\n            <ion-col col-9>\n                <h2>{{ user.mobile }} \n                  \n                </h2>\n              <h2>{{ user.name }}  {{user.second_name}}</h2>\n            </ion-col>\n            <ion-col col-3>\n                <button ion-button color="dark" [disabled]=btn_purchase_items_status (click)="goto_buyer_kaya_purchase()">\n                    <ion-icon name="cart"></ion-icon>\n                  </button>\n            </ion-col>\n          </ion-row>\n            \n          \n  \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  \n  \n    <!-- <ion-searchbar (ionInput)="getItems($event)" placeholder="ค้นขยะ..."></ion-searchbar> -->\n    <ion-card *ngFor="let value of items" (click)="itemSelected(value)" class="card_kaya">\n      <ion-card-header>\n        <ion-row>\n          <ion-col col-8>\n            {{ value.name }} \n          </ion-col>\n          <ion-col col-4 class="kaya_type_txt">\n            {{ value.kaya_type_name }}\n          </ion-col>\n        </ion-row>\n        \n        <ion-row>\n          <ion-col style="text-align:right">\n              <strong>{{ value.est_price }}บาท : {{ value.unit_name }}</strong>\n          </ion-col>\n        </ion-row>\n  \n      </ion-card-header>\n  \n    </ion-card>\n  \n  </ion-content>\n  '/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-categories/buyer-kaya-categories.html"*/,
+            selector: 'page-buyer-kaya-form-calculator',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.html"*/'<ion-header>\n\n  <ion-navbar [hideBackButton]="false" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;" color="nav_blue">บันทึกข้อมูลซื้อขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="my_bg">\n  <ion-card>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-3>\n          <img src="./assets/imgs/user_logo.png" />\n        </ion-col>\n\n        <ion-col col-9>\n\n          <h2>{{ user.mobile }}\n\n          </h2>\n          <h2>{{ user.name }} {{user.second_name}}</h2>\n\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n\n  <div>\n\n    <ion-card class="card_form">\n      <ion-row>\n        <ion-col col-9>\n          <ion-input type="text" [ngModel]="kaya_name" class="topic" readonly=true></ion-input>\n        </ion-col>\n        <ion-col col-3>\n\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-6>\n          <span>ราคากลาง</span>\n        </ion-col>\n        <ion-col col-6>\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="text" [ngModel]="est_price" readonly=true></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              บาท\n            </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n\n      <ion-row style="border-bottom:#ffffff 2px solid ">\n        <ion-col col-6>\n          <span>จำนวน</span>\n        </ion-col>\n        <ion-col col-6>\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="number" class="weight_input" [ngModel]="amount" (ngModelChange)="calculator($event)"></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              {{ shortname }}\n            </ion-col>\n          </ion-row>\n\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-6>\n          <span>คิดเป็นเงิน</span>\n        </ion-col>\n        <ion-col col-6>\n\n          <ion-row>\n            <ion-col col-8>\n              <ion-input type="text" [ngModel]="total" readonly=true></ion-input>\n            </ion-col>\n            <ion-col col-4>\n              บาท\n            </ion-col>\n          </ion-row>\n\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n\n  </div>\n\n  <div padding>\n    <button ion-button block class="round-input" (click)="set_purchase_kaya_list()">บันทึกข้อมูล</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_kaya_list_service_kaya_list_service__["a" /* KayaListServiceProvider */]])
-    ], BuyerKayaCategoriesPage);
-    return BuyerKayaCategoriesPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], BuyerKayaFormCalculatorPage);
+    return BuyerKayaFormCalculatorPage;
 }());
 
-//# sourceMappingURL=buyer-kaya-categories.js.map
+//# sourceMappingURL=buyer-kaya-form-calculator.js.map
 
 /***/ })
 

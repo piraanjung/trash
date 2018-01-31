@@ -5,10 +5,10 @@ webpackJsonp([20],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyKayaPageModule", function() { return BuyKayaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyLocalproductsConfirmPageModule", function() { return BuyLocalproductsConfirmPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_kaya__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__ = __webpack_require__(324);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuyKayaPageModule = (function () {
-    function BuyKayaPageModule() {
+var BuyLocalproductsConfirmPageModule = (function () {
+    function BuyLocalproductsConfirmPageModule() {
     }
-    BuyKayaPageModule = __decorate([
+    BuyLocalproductsConfirmPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buy_kaya__["a" /* BuyKayaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__["a" /* BuyLocalproductsConfirmPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_kaya__["a" /* BuyKayaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buy_localproducts_confirm__["a" /* BuyLocalproductsConfirmPage */]),
             ],
         })
-    ], BuyKayaPageModule);
-    return BuyKayaPageModule;
+    ], BuyLocalproductsConfirmPageModule);
+    return BuyLocalproductsConfirmPageModule;
 }());
 
-//# sourceMappingURL=buy-kaya.module.js.map
+//# sourceMappingURL=buy-localproducts-confirm.module.js.map
 
 /***/ }),
 
@@ -42,10 +42,9 @@ var BuyKayaPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyKayaPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyLocalproductsConfirmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,43 +56,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var BuyKayaPage = (function () {
-    function BuyKayaPage(navCtrl, navParams, storage) {
+/**
+ * Generated class for the BuyLocalproductsConfirmPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var BuyLocalproductsConfirmPage = (function () {
+    function BuyLocalproductsConfirmPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.storage = storage;
     }
-    BuyKayaPage.prototype.goto_buyer = function (cat) {
-        // this.navCtrl.push('buy-kaya-choose-category');
-        this.navCtrl.push("buy-kaya-matching");
+    BuyLocalproductsConfirmPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad BuyLocalproductsConfirmPage');
     };
-    BuyKayaPage.prototype.gotoCustomerAppointment = function () {
-        this.navCtrl.push("buy-kaya-appointment");
+    BuyLocalproductsConfirmPage.prototype.goToBuyLocalProductResult = function () {
+        this.navCtrl.push("buy-localproducts-result");
     };
-    BuyKayaPage.prototype.gotoSettings = function () {
-        this.navCtrl.push("buyer-setting");
-    };
-    BuyKayaPage.prototype.ionViewDidLoad = function () {
-        this.storage.get('currentUser').then(function (res) {
-            // console.log(res);
-            // if (res == null) this.navCtrl.push('login');
-        });
-        // localStorage.removeItem("purchase_kaya_list")
-        // localStorage.removeItem("total_purchase_kaya")
-    };
-    BuyKayaPage = __decorate([
+    BuyLocalproductsConfirmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buy-kaya',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya/buy-kaya.html"*/'<ion-header>\n  <ion-navbar [hideBackButton]="true" color="nav_blue">\n    <button ion-button menuToggle right>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title style="text-align: center;">รับซื้อขยะ</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-row>\n    <ion-col offset-3>\n        <ion-img src="./assets/imgs/buykayabtn.png" width=240 height="242" \n        (click)="goto_buyer()"></ion-img>\n    </ion-col>\n  </ion-row>\n    \n  <!-- <ion-card (click)="goto_buyer()"> -->\n    <!-- <ion-row>\n      <ion-col><ion-img src="./assets/imgs/buykaya.svg" width=100 height="100"></ion-img></ion-col>\n      <ion-col style="padding-top:30px; font-size:40px">รับซื้อขยะ</ion-col>\n    </ion-row> -->\n<!--   \n      <ion-img src="./assets/imgs/buykaya.svg" width=100 height="100"></ion-img>\n      <div style="padding-top:30px; font-size:40px">รับซื้อขยะ</div> -->\n  <!-- </ion-card> -->\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-kaya/buy-kaya.html"*/,
+            selector: 'page-buy-localproducts-confirm',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-confirm/buy-localproducts-confirm.html"*/'<ion-header>\n  <ion-navbar>\n    \n    <ion-title>\n      ยืนยันการซื้อสินค้า\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page13">\n  <ion-card id="page13-card210">\n    <ion-list>\n      \n      <ion-item color="assertive" id="page13-list-item65">\n          <ion-avatar item-left>\n              <img src="./assets/img/chill.png" />\n            </ion-avatar>\n        พริกสด\n      </ion-item>\n      <ion-item id="page13-list-item-container18">\n        <div id="page13-markdown20" class="show-list-numbers-and-dots">\n          <p style="margin-top:0px;color:#000000;">\n            ราคา: 10บาท/ถุง\n          </p>\n        </div>\n      </ion-item>\n      <ion-item color="positive" id="page13-list-item66">\n        <ion-icon name="person" item-left></ion-icon>\n        ผู้ขาย :B-0112-1\n      </ion-item>\n    </ion-list>\n  </ion-card>\n  <ion-card id="page13-card211">\n    <ion-list>\n     \n      <ion-item id="page13-list-item-container19">\n        <div id="page13-markdown21" class="show-list-numbers-and-dots">\n          <p style="margin-top:0px;color:#000000;">\n            ซื้อจำนวน\n          </p>\n        </div>\n      </ion-item>\n      <ion-item color="balanced" id="page13-list-item68">\n        <ion-icon name="add-circle" item-left></ion-icon>\n        2 ถุง : 20 บาท\n      </ion-item>\n    </ion-list>\n  </ion-card>\n  <button id="page13-button14" ion-button color="positive" block on-click="goToBuyLocalProductResult()">\n    ยืนยันการซื้อ\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/buy-localproducts-confirm/buy-localproducts-confirm.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
-    ], BuyKayaPage);
-    return BuyKayaPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], BuyLocalproductsConfirmPage);
+    return BuyLocalproductsConfirmPage;
 }());
 
-//# sourceMappingURL=buy-kaya.js.map
+//# sourceMappingURL=buy-localproducts-confirm.js.map
 
 /***/ })
 

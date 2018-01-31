@@ -62,7 +62,6 @@ export class BuyKayaMatchingPage {
       this.catName = "โรงพยาบาล";
       this.catId = 3;
     }
-    //this.get_buyers()
   }
 
   searchSeller() {
@@ -71,7 +70,6 @@ export class BuyKayaMatchingPage {
     } else {
 
       let sellercode = this.sellercode;
-      // console.log("sellercode=" + sellercode + "   catId=" + this.catId)
       this.search_user(sellercode)
     }
 
@@ -134,13 +132,6 @@ export class BuyKayaMatchingPage {
     this.user = res
     this.items = res
       
-      //this.user={
-        //name : res['name'],
-        //second_name : res['second_name'],
-        //mobile : res['mobile'],
-        //user_cat_id :res['user_cat_id'],
-        //office_id :res['office_id']
-      //}
       this.storage.set('current_seller', this.user);
       console.log(this.user)
       if (JSON.stringify(this.user) == '{}') {
