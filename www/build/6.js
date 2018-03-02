@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 311:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellKayaEstimatepricePageModule", function() { return SellKayaEstimatepricePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya_estimateprice__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya_estimateprice__ = __webpack_require__(336);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var SellKayaEstimatepricePageModule = (function () {
 
 /***/ }),
 
-/***/ 337:
+/***/ 336:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -209,7 +209,7 @@ var SellKayaEstimatepricePage = (function () {
     };
     SellKayaEstimatepricePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sell-kaya-estimateprice',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-kaya-estimateprice/sell-kaya-estimateprice.html"*/'<!--\n  Generated template for the SellKayaEstimatepricePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>ราคากลางขยะ</ion-title>\n  </ion-navbar>\n\n  \n</ion-header>\n\n\n    <ion-content padding>\n      <ion-row style="margin-top:8%">\n        <ion-col>\n          <ion-img src="./assets/imgs/estprice_recycle_btn.png"  \n          style="margin-left:25%" width="170" height="140"\n          (click)="estprice_detail(1)"></ion-img>\n          <ion-row>\n            <ion-col col-6>\n                <ion-img src="./assets/imgs/estpricetopic.png" width="150" height="120"></ion-img>\n            </ion-col>\n            <ion-col col-6>\n                <ion-img src="./assets/imgs/estprice_org_btn.png" \n                width="170" height="140" (click)="estprice_detail(2)"></ion-img>\n            </ion-col>\n          </ion-row>\n          <ion-img src="./assets/imgs/estprice_hz_btn.png" style="margin-left:25%"\n            width="170" height="140" (click)="estprice_detail(3)"></ion-img>\n        </ion-col>  \n      </ion-row>\n\n        \n        </ion-content>\n\n\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-kaya-estimateprice/sell-kaya-estimateprice.html"*/,
+            selector: 'page-sell-kaya-estimateprice',template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-kaya-estimateprice/sell-kaya-estimateprice.html"*/'<!--\n  Generated template for the SellKayaEstimatepricePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>ราคากลางขยะ</ion-title>\n  </ion-navbar>\n\n  \n</ion-header>\n\n\n    <ion-content padding>\n      <ion-row style="margin-top:8%">\n        <ion-col>\n          <ion-img src="./assets/imgs/estprice_recycle_btn.png"  \n          style="margin-left:25%" width="170" height="140"\n          (click)="estprice_detail(1)"></ion-img>\n          <ion-row>\n            <ion-col col-6>\n                <ion-img src="./assets/imgs/estpricetopic.png" width="150" height="120"></ion-img>\n            </ion-col>\n            <ion-col col-6>\n                <ion-img src="./assets/imgs/estprice_org_btn.png" \n                width="170" height="140" (click)="estprice_detail(2)"></ion-img>\n            </ion-col>\n          </ion-row>\n          <ion-img src="./assets/imgs/estprice_hz_btn.png" style="margin-left:25%"\n            width="170" height="140" (click)="estprice_detail(3)"></ion-img>\n        </ion-col>  \n      </ion-row>\n\n        \n        </ion-content>\n\n\n'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-kaya-estimateprice/sell-kaya-estimateprice.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], SellKayaEstimatepricePage);

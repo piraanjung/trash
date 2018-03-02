@@ -88,5 +88,9 @@
         <variable name="UPDATE_METHOD" value="none" />
     </plugin>
     <plugin name="cordova-plugin-camera" spec="^4.0.1" />
+    <plugin name="cordova-android-support-gradle-release" spec="^1.2.0">
+        <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
+    </plugin>
     <engine name="android" spec="~7.0.0" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>

@@ -17,7 +17,6 @@ export class BuyerKayaCategoriesPage {
   office_id: number;
   purchase_items: any = []
   btn_purchase_items_status: boolean = true
-  address: string = 'เทศบาลตำบลพังโคน สกลนคร'
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private KayaListService: KayaListServiceProvider) {

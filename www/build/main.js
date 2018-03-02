@@ -54,34 +54,34 @@ var map = {
 		17
 	],
 	"../pages/buyer-kaya-categories/buyer-kaya-categories.module": [
-		301,
+		315,
 		16
 	],
 	"../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.module": [
-		302,
+		301,
 		15
 	],
 	"../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed.module": [
-		303,
+		302,
 		14
 	],
 	"../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.module": [
-		304,
+		303,
 		13
 	],
 	"../pages/i-banking-bookbank/i-banking-bookbank.module": [
-		305,
+		304,
 		2
 	],
 	"../pages/i-banking/i-banking.module": [
-		306,
+		305,
 		12
 	],
 	"../pages/login/login.module": [
 		160
 	],
 	"../pages/main/main.module": [
-		307,
+		306,
 		11
 	],
 	"../pages/purchase-product-slide/purchase-product-slide.module": [
@@ -93,35 +93,35 @@ var map = {
 		10
 	],
 	"../pages/register/register.module": [
-		308,
+		307,
 		9
 	],
 	"../pages/roles/roles.module": [
-		309,
+		308,
 		8
 	],
 	"../pages/sell-kaya-estimateprice-detail/sell-kaya-estimateprice-detail.module": [
-		310,
+		309,
 		7
 	],
 	"../pages/sell-kaya-estimateprice/sell-kaya-estimateprice.module": [
-		311,
+		310,
 		6
 	],
 	"../pages/sell-kaya-process/sell-kaya-process.module": [
-		312,
+		311,
 		5
 	],
 	"../pages/sell-kaya/sell-kaya.module": [
-		313,
+		312,
 		0
 	],
 	"../pages/sell-local-product-create-product/sell-local-product-create-product.module": [
-		314,
+		313,
 		3
 	],
 	"../pages/sell-local-product-dashboard/sell-local-product-dashboard.module": [
-		315,
+		314,
 		4
 	]
 };
@@ -271,7 +271,7 @@ var LoginPage = (function () {
     ], LoginPage.prototype, "nav", void 0);
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/login/login.html"*/'<ion-content padding>\n  <ion-grid id="logo">\n    <ion-row>\n      <ion-col col-3></ion-col>\n      <ion-col col-6 style="text-align:center">\n         <ion-img src="./assets/imgs/trashlogo.png" style="width: 150px; height:180px"></ion-img>\n      </ion-col>\n      <ion-col col-3></ion-col>\n    </ion-row>\n  </ion-grid>\n\n \n  <form (ngSubmit)="onLogin()">\n      <ion-list>\n        \n        <ion-item class="round-input">\n          <ion-input type="number" [(ngModel)]="params.phone" name="phone" required placeholder="หมายเลขโทรศัพท์"></ion-input>\n        </ion-item>\n      \n        <ion-item class="round-input">\n          <ion-input type="password" [(ngModel)]="params.pin" name="pin" required placeholder="รหัสผ่าน"></ion-input>\n        </ion-item>\n      </ion-list>\n\n    \n    <button ion-button block large round color="shamrock" type="submit">เข้าสู่ระบบ</button>\n   \n  </form>\n  <button ion-button block large round clear color="shamrock" (click)="register()">สมัครสมาชิก</button>\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/login/login.html"*/'<ion-content padding>\n  <ion-grid id="logo">\n    <ion-row>\n      <ion-col col-3></ion-col>\n      <ion-col col-6 style="text-align:center">\n         <ion-img src="./assets/imgs/trashlogo.png" style="width: 150px; height:180px"></ion-img>\n      </ion-col>\n      <ion-col col-3></ion-col>\n    </ion-row>\n  </ion-grid>\n\n \n  <form (ngSubmit)="onLogin()">\n      <ion-list>\n        \n        <ion-item class="round-input">\n          <ion-input type="number" [(ngModel)]="params.phone" name="phone" required placeholder="หมายเลขโทรศัพท์"></ion-input>\n        </ion-item>\n      \n        <ion-item class="round-input">\n          <ion-input type="password" [(ngModel)]="params.pin" name="pin" required placeholder="รหัสผ่าน"></ion-input>\n        </ion-item>\n      </ion-list>\n\n    \n    <button ion-button block large round color="shamrock" type="submit">เข้าสู่ระบบ</button>\n   \n  </form>\n  <button ion-button block large round clear color="shamrock" (click)="register()">สมัครสมาชิก</button>\n</ion-content>\n'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -638,7 +638,6 @@ var AppModule = (function () {
                         { loadChildren: '../pages/buy-localproducts-info/buy-localproducts-info.module#BuyLocalproductsInfoPageModule', name: 'buy-localproducts-info', segment: 'buy-localproducts-info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buy-localproducts-result/buy-localproducts-result.module#BuyLocalproductsResultPageModule', name: 'buy-localproducts-result', segment: 'buy-localproducts-result', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buy-localproducts/buy-localproducts.module#BuyLocalproductsPageModule', name: 'buy-localproducts', segment: 'buy-localproducts', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer-kaya-categories/buyer-kaya-categories.module#BuyerKayaCategoriesPageModule', name: 'buyer-kaya-categories', segment: 'buyer-kaya-categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer-kaya-form-calculator/buyer-kaya-form-calculator.module#BuyerKayaFormCalculatorPageModule', name: 'buyer-kaya-form-calculator', segment: 'buyer-kaya-form-calculator', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer-kaya-purchase-completed/buyer-kaya-purchase-completed.module#BuyerKayaPurchaseCompletedPageModule', name: 'buyer-kaya-purchase-completed', segment: 'buyer-kaya-purchase-completed', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer-kaya-purchase-list/buyer-kaya-purchase-list.module#BuyerKayaPurchaseListPageModule', name: 'buyer-kaya-purchase-list', segment: 'buyer-kaya-purchase-list', priority: 'low', defaultHistory: [] },
@@ -655,7 +654,8 @@ var AppModule = (function () {
                         { loadChildren: '../pages/sell-kaya-process/sell-kaya-process.module#SellKayaProcessPageModule', name: 'sell-kaya-process', segment: 'sell-kaya-process', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sell-kaya/sell-kaya.module#SellKayaPageModule', name: 'sell-kaya', segment: 'sell-kaya', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sell-local-product-create-product/sell-local-product-create-product.module#SellLocalProductCreateProductPageModule', name: 'sell-local-product-create-product', segment: 'sell-local-product-create-product', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sell-local-product-dashboard/sell-local-product-dashboard.module#SellLocalProductDashboardPageModule', name: 'sell-local-product-dashboard', segment: 'sell-local-product-dashboard', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/sell-local-product-dashboard/sell-local-product-dashboard.module#SellLocalProductDashboardPageModule', name: 'sell-local-product-dashboard', segment: 'sell-local-product-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer-kaya-categories/buyer-kaya-categories.module#BuyerKayaCategoriesPageModule', name: 'buyer-kaya-categories', segment: 'buyer-kaya-categories', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
@@ -693,8 +693,8 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_URL; });
-var API_URL = '/api/v1';
-// export const API_URL = 'http://babylinlinsworld.com/refuze/api/v1'; 
+// export const API_URL = '/api/v1';
+var API_URL = 'http://188.166.177.172/trash_webapp/public/index.php/api/v1';
 //# sourceMappingURL=api-url.js.map
 
 /***/ }),
@@ -735,12 +735,11 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map

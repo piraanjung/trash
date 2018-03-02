@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 315:
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellLocalProductDashboardPageModule", function() { return SellLocalProductDashboardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_local_product_dashboard__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_local_product_dashboard__ = __webpack_require__(340);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var SellLocalProductDashboardPageModule = (function () {
 
 /***/ }),
 
-/***/ 341:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75,7 +75,7 @@ var SellLocalProductDashboardPage = (function () {
     };
     SellLocalProductDashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sell-local-product-dashboard',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-dashboard/sell-local-product-dashboard.html"*/'<!--\n  Generated template for the SellLocalProductDashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>sellLocalProductDashboard</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button class="input-round"  (click)="createProducts()">เพิ่มรายการสินค้า</button>\n  รายการสินค้า\n  ชื่อสินค้า ราคาต่อหน่วย updateวันที่ แก้ไข ลบ\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-dashboard/sell-local-product-dashboard.html"*/,
+            selector: 'page-sell-local-product-dashboard',template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-local-product-dashboard/sell-local-product-dashboard.html"*/'<!--\n  Generated template for the SellLocalProductDashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>sellLocalProductDashboard</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button class="input-round"  (click)="createProducts()">เพิ่มรายการสินค้า</button>\n  รายการสินค้า\n  ชื่อสินค้า ราคาต่อหน่วย updateวันที่ แก้ไข ลบ\n</ion-content>\n'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-local-product-dashboard/sell-local-product-dashboard.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], SellLocalProductDashboardPage);

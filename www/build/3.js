@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 314:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellLocalProductCreateProductPageModule", function() { return SellLocalProductCreateProductPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_local_product_create_product__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_local_product_create_product__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(319);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -265,7 +265,7 @@ var Camera = (function (_super) {
 
 /***/ }),
 
-/***/ 340:
+/***/ 339:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -317,7 +317,7 @@ var SellLocalProductCreateProductPage = (function () {
     };
     SellLocalProductCreateProductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sell-local-product-create-product',template:/*ion-inline-start:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/'<!--\n  Generated template for the SellLocalProductCreateProductPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>sellLocalProductCreateProduct</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  ชื่อสินค้า \n  คำอธิบาย\n  ราคาต่อหน่วย\n  หน่วย\n  ถ่ายภาพ\n  <button ion-button class="input-round" click="captureImage()"> ถ่ายภาพ</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/pipatponghongzaeng/Desktop/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/,
+            selector: 'page-sell-local-product-create-product',template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/'<!--\n  Generated template for the SellLocalProductCreateProductPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>sellLocalProductCreateProduct</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  ชื่อสินค้า \n  คำอธิบาย\n  ราคาต่อหน่วย\n  หน่วย\n  ถ่ายภาพ\n  <button ion-button class="input-round" click="captureImage()"> ถ่ายภาพ</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-local-product-create-product/sell-local-product-create-product.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]])
