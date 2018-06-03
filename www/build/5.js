@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 311:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SellKayaProcessPageModule", function() { return SellKayaProcessPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya_process__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_kaya_process__ = __webpack_require__(338);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,7 +39,7 @@ var SellKayaProcessPageModule = (function () {
 
 /***/ }),
 
-/***/ 337:
+/***/ 338:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,7 +90,7 @@ var SellKayaProcessPage = (function () {
     };
     SellKayaProcessPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sell-kaya-process',template:/*ion-inline-start:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-kaya-process/sell-kaya-process.html"*/'<!--\n  Generated template for the SellKayaProcessPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ขายขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <div style="text-align:center">\n        <h2>สร้าง QR CODE ขายขยะ</h2>\n        <div *ngIf="show_qr_code" id="qrcode">\n          <qr-code value="{{seller_code}}" [size]="260"></qr-code>\n          <h5 style="text-align:center">นำ QR CODE สแกนกับเครื่องผู้รับซื้อขยะ</h5>\n        </div>\n        \n    </div>\n  \n</ion-content>\n<ion-footer style="text-align:center; border-top:none">\n    <img src="./assets/imgs/qrcodBtn.png" (click)="generate_qrcode()">\n    \n  </ion-footer>'/*ion-inline-end:"/Users/piraan/Desktop/Desktop - Piraan’s MacBook Air/trash/trash/src/pages/sell-kaya-process/sell-kaya-process.html"*/,
+            selector: 'page-sell-kaya-process',template:/*ion-inline-start:"/Users/piraan/Desktop/refuze-app/trash/src/pages/sell-kaya-process/sell-kaya-process.html"*/'<!--\n  Generated template for the SellKayaProcessPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ขายขยะ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <div style="text-align:center">\n        <h2>สร้าง QR CODE ขายขยะ</h2>\n        <div *ngIf="show_qr_code" id="qrcode">\n          <qr-code value="{{seller_code}}" [size]="260"></qr-code>\n          <h5 style="text-align:center">นำ QR CODE สแกนกับเครื่องผู้รับซื้อขยะ</h5>\n        </div>\n        \n    </div>\n  \n</ion-content>\n<ion-footer style="text-align:center; border-top:none">\n    <img src="./assets/imgs/qrcodBtn.png" (click)="generate_qrcode()">\n    \n  </ion-footer>'/*ion-inline-end:"/Users/piraan/Desktop/refuze-app/trash/src/pages/sell-kaya-process/sell-kaya-process.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
